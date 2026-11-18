@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DB_Streaming // Wireframe Acadêmico - Apresentação de Banco de Dados</title>
+  <meta name="description" content="Wireframe estrutural de alta fidelidade para apresentação acadêmica do projeto de Modelagem de Banco de Dados Relacional para um Aplicativo de Streaming de Música.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       CABEÇALHO FIXO COM NAVEGAÇÃO
+       ========================================================================== -->
+  <header class="header">
+    <div class="header__container">
+      <div class="header__brand">
+        <!-- EDITE AQUI: Título do seu Projeto Acadêmico -->
+        <span class="header__logo-icon">🗄️</span>
+        <span class="header__title">DB_Streaming <span class="header__subtitle">// Wireframe Acadêmico</span></span>
+      </div>
+
+      <nav class="header__nav" aria-label="Navegação Principal do Projeto">
+        <ul class="header__menu">
+          <li class="header__menu-item"><a class="header__link" href="#secao-1">1. Minimundo</a></li>
+          <li class="header__menu-item"><a class="header__link" href="#secao-2">2. DER Conceitual</a></li>
+          <li class="header__menu-item"><a class="header__link" href="#secao-3">3. Lógico & Tabelas</a></li>
+          <li class="header__menu-item"><a class="header__link" href="#secao-4">4. Scripts SQL</a></li>
+          <li class="header__menu-item"><a class="header__link" href="#secao-5">5. Queries</a></li>
+          <li class="header__menu-item"><a class="header__link header__link--team" href="#equipe">Equipe</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       CONTEÚDO PRINCIPAL
+       ========================================================================== -->
+  <main class="main-content">
+
+    <!-- ========================================================================
+         SEÇÃO 1: INTRODUÇÃO, MINIMUNDO E REGRAS DE NEGÓCIO
+         ======================================================================== -->
+    <section id="secao-1" class="section">
+      <header class="section__header">
+        <div class="section__badge">ETAPA 01</div>
+        <h2 class="section__title">Minimundo e Regras de Negócio da Plataforma</h2>
+        <p class="section__description">
+          Definição do escopo operacional, atores envolvidos, entidades fundamentais e restrições de integridade que regem o ecossistema do aplicativo de streaming musical.
+        </p>
+      </header>
+
+      <div class="grid-2-cols">
+        <!-- Coluna 1: Descrição do Minimundo -->
+        <article class="card">
+          <div class="card__header">
+            <h3 class="card__title">📖 Descrição do Minimundo (App de Streaming de Música)</h3>
+            <span class="card__tag">Visão Geral do Domínio</span>
+          </div>
+          <div class="card__body">
+            <!-- EDITE AQUI: Texto de apresentação do Minimundo do seu grupo -->
+            <p class="paragraph">
+              O sistema modelado contempla a infraestrutura de dados para um serviço moderno de <strong>Streaming de Música Digital sob demanda</strong>. A plataforma permite que ouvintes acessem um vasto catálogo fonográfico, assinem planos mensais ou anuais, criem seleções personalizadas de faixas e interajam diretamente com a discografia de seus artistas prediletos.
+            </p>
+            <p class="paragraph">
+              O ecossistema é alicerçado na gestão de <strong>Usuários</strong>, que contratam <strong>Planos de Assinatura</strong> (como Individual, Familiar ou Universitário) e geram <strong>Pagamentos</strong> recorrentes. Do ponto de vista fonográfico, o catálogo é catalogado por <strong>Gêneros Musicais</strong>, <strong>Artistas</strong> cadastrados e seus respectivos <strong>Álbuns</strong> de estúdio, que reúnem múltiplas <strong>Músicas (Faixas)</strong> com metadados como duração, data de lançamento e taxa de amostragem.
+            </p>
+            <p class="paragraph">
+              A experiência interativa do ouvinte consolida-se através da criação e curadoria de <strong>Playlists</strong> (tanto públicas quanto privadas), marcação de faixas favoritas (<strong>Curtidas</strong>), acompanhamento de perfis (<strong>Seguidores de Artista</strong>) e o rastreamento em tempo real de cada reprodução via <strong>Histórico de Reprodução</strong>, viabilizando métricas precisas de faturamento e royalties.
+            </p>
+          </div>
+        </article>
+
+        <!-- Coluna 2: Regras de Negócio -->
+        <article class="card">
+          <div class="card__header">
+            <h3 class="card__title">⚖️ Regras de Negócio (RN)</h3>
+            <span class="card__tag">Restrições & Políticas</span>
+          </div>
+          <div class="card__body">
+            <!-- EDITE AQUI: Regras de Negócio do seu Projeto -->
+            <ol class="rules-list">
+              <li class="rules-list__item">
+                <span class="rules-list__code">RN01 - Unicidade de Cadastro:</span>
+                <span class="rules-list__text">Todo usuário deve possuir endereço de e-mail e CPF cadastrados sob restrição de unicidade (UNIQUE) e formato válido.</span>
+              </li>
+              <li class="rules-list__item">
+                <span class="rules-list__code">RN02 - Vinculação Obrigatória a Plano:</span>
+                <span class="rules-list__text">Ao criar uma conta, o usuário deve obrigatoriamente estar associado a um plano de assinatura ativo (gratuito ou pago).</span>
+              </li>
+              <li class="rules-list__item">
+                <span class="rules-list__code">RN03 - Histórico Financeiro:</span>
+                <span class="rules-list__text">Cada transação de pagamento deve registrar data, valor monetário, método de liquidação e status (Pendente, Aprovado, Estornado).</span>
+              </li>
+              <li class="rules-list__item">
+                <span class="rules-list__code">RN04 - Integridade do Catálogo Musical:</span>
+                <span class="rules-list__text">Toda música deve estar estritamente vinculada a um álbum existente e associada a um gênero musical previamente homologado.</span>
+              </li>
+              <li class="rules-list__item">
+                <span class="rules-list__code">RN05 - Autoria de Álbuns e Músicas:</span>
+                <span class="rules-list__text">Um álbum pertence a um único artista principal, herdando a nacionalidade e os identificadores oficiais do artista cadastrado.</span>
+              </li>
+              <li class="rules-list__item">
+                <span class="rules-list__code">RN06 - Relacionamento Playlist-Músicas:</span>
+                <span class="rules-list__text">Uma playlist pode comportar inúmeras músicas e a mesma música pode estar em diversas playlists (relação N:M resolvida via tabela associativa com ordem de reprodução).</span>
+              </li>
+              <li class="rules-list__item">
+                <span class="rules-list__code">RN07 - Auditoria de Reprodução:</span>
+                <span class="rules-list__text">Cada reprodução realizada dispara um registro de log no histórico com timestamp (data/hora exata) e percentual consumido da faixa.</span>
+              </li>
+              <li class="rules-list__item">
+                <span class="rules-list__code">RN08 - Não-Duplicação de Curtidas:</span>
+                <span class="rules-list__text">Um usuário só pode curtir uma mesma música uma única vez, sendo garantida a integridade por chave primária composta (ID_Usuario + ID_Musica).</span>
+              </li>
+            </ol>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SEÇÃO 2: MODELO CONCEITUAL - DER
+         ======================================================================== -->
+    <section id="secao-2" class="section">
+      <header class="section__header">
+        <div class="section__badge">ETAPA 02</div>
+        <h2 class="section__title">Modelo Conceitual (Diagrama Entidade-Relacionamento)</h2>
+        <p class="section__description">
+          Representação abstrata de alto nível dos conjuntos de entidades do sistema, seus atributos primordiais, relacionamentos e cardinalidades mínimas e máximas.
+        </p>
+      </header>
+
+      <figure class="diagram-viewer">
+        <!-- Canvas interativo em estilo wireframe técnico -->
+        <div class="diagram-viewer__canvas" data-modal-target="modal-der" title="Clique para ampliar o Diagrama Conceitual">
+          <div class="diagram-viewer__placeholder-content">
+            <span class="diagram-viewer__icon">📐</span>
+            <p class="diagram-viewer__instruction">[ Espaço Reservado para Imagem do DER - Clique para Ampliar em Tela Cheia ]</p>
+            <span class="diagram-viewer__hint">Dimensão recomendada: 1920x1080px (PNG ou SVG de Alta Resolução)</span>
+          </div>
+
+          <!-- EDITE AQUI: Descomente a tag img abaixo e insira o caminho da sua imagem exportada (ex: BrModelo, Astah, Lucidchart) -->
+          <!-- <img src="assets/der_conceitual.png" alt="Diagrama Entidade-Relacionamento Conceitual" class="diagram-viewer__image"> -->
+        </div>
+
+        <div class="diagram-viewer__toolbar">
+          <button class="btn btn-zoom" data-modal-target="modal-der" type="button">
+            <span class="btn__icon">🔍</span> Ampliar Diagrama (Tela Cheia)
+          </button>
+          <span class="diagram-viewer__status-tag">Status: Validado pelo Orientador</span>
+        </div>
+
+        <figcaption class="diagram-viewer__caption">
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="metric-item__value">09</span>
+              <span class="metric-item__label">Entidades Fortes</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-item__value">03</span>
+              <span class="metric-item__label">Entidades Associativas</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-item__value">1:N & N:M</span>
+              <span class="metric-item__label">Cardinalidades Predominantes</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-item__value">3FN</span>
+              <span class="metric-item__label">Nível de Normalização</span>
+            </div>
+          </div>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ========================================================================
+         SEÇÃO 3: MODELO LÓGICO RELACIONAL E AS 12 TABELAS COM DADOS
+         ======================================================================== -->
+    <section id="secao-3" class="section">
+      <header class="section__header">
+        <div class="section__badge">ETAPA 03</div>
+        <h2 class="section__title">Modelo Lógico Relacional e Dados Armazenados</h2>
+        <p class="section__description">
+          Esquema relacional em 3ª Forma Normal (3FN) detalhando chaves primárias (PK), chaves estrangeiras (FK), tipos primitivos de dados e instâncias povoadas nas 12 tabelas.
+        </p>
+      </header>
+
+      <!-- Parte 3.1: Diagrama do Modelo Lógico -->
+      <figure class="diagram-viewer">
+        <div class="diagram-viewer__canvas" data-modal-target="modal-logico" title="Clique para ampliar o Diagrama do Modelo Lógico">
+          <div class="diagram-viewer__placeholder-content">
+            <span class="diagram-viewer__icon">📊</span>
+            <p class="diagram-viewer__instruction">[ Espaço Reservado para Imagem do Esquema Lógico Relacional (12 Tabelas) - Clique para Ampliar ]</p>
+            <span class="diagram-viewer__hint">Visão tabular com mapeamento completo de chaves PK e integridade referencial FK</span>
+          </div>
+
+          <!-- EDITE AQUI: Descomente a tag img abaixo e insira o caminho do diagrama lógico gerado no MySQL Workbench, DBeaver, etc. -->
+          <!-- <img src="assets/modelo_logico_relacional.png" alt="Esquema Lógico Relacional das 12 Tabelas" class="diagram-viewer__image"> -->
+        </div>
+
+        <div class="diagram-viewer__toolbar">
+          <button class="btn btn-zoom" data-modal-target="modal-logico" type="button">
+            <span class="btn__icon">🔍</span> Ampliar Modelo Lógico (Tela Cheia)
+          </button>
+          <span class="diagram-viewer__status-tag">12 Tabelas Normalizadas</span>
+        </div>
+      </figure>
+
+      <!-- Parte 3.2: Visualização Tabular das 12 Tabelas Divididas em 4 Abas -->
+      <div class="tables-section">
+        <div class="tables-section__header">
+          <h3 class="tables-section__title">Visualização das 12 Tabelas e Registros do Banco de Dados</h3>
+          <p class="tables-section__subtitle">Selecione o módulo para inspecionar os dicionários de dados e registros fictícios de validação:</p>
+        </div>
+
+        <!-- Barra de Navegação das Abas (Tabs) -->
+        <div class="tab-nav" role="tablist" aria-label="Navegação entre Módulos de Tabelas">
+          <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-modulo-1" id="btn-tab-1" data-tab-target="tab-modulo-1">
+            <span class="tab-btn__number">01</span> Módulo 1: Usuários & Planos
+          </button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-modulo-2" id="btn-tab-2" data-tab-target="tab-modulo-2">
+            <span class="tab-btn__number">02</span> Módulo 2: Catálogo Musical
+          </button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-modulo-3" id="btn-tab-3" data-tab-target="tab-modulo-3">
+            <span class="tab-btn__number">03</span> Módulo 3: Faixas & Playlists
+          </button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-modulo-4" id="btn-tab-4" data-tab-target="tab-modulo-4">
+            <span class="tab-btn__number">04</span> Módulo 4: Interações & Consumo
+          </button>
+        </div>
+
+        <!-- PAINEL 1: USUÁRIOS & PLANOS (Tabelas 1, 2 e 3) -->
+        <div id="tab-modulo-1" class="tab-pane active" role="tabpanel" aria-labelledby="btn-tab-1">
+
+          <!-- Tabela 01: tb_planos -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 01/12</span>
+              <h4 class="table-card__title"><code>TABLE: tb_planos</code></h4>
+              <span class="table-card__meta">Entidade Forte &bull; Definição dos tipos de assinatura</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tb_planos -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> id_plano (INT)</th>
+                    <th>nome_plano (VARCHAR)</th>
+                    <th>valor_mensal (DECIMAL)</th>
+                    <th>limite_dispositivos (INT)</th>
+                    <th>qualidade_audio (VARCHAR)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>1</code></td>
+                    <td>Free com Anúncios</td>
+                    <td>R$ 0.00</td>
+                    <td>1</td>
+                    <td>Padrão (128 kbps)</td>
+                  </tr>
+                  <tr>
+                    <td><code>2</code></td>
+                    <td>Premium Individual</td>
+                    <td>R$ 21.90</td>
+                    <td>1</td>
+                    <td>Alta Fidelidade (320 kbps)</td>
+                  </tr>
+                  <tr>
+                    <td><code>3</code></td>
+                    <td>Premium Universitário</td>
+                    <td>R$ 11.90</td>
+                    <td>1</td>
+                    <td>Alta Fidelidade (320 kbps)</td>
+                  </tr>
+                  <tr>
+                    <td><code>4</code></td>
+                    <td>Premium Familiar</td>
+                    <td>R$ 34.90</td>
+                    <td>6</td>
+                    <td>Alta Fidelidade (320 kbps)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <!-- Tabela 02: tb_usuarios -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 02/12</span>
+              <h4 class="table-card__title"><code>TABLE: tb_usuarios</code></h4>
+              <span class="table-card__meta">Entidade Central &bull; Contas cadastradas no sistema</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tb_usuarios -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> id_usuario (INT)</th>
+                    <th>nome_completo (VARCHAR)</th>
+                    <th>email (VARCHAR)</th>
+                    <th>data_nascimento (DATE)</th>
+                    <th><span class="badge badge--fk">FK</span> id_plano (INT)</th>
+                    <th>status_conta (VARCHAR)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>101</code></td>
+                    <td>Lucas Mendes Silva</td>
+                    <td>lucas.mendes@email.com</td>
+                    <td>1998-05-14</td>
+                    <td><code>2</code></td>
+                    <td>Ativo</td>
+                  </tr>
+                  <tr>
+                    <td><code>102</code></td>
+                    <td>Beatriz Helena Costa</td>
+                    <td>beatriz.costa@email.com</td>
+                    <td>2001-11-23</td>
+                    <td><code>3</code></td>
+                    <td>Ativo</td>
+                  </tr>
+                  <tr>
+                    <td><code>103</code></td>
+                    <td>Carlos Eduardo Rocha</td>
+                    <td>cadu.rocha@email.com</td>
+                    <td>1992-02-08</td>
+                    <td><code>4</code></td>
+                    <td>Ativo</td>
+                  </tr>
+                  <tr>
+                    <td><code>104</code></td>
+                    <td>Fernanda Lima Souza</td>
+                    <td>fernanda.souza@email.com</td>
+                    <td>2003-09-30</td>
+                    <td><code>1</code></td>
+                    <td>Inativo</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <!-- Tabela 03: tb_pagamentos -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 03/12</span>
+              <h4 class="table-card__title"><code>TABLE: tb_pagamentos</code></h4>
+              <span class="table-card__meta">Entidade Transacional &bull; Histórico financeiro de faturamento</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tb_pagamentos -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> id_pagamento (INT)</th>
+                    <th><span class="badge badge--fk">FK</span> id_usuario (INT)</th>
+                    <th>data_pagamento (TIMESTAMP)</th>
+                    <th>valor_pago (DECIMAL)</th>
+                    <th>metodo_pagamento (VARCHAR)</th>
+                    <th>status_transacao (VARCHAR)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>9001</code></td>
+                    <td><code>101</code></td>
+                    <td>2026-03-01 08:14:22</td>
+                    <td>R$ 21.90</td>
+                    <td>Cartão de Crédito</td>
+                    <td>Aprovado</td>
+                  </tr>
+                  <tr>
+                    <td><code>9002</code></td>
+                    <td><code>102</code></td>
+                    <td>2026-03-02 14:30:10</td>
+                    <td>R$ 11.90</td>
+                    <td>PIX</td>
+                    <td>Aprovado</td>
+                  </tr>
+                  <tr>
+                    <td><code>9003</code></td>
+                    <td><code>103</code></td>
+                    <td>2026-03-05 19:45:00</td>
+                    <td>R$ 34.90</td>
+                    <td>Boleto Bancário</td>
+                    <td>Aprovado</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- PAINEL 2: CATÁLOGO MUSICAL (Tabelas 4, 5 e 6) -->
+        <div id="tab-modulo-2" class="tab-pane" role="tabpanel" aria-labelledby="btn-tab-2">
+
+          <!-- Tabela 04: tb_generos -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 04/12</span>
+              <h4 class="table-card__title"><code>TABLE: tb_generos</code></h4>
+              <span class="table-card__meta">Entidade de Classificação &bull; Categorias fonográficas</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tb_generos -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> id_genero (INT)</th>
+                    <th>nome_genero (VARCHAR)</th>
+                    <th>descricao (VARCHAR)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>1</code></td>
+                    <td>Rock Clássico</td>
+                    <td>Gênero caracterizado por guitarras elétricas, baixo e bateria.</td>
+                  </tr>
+                  <tr>
+                    <td><code>2</code></td>
+                    <td>MPB (Música Popular Brasileira)</td>
+                    <td>Fusão tradicional de ritmos brasileiros com elementos pop e jazz.</td>
+                  </tr>
+                  <tr>
+                    <td><code>3</code></td>
+                    <td>Synthwave / Lo-Fi</td>
+                    <td>Música eletrônica nostálgica com sintetizadores analógicos retrô.</td>
+                  </tr>
+                  <tr>
+                    <td><code>4</code></td>
+                    <td>Jazz Contemporâneo</td>
+                    <td>Improvisações harmônicas ricas com metais, piano acústico e contrabaixo.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <!-- Tabela 05: tb_artistas -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 05/12</span>
+              <h4 class="table-card__title"><code>TABLE: tb_artistas</code></h4>
+              <span class="table-card__meta">Entidade Forte &bull; Autores, bandas e intérpretes cadastrados</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tb_artistas -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> id_artista (INT)</th>
+                    <th>nome_artistico (VARCHAR)</th>
+                    <th>pais_origem (VARCHAR)</th>
+                    <th>ouvintes_mensais (INT)</th>
+                    <th>verificado (BOOLEAN)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>10</code></td>
+                    <td>The Midnight Echoes</td>
+                    <td>Reino Unido</td>
+                    <td>4.850.210</td>
+                    <td>TRUE</td>
+                  </tr>
+                  <tr>
+                    <td><code>20</code></td>
+                    <td>Clara Viana & Quinteto</td>
+                    <td>Brasil</td>
+                    <td>1.240.900</td>
+                    <td>TRUE</td>
+                  </tr>
+                  <tr>
+                    <td><code>30</code></td>
+                    <td>Neon Cyberflow</td>
+                    <td>Canadá</td>
+                    <td>890.430</td>
+                    <td>FALSE</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <!-- Tabela 06: tb_albuns -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 06/12</span>
+              <h4 class="table-card__title"><code>TABLE: tb_albuns</code></h4>
+              <span class="table-card__meta">Entidade Forte &bull; Produções e lançamentos de estúdio</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tb_albuns -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> id_album (INT)</th>
+                    <th>titulo_album (VARCHAR)</th>
+                    <th>ano_lancamento (INT)</th>
+                    <th><span class="badge badge--fk">FK</span> id_artista (INT)</th>
+                    <th>gravadora (VARCHAR)</th>
+                    <th>tipo_lancamento (VARCHAR)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>501</code></td>
+                    <td>Electric Sunset Horizon</td>
+                    <td>2024</td>
+                    <td><code>10</code></td>
+                    <td>SoundWave Records</td>
+                    <td>Álbum de Estúdio</td>
+                  </tr>
+                  <tr>
+                    <td><code>502</code></td>
+                    <td>Aquarela de Cordas</td>
+                    <td>2023</td>
+                    <td><code>20</code></td>
+                    <td>Som Tropical Brasil</td>
+                    <td>Álbum de Estúdio</td>
+                  </tr>
+                  <tr>
+                    <td><code>503</code></td>
+                    <td>Digital Nostalgia Dreams</td>
+                    <td>2025</td>
+                    <td><code>30</code></td>
+                    <td>Independente</td>
+                    <td>EP</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- PAINEL 3: FAIXAS & PLAYLISTS (Tabelas 7, 8 e 9) -->
+        <div id="tab-modulo-3" class="tab-pane" role="tabpanel" aria-labelledby="btn-tab-3">
+
+          <!-- Tabela 07: tb_musicas -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 07/12</span>
+              <h4 class="table-card__title"><code>TABLE: tb_musicas</code></h4>
+              <span class="table-card__meta">Entidade Primordial &bull; Catálogo individual de faixas de áudio</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tb_musicas -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> id_musica (INT)</th>
+                    <th>titulo_musica (VARCHAR)</th>
+                    <th>duracao_segundos (INT)</th>
+                    <th><span class="badge badge--fk">FK</span> id_album (INT)</th>
+                    <th><span class="badge badge--fk">FK</span> id_genero (INT)</th>
+                    <th>faixa_numero (INT)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>1001</code></td>
+                    <td>Midnight City Drive</td>
+                    <td>248</td>
+                    <td><code>501</code></td>
+                    <td><code>1</code></td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td><code>1002</code></td>
+                    <td>Neon Reflections</td>
+                    <td>195</td>
+                    <td><code>501</code></td>
+                    <td><code>1</code></td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td><code>1003</code></td>
+                    <td>Samba dos Horizontes</td>
+                    <td>210</td>
+                    <td><code>502</code></td>
+                    <td><code>2</code></td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td><code>1004</code></td>
+                    <td>Retro Highway 88</td>
+                    <td>182</td>
+                    <td><code>503</code></td>
+                    <td><code>3</code></td>
+                    <td>1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <!-- Tabela 08: tb_playlists -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 08/12</span>
+              <h4 class="table-card__title"><code>TABLE: tb_playlists</code></h4>
+              <span class="table-card__meta">Entidade de Usuário &bull; Coletâneas criadas por usuários</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tb_playlists -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> id_playlist (INT)</th>
+                    <th>nome_playlist (VARCHAR)</th>
+                    <th>descricao (VARCHAR)</th>
+                    <th><span class="badge badge--fk">FK</span> id_usuario (INT)</th>
+                    <th>publica (BOOLEAN)</th>
+                    <th>data_criacao (DATE)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>301</code></td>
+                    <td>Foco no Código & Café</td>
+                    <td>Faixas instrumentais para alta concentração.</td>
+                    <td><code>101</code></td>
+                    <td>TRUE</td>
+                    <td>2026-01-10</td>
+                  </tr>
+                  <tr>
+                    <td><code>302</code></td>
+                    <td>Viagem de Fim de Semana</td>
+                    <td>Músicas animadas para estrada e descanso.</td>
+                    <td><code>102</code></td>
+                    <td>TRUE</td>
+                    <td>2026-02-18</td>
+                  </tr>
+                  <tr>
+                    <td><code>303</code></td>
+                    <td>Relaxing Vibes Only</td>
+                    <td>Seleção calma para antes de dormir.</td>
+                    <td><code>103</code></td>
+                    <td>FALSE</td>
+                    <td>2026-03-01</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <!-- Tabela 09: tb_playlist_musica -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 09/12</span>
+              <h4 class="table-card__title"><code>TABLE: tb_playlist_musica</code></h4>
+              <span class="table-card__meta">Entidade Associativa (N:M) &bull; Associação entre Playlists e Músicas</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tb_playlist_musica -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> id_playlist (INT)</th>
+                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> id_musica (INT)</th>
+                    <th>ordem_execucao (INT)</th>
+                    <th>adicionado_em (TIMESTAMP)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>301</code></td>
+                    <td><code>1001</code></td>
+                    <td>1</td>
+                    <td>2026-01-10 10:15:00</td>
+                  </tr>
+                  <tr>
+                    <td><code>301</code></td>
+                    <td><code>1004</code></td>
+                    <td>2</td>
+                    <td>2026-01-10 10:16:30</td>
+                  </tr>
+                  <tr>
+                    <td><code>302</code></td>
+                    <td><code>1003</code></td>
+                    <td>1</td>
+                    <td>2026-02-18 16:40:12</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- PAINEL 4: INTERAÇÕES & CONSUMO (Tabelas 10, 11 e 12) -->
+        <div id="tab-modulo-4" class="tab-pane" role="tabpanel" aria-labelledby="btn-tab-4">
+
+          <!-- Tabela 10: tb_historico_reproducao -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 10/12</span>
+              <h4 class="table-card__title"><code>TABLE: tb_historico_reproducao</code></h4>
+              <span class="table-card__meta">Entidade de Log / Fato &bull; Rastreamento de streaming executado</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tb_historico_reproducao -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> id_reproducao (INT)</th>
+                    <th><span class="badge badge--fk">FK</span> id_usuario (INT)</th>
+                    <th><span class="badge badge--fk">FK</span> id_musica (INT)</th>
+                    <th>data_hora_reproducao (TIMESTAMP)</th>
+                    <th>segundos_ouvidos (INT)</th>
+                    <th>dispositivo (VARCHAR)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>70001</code></td>
+                    <td><code>101</code></td>
+                    <td><code>1001</code></td>
+                    <td>2026-03-10 14:02:11</td>
+                    <td>248</td>
+                    <td>Desktop Web App</td>
+                  </tr>
+                  <tr>
+                    <td><code>70002</code></td>
+                    <td><code>101</code></td>
+                    <td><code>1004</code></td>
+                    <td>2026-03-10 14:06:20</td>
+                    <td>182</td>
+                    <td>Desktop Web App</td>
+                  </tr>
+                  <tr>
+                    <td><code>70003</code></td>
+                    <td><code>102</code></td>
+                    <td><code>1001</code></td>
+                    <td>2026-03-10 15:30:45</td>
+                    <td>248</td>
+                    <td>Smartphone Android</td>
+                  </tr>
+                  <tr>
+                    <td><code>70004</code></td>
+                    <td><code>103</code></td>
+                    <td><code>1003</code></td>
+                    <td>2026-03-10 16:11:02</td>
+                    <td>210</td>
+                    <td>Smart TV Samsung</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <!-- Tabela 11: tb_curtidas -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 11/12</span>
+              <h4 class="table-card__title"><code>TABLE: tb_curtidas</code></h4>
+              <span class="table-card__meta">Entidade Associativa &bull; Músicas favoritadas pelos usuários</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tb_curtidas -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> id_usuario (INT)</th>
+                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> id_musica (INT)</th>
+                    <th>data_curtida (TIMESTAMP)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>101</code></td>
+                    <td><code>1001</code></td>
+                    <td>2026-01-12 18:22:04</td>
+                  </tr>
+                  <tr>
+                    <td><code>101</code></td>
+                    <td><code>1002</code></td>
+                    <td>2026-01-15 09:10:31</td>
+                  </tr>
+                  <tr>
+                    <td><code>102</code></td>
+                    <td><code>1003</code></td>
+                    <td>2026-02-01 21:04:19</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <!-- Tabela 12: tb_seguidores_artista -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 12/12</span>
+              <h4 class="table-card__title"><code>TABLE: tb_seguidores_artista</code></h4>
+              <span class="table-card__meta">Entidade Associativa &bull; Engajamento social e feed de novidades</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tb_seguidores_artista -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> id_usuario (INT)</th>
+                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> id_artista (INT)</th>
+                    <th>data_seguindo (TIMESTAMP)</th>
+                    <th>notificacoes_ativas (BOOLEAN)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>101</code></td>
+                    <td><code>10</code></td>
+                    <td>2026-01-10 11:00:00</td>
+                    <td>TRUE</td>
+                  </tr>
+                  <tr>
+                    <td><code>102</code></td>
+                    <td><code>20</code></td>
+                    <td>2026-02-15 17:42:19</td>
+                    <td>TRUE</td>
+                  </tr>
+                  <tr>
+                    <td><code>103</code></td>
+                    <td><code>10</code></td>
+                    <td>2026-03-02 19:15:30</td>
+                    <td>FALSE</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SEÇÃO 4: SCRIPTS SQL USADOS NO MYCOMPILER
+         ======================================================================== -->
+    <section id="secao-4" class="section">
+      <header class="section__header">
+        <div class="section__badge">ETAPA 04</div>
+        <h2 class="section__title">Scripts SQL (DDL & DML — MyCompiler)</h2>
+        <p class="section__description">
+          Comandos padronizados em SQL ANSI executados e validados no compilador online MyCompiler para a criação estrutural, instanciação e definição de integridade referencial.
+        </p>
+      </header>
+
+      <div class="accordions-container">
+
+        <!-- Gaveta 1: DDL CREATE TABLE (Aberta por padrão) -->
+        <details class="code-accordion" open>
+          <summary class="code-accordion__header">
+            <span class="code-accordion__icon-indicator"></span>
+            <span class="code-accordion__title">Script 01 — Criação das Tabelas (DDL: CREATE TABLE)</span>
+            <span class="code-accordion__badge">DDL</span>
+          </summary>
+          <div class="code-accordion__content">
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">01_create_tables_ddl.sql</span>
+                <span class="ide-window__tag">[SQL / MyCompiler]</span>
+              </div>
+              <div class="ide-window__body">
+                <!-- EDITE AQUI: Seu script DDL completo -->
+                <pre class="ide-window__code"><code>-- ==========================================================
+-- PROJETO: BANCO DE DADOS DE STREAMING MUSICAL
+-- ARQUIVO: 01_create_tables_ddl.sql
+-- AMBIENTE DE EXECUÇÃO: MyCompiler (MySQL / MariaDB)
+-- ==========================================================
+
+-- 1. TABELA DE PLANOS DE ASSINATURA
+CREATE TABLE tb_planos (
+    id_plano INT AUTO_INCREMENT PRIMARY KEY,
+    nome_plano VARCHAR(50) NOT NULL,
+    valor_mensal DECIMAL(10,2) NOT NULL,
+    limite_dispositivos INT DEFAULT 1,
+    qualidade_audio VARCHAR(30) NOT NULL
+);
+
+-- 2. TABELA DE USUÁRIOS
+CREATE TABLE tb_usuarios (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nome_completo VARCHAR(120) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    data_nascimento DATE NOT NULL,
+    id_plano INT NOT NULL,
+    status_conta VARCHAR(20) DEFAULT 'Ativo'
+);
+
+-- 3. TABELA DE PAGAMENTOS
+CREATE TABLE tb_pagamentos (
+    id_pagamento INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    data_pagamento TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    valor_pago DECIMAL(10,2) NOT NULL,
+    metodo_pagamento VARCHAR(40) NOT NULL,
+    status_transacao VARCHAR(20) DEFAULT 'Aprovado'
+);
+
+-- 4. TABELA DE GÊNEROS MUSICAIS
+CREATE TABLE tb_generos (
+    id_genero INT AUTO_INCREMENT PRIMARY KEY,
+    nome_genero VARCHAR(50) NOT NULL UNIQUE,
+    descricao VARCHAR(255)
+);
+
+-- 5. TABELA DE ARTISTAS
+CREATE TABLE tb_artistas (
+    id_artista INT AUTO_INCREMENT PRIMARY KEY,
+    nome_artistico VARCHAR(100) NOT NULL,
+    pais_origem VARCHAR(50),
+    ouvintes_mensais INT DEFAULT 0,
+    verificado BOOLEAN DEFAULT FALSE
+);
+
+-- 6. TABELA DE ÁLBUNS
+CREATE TABLE tb_albuns (
+    id_album INT AUTO_INCREMENT PRIMARY KEY,
+    titulo_album VARCHAR(120) NOT NULL,
+    ano_lancamento INT NOT NULL,
+    id_artista INT NOT NULL,
+    gravadora VARCHAR(80),
+    tipo_lancamento VARCHAR(30) DEFAULT 'Álbum de Estúdio'
+);
+
+-- 7. TABELA DE MÚSICAS (FAIXAS)
+CREATE TABLE tb_musicas (
+    id_musica INT AUTO_INCREMENT PRIMARY KEY,
+    titulo_musica VARCHAR(120) NOT NULL,
+    duracao_segundos INT NOT NULL,
+    id_album INT NOT NULL,
+    id_genero INT NOT NULL,
+    faixa_numero INT NOT NULL
+);
+
+-- 8. TABELA DE PLAYLISTS
+CREATE TABLE tb_playlists (
+    id_playlist INT AUTO_INCREMENT PRIMARY KEY,
+    nome_playlist VARCHAR(100) NOT NULL,
+    descricao VARCHAR(255),
+    id_usuario INT NOT NULL,
+    publica BOOLEAN DEFAULT TRUE,
+    data_criacao DATE NOT NULL
+);
+
+-- 9. TABELA ASSOCIATIVA PLAYLIST-MÚSICA (N:M)
+CREATE TABLE tb_playlist_musica (
+    id_playlist INT NOT NULL,
+    id_musica INT NOT NULL,
+    ordem_execucao INT NOT NULL,
+    adicionado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id_playlist, id_musica)
+);
+
+-- 10. TABELA DE HISTÓRICO DE REPRODUÇÃO
+CREATE TABLE tb_historico_reproducao (
+    id_reproducao INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    id_musica INT NOT NULL,
+    data_hora_reproducao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    segundos_ouvidos INT NOT NULL,
+    dispositivo VARCHAR(50)
+);
+
+-- 11. TABELA DE CURTIDAS (FAVORITAS)
+CREATE TABLE tb_curtidas (
+    id_usuario INT NOT NULL,
+    id_musica INT NOT NULL,
+    data_curtida TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id_usuario, id_musica)
+);
+
+-- 12. TABELA DE SEGUIDORES DE ARTISTAS
+CREATE TABLE tb_seguidores_artista (
+    id_usuario INT NOT NULL,
+    id_artista INT NOT NULL,
+    data_seguindo TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    notificacoes_ativas BOOLEAN DEFAULT TRUE,
+    PRIMARY KEY (id_usuario, id_artista)
+);</code></pre>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Gaveta 2: DML INSERT INTO -->
+        <details class="code-accordion">
+          <summary class="code-accordion__header">
+            <span class="code-accordion__icon-indicator"></span>
+            <span class="code-accordion__title">Script 02 — Inserção de Dados (DML: INSERT INTO)</span>
+            <span class="code-accordion__badge">DML</span>
+          </summary>
+          <div class="code-accordion__content">
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">02_insert_seed_data.sql</span>
+                <span class="ide-window__tag">[SQL / MyCompiler]</span>
+              </div>
+              <div class="ide-window__body">
+                <!-- EDITE AQUI: Seu script DML completo -->
+                <pre class="ide-window__code"><code>-- ==========================================================
+-- PROJETO: BANCO DE DADOS DE STREAMING MUSICAL
+-- ARQUIVO: 02_insert_seed_data.sql
+-- POVOAMENTO INICIAL DAS 12 TABELAS NO MYCOMPILER
+-- ==========================================================
+
+-- 1. POVOAMENTO: tb_planos
+INSERT INTO tb_planos (id_plano, nome_plano, valor_mensal, limite_dispositivos, qualidade_audio) VALUES
+(1, 'Free com Anúncios', 0.00, 1, 'Padrão (128 kbps)'),
+(2, 'Premium Individual', 21.90, 1, 'Alta Fidelidade (320 kbps)'),
+(3, 'Premium Universitário', 11.90, 1, 'Alta Fidelidade (320 kbps)'),
+(4, 'Premium Familiar', 34.90, 6, 'Alta Fidelidade (320 kbps)');
+
+-- 2. POVOAMENTO: tb_usuarios
+INSERT INTO tb_usuarios (id_usuario, nome_completo, email, data_nascimento, id_plano, status_conta) VALUES
+(101, 'Lucas Mendes Silva', 'lucas.mendes@email.com', '1998-05-14', 2, 'Ativo'),
+(102, 'Beatriz Helena Costa', 'beatriz.costa@email.com', '2001-11-23', 3, 'Ativo'),
+(103, 'Carlos Eduardo Rocha', 'cadu.rocha@email.com', '1992-02-08', 4, 'Ativo'),
+(104, 'Fernanda Lima Souza', 'fernanda.souza@email.com', '2003-09-30', 1, 'Inativo');
+
+-- 3. POVOAMENTO: tb_pagamentos
+INSERT INTO tb_pagamentos (id_pagamento, id_usuario, data_pagamento, valor_pago, metodo_pagamento, status_transacao) VALUES
+(9001, 101, '2026-03-01 08:14:22', 21.90, 'Cartão de Crédito', 'Aprovado'),
+(9002, 102, '2026-03-02 14:30:10', 11.90, 'PIX', 'Aprovado'),
+(9003, 103, '2026-03-05 19:45:00', 34.90, 'Boleto Bancário', 'Aprovado');
+
+-- 4. POVOAMENTO: tb_generos
+INSERT INTO tb_generos (id_genero, nome_genero, descricao) VALUES
+(1, 'Rock Clássico', 'Gênero caracterizado por guitarras elétricas, baixo e bateria.'),
+(2, 'MPB (Música Popular Brasileira)', 'Fusão tradicional de ritmos brasileiros com elementos pop e jazz.'),
+(3, 'Synthwave / Lo-Fi', 'Música eletrônica nostálgica com sintetizadores analógicos retrô.'),
+(4, 'Jazz Contemporâneo', 'Improvisações harmônicas ricas com metais, piano acústico e contrabaixo.');
+
+-- 5. POVOAMENTO: tb_artistas
+INSERT INTO tb_artistas (id_artista, nome_artistico, pais_origem, ouvintes_mensais, verificado) VALUES
+(10, 'The Midnight Echoes', 'Reino Unido', 4850210, TRUE),
+(20, 'Clara Viana & Quinteto', 'Brasil', 1240900, TRUE),
+(30, 'Neon Cyberflow', 'Canadá', 890430, FALSE);
+
+-- 6. POVOAMENTO: tb_albuns
+INSERT INTO tb_albuns (id_album, titulo_album, ano_lancamento, id_artista, gravadora, tipo_lancamento) VALUES
+(501, 'Electric Sunset Horizon', 2024, 10, 'SoundWave Records', 'Álbum de Estúdio'),
+(502, 'Aquarela de Cordas', 2023, 20, 'Som Tropical Brasil', 'Álbum de Estúdio'),
+(503, 'Digital Nostalgia Dreams', 2025, 30, 'Independente', 'EP');
+
+-- 7. POVOAMENTO: tb_musicas
+INSERT INTO tb_musicas (id_musica, titulo_musica, duracao_segundos, id_album, id_genero, faixa_numero) VALUES
+(1001, 'Midnight City Drive', 248, 501, 1, 1),
+(1002, 'Neon Reflections', 195, 501, 1, 2),
+(1003, 'Samba dos Horizontes', 210, 502, 2, 1),
+(1004, 'Retro Highway 88', 182, 503, 3, 1);
+
+-- 8. POVOAMENTO: tb_playlists
+INSERT INTO tb_playlists (id_playlist, nome_playlist, descricao, id_usuario, publica, data_criacao) VALUES
+(301, 'Foco no Código & Café', 'Faixas instrumentais para alta concentração.', 101, TRUE, '2026-01-10'),
+(302, 'Viagem de Fim de Semana', 'Músicas animadas para estrada e descanso.', 102, TRUE, '2026-02-18'),
+(303, 'Relaxing Vibes Only', 'Seleção calma para antes de dormir.', 103, FALSE, '2026-03-01');
+
+-- 9. POVOAMENTO: tb_playlist_musica
+INSERT INTO tb_playlist_musica (id_playlist, id_musica, ordem_execucao, adicionado_em) VALUES
+(301, 1001, 1, '2026-01-10 10:15:00'),
+(301, 1004, 2, '2026-01-10 10:16:30'),
+(302, 1003, 1, '2026-02-18 16:40:12');
+
+-- 10. POVOAMENTO: tb_historico_reproducao
+INSERT INTO tb_historico_reproducao (id_reproducao, id_usuario, id_musica, data_hora_reproducao, segundos_ouvidos, dispositivo) VALUES
+(70001, 101, 1001, '2026-03-10 14:02:11', 248, 'Desktop Web App'),
+(70002, 101, 1004, '2026-03-10 14:06:20', 182, 'Desktop Web App'),
+(70003, 102, 1001, '2026-03-10 15:30:45', 248, 'Smartphone Android'),
+(70004, 103, 1003, '2026-03-10 16:11:02', 210, 'Smart TV Samsung');
+
+-- 11. POVOAMENTO: tb_curtidas
+INSERT INTO tb_curtidas (id_usuario, id_musica, data_curtida) VALUES
+(101, 1001, '2026-01-12 18:22:04'),
+(101, 1002, '2026-01-15 09:10:31'),
+(102, 1003, '2026-02-01 21:04:19');
+
+-- 12. POVOAMENTO: tb_seguidores_artista
+INSERT INTO tb_seguidores_artista (id_usuario, id_artista, data_seguindo, notificacoes_ativas) VALUES
+(101, 10, '2026-01-10 11:00:00', TRUE),
+(102, 20, '2026-02-15 17:42:19', TRUE),
+(103, 10, '2026-03-02 19:15:30', FALSE);</code></pre>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Gaveta 3: Constraints, Chaves Estrangeiras e Índices -->
+        <details class="code-accordion">
+          <summary class="code-accordion__header">
+            <span class="code-accordion__icon-indicator"></span>
+            <span class="code-accordion__title">Script 03 — Constraints, Chaves Estrangeiras e Índices (ALTER TABLE)</span>
+            <span class="code-accordion__badge">CONSTRAINTS</span>
+          </summary>
+          <div class="code-accordion__content">
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">03_constraints_and_foreign_keys.sql</span>
+                <span class="ide-window__tag">[SQL / MyCompiler]</span>
+              </div>
+              <div class="ide-window__body">
+                <!-- EDITE AQUI: Seu script de Constraints e ALTER TABLE -->
+                <pre class="ide-window__code"><code>-- ==========================================================
+-- PROJETO: BANCO DE DADOS DE STREAMING MUSICAL
+-- ARQUIVO: 03_constraints_and_foreign_keys.sql
+-- INTEGRIDADE REFERENCIAL E ÍNDICES DE PERFORMANCE
+-- ==========================================================
+
+-- 1. FOREIGN KEYS PARA USUÁRIOS E PAGAMENTOS
+ALTER TABLE tb_usuarios
+    ADD CONSTRAINT fk_usuarios_planos
+    FOREIGN KEY (id_plano) REFERENCES tb_planos(id_plano)
+    ON UPDATE CASCADE ON DELETE RESTRICT;
+
+ALTER TABLE tb_pagamentos
+    ADD CONSTRAINT fk_pagamentos_usuarios
+    FOREIGN KEY (id_usuario) REFERENCES tb_usuarios(id_usuario)
+    ON UPDATE CASCADE ON DELETE CASCADE;
+
+-- 2. FOREIGN KEYS PARA ÁLBUNS E MÚSICAS
+ALTER TABLE tb_albuns
+    ADD CONSTRAINT fk_albuns_artistas
+    FOREIGN KEY (id_artista) REFERENCES tb_artistas(id_artista)
+    ON UPDATE CASCADE ON DELETE RESTRICT;
+
+ALTER TABLE tb_musicas
+    ADD CONSTRAINT fk_musicas_albuns
+    FOREIGN KEY (id_album) REFERENCES tb_albuns(id_album)
+    ON UPDATE CASCADE ON DELETE CASCADE,
+    ADD CONSTRAINT fk_musicas_generos
+    FOREIGN KEY (id_genero) REFERENCES tb_generos(id_genero)
+    ON UPDATE CASCADE ON DELETE RESTRICT;
+
+-- 3. FOREIGN KEYS PARA PLAYLISTS E ITENS DA PLAYLIST
+ALTER TABLE tb_playlists
+    ADD CONSTRAINT fk_playlists_usuarios
+    FOREIGN KEY (id_usuario) REFERENCES tb_usuarios(id_usuario)
+    ON UPDATE CASCADE ON DELETE CASCADE;
+
+ALTER TABLE tb_playlist_musica
+    ADD CONSTRAINT fk_plmusica_playlists
+    FOREIGN KEY (id_playlist) REFERENCES tb_playlists(id_playlist)
+    ON UPDATE CASCADE ON DELETE CASCADE,
+    ADD CONSTRAINT fk_plmusica_musicas
+    FOREIGN KEY (id_musica) REFERENCES tb_musicas(id_musica)
+    ON UPDATE CASCADE ON DELETE CASCADE;
+
+-- 4. FOREIGN KEYS PARA HISTÓRICO, CURTIDAS E SEGUIDORES
+ALTER TABLE tb_historico_reproducao
+    ADD CONSTRAINT fk_historico_usuarios
+    FOREIGN KEY (id_usuario) REFERENCES tb_usuarios(id_usuario)
+    ON UPDATE CASCADE ON DELETE CASCADE,
+    ADD CONSTRAINT fk_historico_musicas
+    FOREIGN KEY (id_musica) REFERENCES tb_musicas(id_musica)
+    ON UPDATE CASCADE ON DELETE CASCADE;
+
+ALTER TABLE tb_curtidas
+    ADD CONSTRAINT fk_curtidas_usuarios
+    FOREIGN KEY (id_usuario) REFERENCES tb_usuarios(id_usuario)
+    ON UPDATE CASCADE ON DELETE CASCADE,
+    ADD CONSTRAINT fk_curtidas_musicas
+    FOREIGN KEY (id_musica) REFERENCES tb_musicas(id_musica)
+    ON UPDATE CASCADE ON DELETE CASCADE;
+
+ALTER TABLE tb_seguidores_artista
+    ADD CONSTRAINT fk_seguidores_usuarios
+    FOREIGN KEY (id_usuario) REFERENCES tb_usuarios(id_usuario)
+    ON UPDATE CASCADE ON DELETE CASCADE,
+    ADD CONSTRAINT fk_seguidores_artistas
+    FOREIGN KEY (id_artista) REFERENCES tb_artistas(id_artista)
+    ON UPDATE CASCADE ON DELETE CASCADE;
+
+-- 5. ÍNDICES DE PERFORMANCE PARA BUSCAS FREQUENTES
+CREATE INDEX idx_musicas_titulo ON tb_musicas(titulo_musica);
+CREATE INDEX idx_artistas_nome ON tb_artistas(nome_artistico);
+CREATE INDEX idx_historico_data ON tb_historico_reproducao(data_hora_reproducao);</code></pre>
+              </div>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SEÇÃO 5: QUERIES DE EXEMPLO E RESULTADOS DE PESQUISA (DQL)
+         ======================================================================== -->
+    <section id="secao-5" class="section">
+      <header class="section__header">
+        <div class="section__badge">ETAPA 05</div>
+        <h2 class="section__title">Queries de Pesquisa e Retorno de Dados (DQL)</h2>
+        <p class="section__description">
+          Demonstração de consultas analíticas e relacionais com junções (JOIN), agregações (COUNT, SUM) e ordenações para validação em sala de aula.
+        </p>
+      </header>
+
+      <div class="accordions-container">
+
+        <!-- Query 01: Usuários ativos e seus planos (Aberta por padrão) -->
+        <details class="query-accordion" open>
+          <summary class="query-accordion__header">
+            <span class="query-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Consulta 01 — Listar usuários ativos e seus respectivos planos (INNER JOIN)</span>
+            <span class="query-accordion__badge">INNER JOIN</span>
+          </summary>
+          <div class="query-accordion__content">
+            <!-- 1. Parte Superior: Janela do Editor SQL -->
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">query_01_usuarios_planos.sql</span>
+                <span class="ide-window__tag">[SELECT / DQL]</span>
+              </div>
+              <div class="ide-window__body">
+                <!-- EDITE AQUI: Comando SELECT da Query 01 -->
+                <pre class="ide-window__code"><code>SELECT 
+    u.id_usuario,
+    u.nome_completo AS usuario,
+    u.email,
+    p.nome_plano AS plano,
+    p.valor_mensal AS mensalidade,
+    p.qualidade_audio
+FROM tb_usuarios u
+INNER JOIN tb_planos p ON u.id_plano = p.id_plano
+WHERE u.status_conta = 'Ativo'
+ORDER BY u.nome_completo ASC;</code></pre>
+              </div>
+            </div>
+
+            <!-- 2. Parte Inferior: Resultado da Pesquisa -->
+            <div class="query-output">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; 3 linhas retornadas</span>
+              </div>
+              <!-- EDITE AQUI: Tabela com o retorno da Query 01 -->
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>id_usuario</th>
+                      <th>usuario</th>
+                      <th>email</th>
+                      <th>plano</th>
+                      <th>mensalidade</th>
+                      <th>qualidade_audio</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>102</td>
+                      <td>Beatriz Helena Costa</td>
+                      <td>beatriz.costa@email.com</td>
+                      <td>Premium Universitário</td>
+                      <td>R$ 11.90</td>
+                      <td>Alta Fidelidade (320 kbps)</td>
+                    </tr>
+                    <tr>
+                      <td>103</td>
+                      <td>Carlos Eduardo Rocha</td>
+                      <td>cadu.rocha@email.com</td>
+                      <td>Premium Familiar</td>
+                      <td>R$ 34.90</td>
+                      <td>Alta Fidelidade (320 kbps)</td>
+                    </tr>
+                    <tr>
+                      <td>101</td>
+                      <td>Lucas Mendes Silva</td>
+                      <td>lucas.mendes@email.com</td>
+                      <td>Premium Individual</td>
+                      <td>R$ 21.90</td>
+                      <td>Alta Fidelidade (320 kbps)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Query 02: Top 5 músicas mais reproduzidas -->
+        <details class="query-accordion">
+          <summary class="query-accordion__header">
+            <span class="query-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Consulta 02 — Top 5 músicas mais reproduzidas na plataforma (GROUP BY + COUNT + ORDER BY)</span>
+            <span class="query-accordion__badge">GROUP BY & COUNT</span>
+          </summary>
+          <div class="query-accordion__content">
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">query_02_top_reproduzidas.sql</span>
+                <span class="ide-window__tag">[SELECT / DQL]</span>
+              </div>
+              <div class="ide-window__body">
+                <!-- EDITE AQUI: Comando SELECT da Query 02 -->
+                <pre class="ide-window__code"><code>SELECT 
+    m.id_musica,
+    m.titulo_musica,
+    a.nome_artistico AS artista,
+    COUNT(h.id_reproducao) AS total_reproducoes
+FROM tb_musicas m
+INNER JOIN tb_albuns alb ON m.id_album = alb.id_album
+INNER JOIN tb_artistas a ON alb.id_artista = a.id_artista
+LEFT JOIN tb_historico_reproducao h ON m.id_musica = h.id_musica
+GROUP BY m.id_musica, m.titulo_musica, a.nome_artistico
+ORDER BY total_reproducoes DESC
+LIMIT 5;</code></pre>
+              </div>
+            </div>
+
+            <div class="query-output">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Ranking de audiência</span>
+              </div>
+              <!-- EDITE AQUI: Tabela com o retorno da Query 02 -->
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>id_musica</th>
+                      <th>titulo_musica</th>
+                      <th>artista</th>
+                      <th>total_reproducoes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1001</td>
+                      <td>Midnight City Drive</td>
+                      <td>The Midnight Echoes</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>1004</td>
+                      <td>Retro Highway 88</td>
+                      <td>Neon Cyberflow</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>1003</td>
+                      <td>Samba dos Horizontes</td>
+                      <td>Clara Viana & Quinteto</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>1002</td>
+                      <td>Neon Reflections</td>
+                      <td>The Midnight Echoes</td>
+                      <td>0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Query 03: Faixas de uma playlist com artista e álbum -->
+        <details class="query-accordion">
+          <summary class="query-accordion__header">
+            <span class="query-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Consulta 03 — Buscar todas as faixas de uma Playlist específica com nome do Artista e Álbum</span>
+            <span class="query-accordion__badge">MULTI JOIN</span>
+          </summary>
+          <div class="query-accordion__content">
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">query_03_faixas_playlist.sql</span>
+                <span class="ide-window__tag">[SELECT / DQL]</span>
+              </div>
+              <div class="ide-window__body">
+                <!-- EDITE AQUI: Comando SELECT da Query 03 -->
+                <pre class="ide-window__code"><code>SELECT 
+    p.nome_playlist,
+    pm.ordem_execucao AS ordem,
+    m.titulo_musica,
+    a.nome_artistico AS artista,
+    alb.titulo_album AS album,
+    SEC_TO_TIME(m.duracao_segundos) AS duracao_formatada
+FROM tb_playlists p
+INNER JOIN tb_playlist_musica pm ON p.id_playlist = pm.id_playlist
+INNER JOIN tb_musicas m ON pm.id_musica = m.id_musica
+INNER JOIN tb_albuns alb ON m.id_album = alb.id_album
+INNER JOIN tb_artistas a ON alb.id_artista = a.id_artista
+WHERE p.id_playlist = 301
+ORDER BY pm.ordem_execucao ASC;</code></pre>
+              </div>
+            </div>
+
+            <div class="query-output">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Playlist ID 301 (Foco no Código & Café)</span>
+              </div>
+              <!-- EDITE AQUI: Tabela com o retorno da Query 03 -->
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>nome_playlist</th>
+                      <th>ordem</th>
+                      <th>titulo_musica</th>
+                      <th>artista</th>
+                      <th>album</th>
+                      <th>duracao_formatada</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Foco no Código & Café</td>
+                      <td>1</td>
+                      <td>Midnight City Drive</td>
+                      <td>The Midnight Echoes</td>
+                      <td>Electric Sunset Horizon</td>
+                      <td>00:04:08</td>
+                    </tr>
+                    <tr>
+                      <td>Foco no Código & Café</td>
+                      <td>2</td>
+                      <td>Retro Highway 88</td>
+                      <td>Neon Cyberflow</td>
+                      <td>Digital Nostalgia Dreams</td>
+                      <td>00:03:02</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Query 04: Relatório de faturamento por tipo de plano -->
+        <details class="query-accordion">
+          <summary class="query-accordion__header">
+            <span class="query-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Consulta 04 — Relatório de faturamento por tipo de plano de assinatura (SUM + GROUP BY)</span>
+            <span class="query-accordion__badge">SUM & FINANCEIRO</span>
+          </summary>
+          <div class="query-accordion__content">
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">query_04_faturamento_planos.sql</span>
+                <span class="ide-window__tag">[SELECT / DQL]</span>
+              </div>
+              <div class="ide-window__body">
+                <!-- EDITE AQUI: Comando SELECT da Query 04 -->
+                <pre class="ide-window__code"><code>SELECT 
+    p.id_plano,
+    p.nome_plano,
+    COUNT(DISTINCT u.id_usuario) AS assinantes_ativos,
+    COALESCE(SUM(pag.valor_pago), 0.00) AS faturamento_total_bruto
+FROM tb_planos p
+LEFT JOIN tb_usuarios u ON p.id_plano = u.id_plano AND u.status_conta = 'Ativo'
+LEFT JOIN tb_pagamentos pag ON u.id_usuario = pag.id_usuario AND pag.status_transacao = 'Aprovado'
+GROUP BY p.id_plano, p.nome_plano
+ORDER BY faturamento_total_bruto DESC;</code></pre>
+              </div>
+            </div>
+
+            <div class="query-output">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Total Consolidado por Plano</span>
+              </div>
+              <!-- EDITE AQUI: Tabela com o retorno da Query 04 -->
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>id_plano</th>
+                      <th>nome_plano</th>
+                      <th>assinantes_ativos</th>
+                      <th>faturamento_total_bruto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>4</td>
+                      <td>Premium Familiar</td>
+                      <td>1</td>
+                      <td>R$ 34.90</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Premium Individual</td>
+                      <td>1</td>
+                      <td>R$ 21.90</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Premium Universitário</td>
+                      <td>1</td>
+                      <td>R$ 11.90</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>Free com Anúncios</td>
+                      <td>0</td>
+                      <td>R$ 0.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       RODAPÉ COM OS 7 INTEGRANTES DO GRUPO
+       ========================================================================== -->
+  <footer id="equipe" class="footer">
+    <div class="footer__container">
+      <div class="footer__header">
+        <h2 class="footer__title">Equipe de Desenvolvimento & Modelagem de Dados</h2>
+        <div class="footer__academic-info">
+          <!-- EDITE AQUI: Informações institucionais da faculdade/curso -->
+          <span class="academic-badge"><strong>Curso:</strong> [Editar Curso - ex: Bacharelado em Ciência da Computação / Análise e Desenvolvimento de Sistemas]</span>
+          <span class="academic-badge"><strong>Disciplina:</strong> Banco de Dados Relacional</span>
+          <span class="academic-badge"><strong>Semestre/Ano:</strong> 2026/1</span>
+          <span class="academic-badge"><strong>Professor(a):</strong> [Editar Nome do Professor]</span>
+        </div>
+      </div>
+
+      <!-- Grid com exatamente 7 cards de integrantes -->
+      <div class="team-grid">
+
+        <!-- Integrante 01 -->
+        <article class="member-card">
+          <div class="member-card__avatar">01</div>
+          <div class="member-card__info">
+            <!-- EDITE AQUI: Dados do Integrante 01 -->
+            <h4 class="member-card__name">Integrante 01 - [Editar Nome]</h4>
+            <p class="member-card__ra">RA: 00000001</p>
+            <span class="member-card__role">Modelagem Conceitual (DER)</span>
+          </div>
+        </article>
+
+        <!-- Integrante 02 -->
+        <article class="member-card">
+          <div class="member-card__avatar">02</div>
+          <div class="member-card__info">
+            <!-- EDITE AQUI: Dados do Integrante 02 -->
+            <h4 class="member-card__name">Integrante 02 - [Editar Nome]</h4>
+            <p class="member-card__ra">RA: 00000002</p>
+            <span class="member-card__role">Modelo Lógico & 3ª FN</span>
+          </div>
+        </article>
+
+        <!-- Integrante 03 -->
+        <article class="member-card">
+          <div class="member-card__avatar">03</div>
+          <div class="member-card__info">
+            <!-- EDITE AQUI: Dados do Integrante 03 -->
+            <h4 class="member-card__name">Integrante 03 - [Editar Nome]</h4>
+            <p class="member-card__ra">RA: 00000003</p>
+            <span class="member-card__role">Scripts DDL (CREATE TABLE)</span>
+          </div>
+        </article>
+
+        <!-- Integrante 04 -->
+        <article class="member-card">
+          <div class="member-card__avatar">04</div>
+          <div class="member-card__info">
+            <!-- EDITE AQUI: Dados do Integrante 04 -->
+            <h4 class="member-card__name">Integrante 04 - [Editar Nome]</h4>
+            <p class="member-card__ra">RA: 00000004</p>
+            <span class="member-card__role">Scripts DML & Povoamento</span>
+          </div>
+        </article>
+
+        <!-- Integrante 05 -->
+        <article class="member-card">
+          <div class="member-card__avatar">05</div>
+          <div class="member-card__info">
+            <!-- EDITE AQUI: Dados do Integrante 05 -->
+            <h4 class="member-card__name">Integrante 05 - [Editar Nome]</h4>
+            <p class="member-card__ra">RA: 00000005</p>
+            <span class="member-card__role">Constraints & Integridade FK</span>
+          </div>
+        </article>
+
+        <!-- Integrante 06 -->
+        <article class="member-card">
+          <div class="member-card__avatar">06</div>
+          <div class="member-card__info">
+            <!-- EDITE AQUI: Dados do Integrante 06 -->
+            <h4 class="member-card__name">Integrante 06 - [Editar Nome]</h4>
+            <p class="member-card__ra">RA: 00000006</p>
+            <span class="member-card__role">Queries DQL & Relatórios</span>
+          </div>
+        </article>
+
+        <!-- Integrante 07 -->
+        <article class="member-card">
+          <div class="member-card__avatar">07</div>
+          <div class="member-card__info">
+            <!-- EDITE AQUI: Dados do Integrante 07 -->
+            <h4 class="member-card__name">Integrante 07 - [Editar Nome]</h4>
+            <p class="member-card__ra">RA: 00000007</p>
+            <span class="member-card__role">Documentação & Apresentação</span>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 DB_Streaming Acadêmico. Projeto desenvolvido estritamente com HTML5 Semântico, CSS3 Moderno e Vanilla JS para apresentação acadêmica.</p>
+        <a href="#secao-1" class="footer__back-to-top">⬆ Voltar ao Topo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAIS NATIVOS (<dialog>) PARA ZOOM DOS DIAGRAMAS DER E LÓGICO
+       ========================================================================== -->
+
+  <!-- Modal 1: DER Conceitual -->
+  <dialog id="modal-der" class="diagram-modal">
+    <div class="diagram-modal__box">
+      <header class="diagram-modal__header">
+        <h3 class="diagram-modal__title">📐 Diagrama Entidade-Relacionamento Conceitual (DER)</h3>
+        <button class="diagram-modal__close-btn" data-modal-close="modal-der" aria-label="Fechar Modal">&times;</button>
+      </header>
+      <div class="diagram-modal__content">
+        <div class="diagram-modal__canvas">
+          <!-- EDITE AQUI: Insira a tag de imagem real para visualização em alta resolução no modal -->
+          <div class="diagram-viewer__placeholder-content">
+            <span class="diagram-viewer__icon">📐</span>
+            <p class="diagram-viewer__instruction">[ Imagem do DER Conceitual Ampliada ]</p>
+            <span class="diagram-viewer__hint">Substitua este placeholder no index.html pelo arquivo da imagem real (ex: assets/der_ampliado.png)</span>
+          </div>
+        </div>
+      </div>
+      <footer class="diagram-modal__footer">
+        <span class="diagram-modal__legend">Pressione <code>ESC</code> ou clique no botão ao lado para fechar.</span>
+        <button class="btn btn-secondary" data-modal-close="modal-der" type="button">Fechar Janela</button>
+      </footer>
+    </div>
+  </dialog>
+
+  <!-- Modal 2: Modelo Lógico Relacional -->
+  <dialog id="modal-logico" class="diagram-modal">
+    <div class="diagram-modal__box">
+      <header class="diagram-modal__header">
+        <h3 class="diagram-modal__title">📊 Esquema do Modelo Lógico Relacional (12 Tabelas)</h3>
+        <button class="diagram-modal__close-btn" data-modal-close="modal-logico" aria-label="Fechar Modal">&times;</button>
+      </header>
+      <div class="diagram-modal__content">
+        <div class="diagram-modal__canvas">
+          <!-- EDITE AQUI: Insira a tag de imagem real do modelo lógico para exibição no projetor -->
+          <div class="diagram-viewer__placeholder-content">
+            <span class="diagram-viewer__icon">📊</span>
+            <p class="diagram-viewer__instruction">[ Imagem do Modelo Lógico Relacional Ampliada ]</p>
+            <span class="diagram-viewer__hint">Exibição de alta resolução das 12 tabelas, chaves primárias e relacionamentos</span>
+          </div>
+        </div>
+      </div>
+      <footer class="diagram-modal__footer">
+        <span class="diagram-modal__legend">Pressione <code>ESC</code> ou clique no botão ao lado para fechar.</span>
+        <button class="btn btn-secondary" data-modal-close="modal-logico" type="button">Fechar Janela</button>
+      </footer>
+    </div>
+  </dialog>
+
+  <!-- Script Vanilla Didático -->
+  <script src="script.js"></script>
+</body>
+</html>
