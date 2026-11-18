@@ -1,4 +1,4 @@
-# DB_Streaming // Wireframe Acadêmico 🗄️🎵
+# DB_Streaming // 🗄️🎵
 
 Landing Page Acadêmica em formato de **Wireframe Estrutural de Alta Fidelidade** para apresentação de Modelagem de Banco de Dados Relacional de um **Aplicativo de Streaming de Música**.
 
