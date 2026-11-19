@@ -1053,34 +1053,36 @@ details[open] > summary {
 }
 
 /* --------------------------------------------------------------------------
-   10. MODAIS NATIVOS (<dialog>) COM BACKDROP ESCURO
+   10. MODAIS NATIVOS (<dialog>) COM BACKDROP ESCURO E ZOOM EXPANDIDO
    -------------------------------------------------------------------------- */
 .diagram-modal {
   margin: auto;
   border: none;
   background: transparent;
-  max-width: 95vw;
-  max-height: 90vh;
+  width: 96vw;
+  max-width: 96vw;
+  height: 94vh;
+  max-height: 94vh;
   padding: 0;
   overflow: visible;
 }
 
 .diagram-modal::backdrop {
-  background-color: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .diagram-modal__box {
   background-color: var(--bg-primary);
   border: 2px solid var(--border-color);
   border-radius: var(--radius-md);
-  box-shadow: 8px 8px 0px #000000;
+  box-shadow: 10px 10px 0px #000000;
   display: flex;
   flex-direction: column;
-  width: 90vw;
-  max-width: 1200px;
-  max-height: 85vh;
+  width: 100%;
+  height: 100%;
+  max-height: 94vh;
   overflow: hidden;
   animation: modalEnter 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -1088,7 +1090,7 @@ details[open] > summary {
 @keyframes modalEnter {
   from {
     opacity: 0;
-    transform: scale(0.96) translateY(10px);
+    transform: scale(0.97) translateY(10px);
   }
   to {
     opacity: 1;
@@ -1100,9 +1102,10 @@ details[open] > summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
+  padding: 0.85rem 1.5rem;
   background-color: var(--bg-surface);
   border-bottom: 2px solid var(--border-color);
+  flex-shrink: 0;
 }
 
 .diagram-modal__title {
@@ -1115,12 +1118,12 @@ details[open] > summary {
   background: none;
   border: 2px solid var(--border-color);
   border-radius: var(--radius-sm);
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 700;
   cursor: pointer;
   color: var(--text-primary);
@@ -1134,36 +1137,56 @@ details[open] > summary {
 }
 
 .diagram-modal__content {
-  padding: 1.5rem;
-  overflow-y: auto;
+  flex: 1;
+  padding: 1.25rem;
+  overflow: auto; /* Permite rolagem vertical e horizontal livre no modo ampliado */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f4f4f5;
-  min-height: 450px;
+  background-color: #18181b; /* Fundo escuro de alto contraste para destacar o diagrama */
 }
 
 .diagram-modal__canvas {
   width: 100%;
-  min-height: 400px;
-  background-color: #fafafa;
-  background-image: 
-    repeating-linear-gradient(0deg, #e4e4e7, #e4e4e7 1px, transparent 1px, transparent 24px),
-    repeating-linear-gradient(90deg, #e4e4e7, #e4e4e7 1px, transparent 1px, transparent 24px);
-  border: 2px dashed var(--border-color);
-  border-radius: var(--radius-sm);
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
+  border: none;
+}
+
+.diagram-modal__canvas img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(94vh - 150px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: zoom-in;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+  transition: width 0.25s ease, max-width 0.25s ease, transform 0.25s ease;
+}
+
+/* Modo Ultra Zoom ativado ao clicar na imagem */
+.diagram-modal__canvas img.is-zoomed {
+  max-width: none;
+  max-height: none;
+  width: 175%;
+  cursor: zoom-out;
+  margin: auto;
 }
 
 .diagram-modal__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.85rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   background-color: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
+  flex-shrink: 0;
 }
 
 .diagram-modal__legend {

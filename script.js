@@ -85,6 +85,22 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.close();
       }
     });
+
+    // Reseta o estado de zoom da imagem ao fechar o modal
+    modal.addEventListener("close", () => {
+      const img = modal.querySelector(".diagram-modal__canvas img");
+      if (img) {
+        img.classList.remove("is-zoomed");
+      }
+    });
+  });
+
+  // 2.1 Permite alternar o modo Ultra Zoom (175%) ao clicar diretamente na imagem dentro do modal
+  const modalImages = document.querySelectorAll(".diagram-modal__canvas img");
+  modalImages.forEach((img) => {
+    img.addEventListener("click", () => {
+      img.classList.toggle("is-zoomed");
+    });
   });
 
 });

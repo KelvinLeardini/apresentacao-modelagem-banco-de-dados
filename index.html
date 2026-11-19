@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DB_Streaming // Wireframe Acadêmico - Apresentação de Banco de Dados</title>
-  <meta name="description" content="Wireframe estrutural de alta fidelidade para apresentação acadêmica do projeto de Modelagem de Banco de Dados Relacional para um Aplicativo de Streaming de Música.">
+  <title>BD_Streaming // Apresentação de Banco de Dados</title>
+  <meta name="description"
+    content="Apresentação acadêmica do projeto de Modelagem de Banco de Dados Relacional para um Aplicativo de Streaming de Música.">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- ==========================================================================
@@ -17,7 +20,7 @@
       <div class="header__brand">
         <!-- EDITE AQUI: Título do seu Projeto Acadêmico -->
         <span class="header__logo-icon">🗄️</span>
-        <span class="header__title">DB_Streaming <span class="header__subtitle">// Wireframe Acadêmico</span></span>
+        <span class="header__title">BD_Streaming <span class="header__subtitle">// Apresentação Modelagem de Banco de Dados</span></span>
       </div>
 
       <nav class="header__nav" aria-label="Navegação Principal do Projeto">
@@ -46,7 +49,8 @@
         <div class="section__badge">ETAPA 01</div>
         <h2 class="section__title">Minimundo e Regras de Negócio da Plataforma</h2>
         <p class="section__description">
-          Definição do escopo operacional, atores envolvidos, entidades fundamentais e restrições de integridade que regem o ecossistema do aplicativo de streaming musical.
+          Definição do escopo operacional, atores envolvidos, entidades fundamentais e restrições de integridade que
+          regem o ecossistema do aplicativo de streaming musical.
         </p>
       </header>
 
@@ -60,13 +64,27 @@
           <div class="card__body">
             <!-- EDITE AQUI: Texto de apresentação do Minimundo do seu grupo -->
             <p class="paragraph">
-              O sistema modelado contempla a infraestrutura de dados para um serviço moderno de <strong>Streaming de Música Digital sob demanda</strong>. A plataforma permite que ouvintes acessem um vasto catálogo fonográfico, assinem planos mensais ou anuais, criem seleções personalizadas de faixas e interajam diretamente com a discografia de seus artistas prediletos.
+              O sistema modelado estrutura o banco de dados de uma nova plataforma de <strong>Streaming
+                Musical</strong>,
+              criada para competir com os serviços já consolidados no mercado. A aplicação permite que os usuários
+              busquem músicas com facilidade, montem listas personalizadas, acompanhem seus artistas favoritos
+              e assinem diferentes planos de acesso.
             </p>
             <p class="paragraph">
-              O ecossistema é alicerçado na gestão de <strong>Usuários</strong>, que contratam <strong>Planos de Assinatura</strong> (como Individual, Familiar ou Universitário) e geram <strong>Pagamentos</strong> recorrentes. Do ponto de vista fonográfico, o catálogo é catalogado por <strong>Gêneros Musicais</strong>, <strong>Artistas</strong> cadastrados e seus respectivos <strong>Álbuns</strong> de estúdio, que reúnem múltiplas <strong>Músicas (Faixas)</strong> com metadados como duração, data de lançamento e taxa de amostragem.
+              A base do sistema organiza o cadastro de <strong>Usuários</strong> e seus respectivos <strong>Planos de
+                Assinatura</strong>,
+              garantindo o controle dos pagamentos e acessos. No catálogo, as <strong>Músicas</strong> e os
+              <strong>Artistas</strong>
+              são registrados com informações detalhadas, o que agiliza as buscas e serve de base para o sistema
+              sugerir novas faixas de acordo com o gosto de cada pessoa.
             </p>
             <p class="paragraph">
-              A experiência interativa do ouvinte consolida-se através da criação e curadoria de <strong>Playlists</strong> (tanto públicas quanto privadas), marcação de faixas favoritas (<strong>Curtidas</strong>), acompanhamento de perfis (<strong>Seguidores de Artista</strong>) e o rastreamento em tempo real de cada reprodução via <strong>Histórico de Reprodução</strong>, viabilizando métricas precisas de faturamento e royalties.
+              Para tornar a experiência mais interativa, o projeto contempla a criação de <strong>Playlists</strong>, a
+              opção de seguir
+              perfis de artistas e o registro contínuo do <strong>Histórico de Reprodução</strong>. Com esses dados
+              organizados, a plataforma
+              consegue entender o comportamento dos ouvintes, melhorar as recomendações e acompanhar o uso geral do
+              serviço.
             </p>
           </div>
         </article>
@@ -81,36 +99,50 @@
             <!-- EDITE AQUI: Regras de Negócio do seu Projeto -->
             <ol class="rules-list">
               <li class="rules-list__item">
-                <span class="rules-list__code">RN01 - Unicidade de Cadastro:</span>
-                <span class="rules-list__text">Todo usuário deve possuir endereço de e-mail e CPF cadastrados sob restrição de unicidade (UNIQUE) e formato válido.</span>
+                <span class="rules-list__code">RN01 - Participação múltipla de artistas:</span>
+                <span class="rules-list__text">Um <strong>Artista</strong> não fica limitado a uma única faixa, podendo
+                  participar da gravação e produção de várias <strong>Músicas</strong> dentro
+                  do catálogo da plataforma.</span>
               </li>
               <li class="rules-list__item">
-                <span class="rules-list__code">RN02 - Vinculação Obrigatória a Plano:</span>
-                <span class="rules-list__text">Ao criar uma conta, o usuário deve obrigatoriamente estar associado a um plano de assinatura ativo (gratuito ou pago).</span>
+                <span class="rules-list__code">RN02 - Agrupamento de faixas por álbum:</span>
+                <span class="rules-list__text">Cada <strong>Álbum</strong> cadastrado funciona como um agrupador do
+                  acervo,
+                  podendo conter diversas <strong>Músicas</strong> vinculadas a um mesmo projeto
+                  ou lançamento.</span>
               </li>
               <li class="rules-list__item">
-                <span class="rules-list__code">RN03 - Histórico Financeiro:</span>
-                <span class="rules-list__text">Cada transação de pagamento deve registrar data, valor monetário, método de liquidação e status (Pendente, Aprovado, Estornado).</span>
+                <span class="rules-list__code">RN03 - Colaborações e parcerias musicais:</span>
+                <span class="rules-list__text">Para contemplar parcerias e colaborações musicais, uma mesma
+                  <strong>Música</strong>
+                  pode estar associada a mais de um <strong>Artista</strong> participante.</span>
               </li>
               <li class="rules-list__item">
-                <span class="rules-list__code">RN04 - Integridade do Catálogo Musical:</span>
-                <span class="rules-list__text">Toda música deve estar estritamente vinculada a um álbum existente e associada a um gênero musical previamente homologado.</span>
+                <span class="rules-list__code">RN04 - Criação ilimitada de playlists:</span>
+                <span class="rules-list__text">O sistema oferece liberdade de organização ao ouvinte, permitindo que um
+                  mesmo
+                  <strong>Usuário</strong> crie e gerencie diversas <strong>Playlists</strong>
+                  personalizadas em sua conta.</span>
               </li>
               <li class="rules-list__item">
-                <span class="rules-list__code">RN05 - Autoria de Álbuns e Músicas:</span>
-                <span class="rules-list__text">Um álbum pertence a um único artista principal, herdando a nacionalidade e os identificadores oficiais do artista cadastrado.</span>
+                <span class="rules-list__code">RN05 - Composição múltipla de playlists:</span>
+                <span class="rules-list__text">Uma <strong>Playlist</strong> atua como uma lista flexível de reprodução,
+                  podendo reunir diversas <strong>Músicas</strong> escolhidas e ordenadas pelo
+                  usuário.</span>
               </li>
               <li class="rules-list__item">
-                <span class="rules-list__code">RN06 - Relacionamento Playlist-Músicas:</span>
-                <span class="rules-list__text">Uma playlist pode comportar inúmeras músicas e a mesma música pode estar em diversas playlists (relação N:M resolvida via tabela associativa com ordem de reprodução).</span>
+                <span class="rules-list__code">RN06 - Reutilização de faixas em coleções:</span>
+                <span class="rules-list__text">As faixas do catálogo são reutilizáveis nas coleções, o que permite que
+                  uma
+                  mesma <strong>Música</strong> seja adicionada a diferentes <strong>Playlists</strong>
+                  simultaneamente.</span>
               </li>
               <li class="rules-list__item">
-                <span class="rules-list__code">RN07 - Auditoria de Reprodução:</span>
-                <span class="rules-list__text">Cada reprodução realizada dispara um registro de log no histórico com timestamp (data/hora exata) e percentual consumido da faixa.</span>
-              </li>
-              <li class="rules-list__item">
-                <span class="rules-list__code">RN08 - Não-Duplicação de Curtidas:</span>
-                <span class="rules-list__text">Um usuário só pode curtir uma mesma música uma única vez, sendo garantida a integridade por chave primária composta (ID_Usuario + ID_Musica).</span>
+                <span class="rules-list__code">RN07 - Registro contínuo de reproduções:</span>
+                <span class="rules-list__text">Para alimentar as métricas de uso e recomendações, cada
+                  <strong>Usuário</strong>
+                  acumula um <strong>Histórico de Reprodução</strong> com o registro de várias
+                  faixas ouvidas ao longo do tempo.</span>
               </li>
             </ol>
           </div>
@@ -126,16 +158,19 @@
         <div class="section__badge">ETAPA 02</div>
         <h2 class="section__title">Modelo Conceitual (Diagrama Entidade-Relacionamento)</h2>
         <p class="section__description">
-          Representação abstrata de alto nível dos conjuntos de entidades do sistema, seus atributos primordiais, relacionamentos e cardinalidades mínimas e máximas.
+          Representação abstrata de alto nível dos conjuntos de entidades do sistema, seus atributos primordiais,
+          relacionamentos e cardinalidades mínimas e máximas.
         </p>
       </header>
 
       <figure class="diagram-viewer">
         <!-- Canvas interativo em estilo wireframe técnico -->
-        <div class="diagram-viewer__canvas" data-modal-target="modal-der" title="Clique para ampliar o Diagrama Conceitual">
+        <div class="diagram-viewer__canvas" data-modal-target="modal-der"
+          title="Clique para ampliar o Diagrama Conceitual">
           <div class="diagram-viewer__placeholder-content">
             <span class="diagram-viewer__icon">📐</span>
-            <p class="diagram-viewer__instruction">[ Espaço Reservado para Imagem do DER - Clique para Ampliar em Tela Cheia ]</p>
+            <p class="diagram-viewer__instruction">[ Espaço Reservado para Imagem do DER - Clique para Ampliar em Tela
+              Cheia ]</p>
             <span class="diagram-viewer__hint">Dimensão recomendada: 1920x1080px (PNG ou SVG de Alta Resolução)</span>
           </div>
 
@@ -147,7 +182,6 @@
           <button class="btn btn-zoom" data-modal-target="modal-der" type="button">
             <span class="btn__icon">🔍</span> Ampliar Diagrama (Tela Cheia)
           </button>
-          <span class="diagram-viewer__status-tag">Status: Validado pelo Orientador</span>
         </div>
 
         <figcaption class="diagram-viewer__caption">
@@ -161,7 +195,7 @@
               <span class="metric-item__label">Entidades Associativas</span>
             </div>
             <div class="metric-item">
-              <span class="metric-item__value">1:N & N:M</span>
+              <span class="metric-item__value">1:N & N:N</span>
               <span class="metric-item__label">Cardinalidades Predominantes</span>
             </div>
             <div class="metric-item">
@@ -181,21 +215,18 @@
         <div class="section__badge">ETAPA 03</div>
         <h2 class="section__title">Modelo Lógico Relacional e Dados Armazenados</h2>
         <p class="section__description">
-          Esquema relacional em 3ª Forma Normal (3FN) detalhando chaves primárias (PK), chaves estrangeiras (FK), tipos primitivos de dados e instâncias povoadas nas 12 tabelas.
+          Esquema relacional em 3ª Forma Normal (3FN) detalhando chaves primárias (PK), chaves estrangeiras (FK), tipos
+          primitivos de dados e instâncias povoadas nas 12 tabelas.
         </p>
       </header>
 
       <!-- Parte 3.1: Diagrama do Modelo Lógico -->
       <figure class="diagram-viewer">
-        <div class="diagram-viewer__canvas" data-modal-target="modal-logico" title="Clique para ampliar o Diagrama do Modelo Lógico">
-          <div class="diagram-viewer__placeholder-content">
-            <span class="diagram-viewer__icon">📊</span>
-            <p class="diagram-viewer__instruction">[ Espaço Reservado para Imagem do Esquema Lógico Relacional (12 Tabelas) - Clique para Ampliar ]</p>
-            <span class="diagram-viewer__hint">Visão tabular com mapeamento completo de chaves PK e integridade referencial FK</span>
-          </div>
+        <div class="diagram-viewer__canvas" data-modal-target="modal-logico"
+          title="Clique para ampliar o Diagrama do Modelo Lógico">
 
           <!-- EDITE AQUI: Descomente a tag img abaixo e insira o caminho do diagrama lógico gerado no MySQL Workbench, DBeaver, etc. -->
-          <!-- <img src="assets/modelo_logico_relacional.png" alt="Esquema Lógico Relacional das 12 Tabelas" class="diagram-viewer__image"> -->
+          <img src="ModeloLogicov2.jpeg" alt="Esquema Lógico Relacional das 12 Tabelas" class="diagram-viewer__image">
         </div>
 
         <div class="diagram-viewer__toolbar">
@@ -210,183 +241,187 @@
       <div class="tables-section">
         <div class="tables-section__header">
           <h3 class="tables-section__title">Visualização das 12 Tabelas e Registros do Banco de Dados</h3>
-          <p class="tables-section__subtitle">Selecione o módulo para inspecionar os dicionários de dados e registros fictícios de validação:</p>
+          <p class="tables-section__subtitle">Selecione o módulo para inspecionar os dicionários de dados e registros
+            fictícios de validação:</p>
         </div>
 
         <!-- Barra de Navegação das Abas (Tabs) -->
         <div class="tab-nav" role="tablist" aria-label="Navegação entre Módulos de Tabelas">
-          <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-modulo-1" id="btn-tab-1" data-tab-target="tab-modulo-1">
+          <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-modulo-1" id="btn-tab-1"
+            data-tab-target="tab-modulo-1">
             <span class="tab-btn__number">01</span> Módulo 1: Usuários & Planos
           </button>
-          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-modulo-2" id="btn-tab-2" data-tab-target="tab-modulo-2">
-            <span class="tab-btn__number">02</span> Módulo 2: Catálogo Musical
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-modulo-2" id="btn-tab-2"
+            data-tab-target="tab-modulo-2">
+            <span class="tab-btn__number">02</span> Módulo 2: Pagamentos & Artistas
           </button>
-          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-modulo-3" id="btn-tab-3" data-tab-target="tab-modulo-3">
-            <span class="tab-btn__number">03</span> Módulo 3: Faixas & Playlists
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-modulo-3" id="btn-tab-3"
+            data-tab-target="tab-modulo-3">
+            <span class="tab-btn__number">03</span> Módulo 3: Músicas, Gêneros & Autoria
           </button>
-          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-modulo-4" id="btn-tab-4" data-tab-target="tab-modulo-4">
-            <span class="tab-btn__number">04</span> Módulo 4: Interações & Consumo
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-modulo-4" id="btn-tab-4"
+            data-tab-target="tab-modulo-4">
+            <span class="tab-btn__number">04</span> Módulo 4: Playlists & Histórico
           </button>
         </div>
 
         <!-- PAINEL 1: USUÁRIOS & PLANOS (Tabelas 1, 2 e 3) -->
         <div id="tab-modulo-1" class="tab-pane active" role="tabpanel" aria-labelledby="btn-tab-1">
 
-          <!-- Tabela 01: tb_planos -->
+          <!-- Tabela 01: usuario -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 01/12</span>
-              <h4 class="table-card__title"><code>TABLE: tb_planos</code></h4>
-              <span class="table-card__meta">Entidade Forte &bull; Definição dos tipos de assinatura</span>
+              <h4 class="table-card__title"><code>TABLE: usuario</code></h4>
+              <span class="table-card__meta">Entidade Central &bull; Contas e endereços dos usuários</span>
             </div>
-            <!-- EDITE AQUI: Dados da tb_planos -->
+            <!-- EDITE AQUI: Dados da tabela usuario -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
-                    <th><span class="badge badge--pk">PK</span> id_plano (INT)</th>
-                    <th>nome_plano (VARCHAR)</th>
-                    <th>valor_mensal (DECIMAL)</th>
-                    <th>limite_dispositivos (INT)</th>
-                    <th>qualidade_audio (VARCHAR)</th>
+                    <th><span class="badge badge--pk">PK</span> id_user</th>
+                    <th>Nome</th>
+                    <th>cpf</th>
+                    <th>email</th>
+                    <th>senha</th>
+                    <th><span class="badge badge--fk">FK</span> fk_telefone</th>
+                    <th>cep</th>
+                    <th>Rua</th>
+                    <th>numero</th>
+                    <th>cidade</th>
+                    <th>bairro</th>
+                    <th><span class="badge badge--fk">FK</span> fk_id_plano</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>1</code></td>
+                    <td>Lucas Mendes Silva</td>
+                    <td>123.456.789-00</td>
+                    <td>lucas.mendes@email.com</td>
+                    <td><code>••••••••</code></td>
+                    <td><code>1</code></td>
+                    <td>01310-100</td>
+                    <td>Av. Paulista</td>
+                    <td>1578</td>
+                    <td>São Paulo</td>
+                    <td>Bela Vista</td>
+                    <td><code>2</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>2</code></td>
+                    <td>Beatriz Helena Costa</td>
+                    <td>234.567.890-11</td>
+                    <td>beatriz.costa@email.com</td>
+                    <td><code>••••••••</code></td>
+                    <td><code>2</code></td>
+                    <td>22041-001</td>
+                    <td>Rua Barata Ribeiro</td>
+                    <td>450</td>
+                    <td>Rio de Janeiro</td>
+                    <td>Copacabana</td>
+                    <td><code>3</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>3</code></td>
+                    <td>Carlos Eduardo Rocha</td>
+                    <td>345.678.901-22</td>
+                    <td>cadu.rocha@email.com</td>
+                    <td><code>••••••••</code></td>
+                    <td><code>3</code></td>
+                    <td>30130-110</td>
+                    <td>Av. Afonso Pena</td>
+                    <td>1200</td>
+                    <td>Belo Horizonte</td>
+                    <td>Centro</td>
+                    <td><code>4</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <!-- Tabela 02: telefone -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 02/12</span>
+              <h4 class="table-card__title"><code>TABLE: telefone</code></h4>
+              <span class="table-card__meta">Entidade de Contato &bull; Números vinculados aos usuários</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tabela telefone -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> id_telefone</th>
+                    <th>Nome</th>
+                    <th><span class="badge badge--fk">FK</span> fk_id_user</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>1</code></td>
+                    <td>(11) 98765-4321</td>
+                    <td><code>1</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>2</code></td>
+                    <td>(21) 99876-5432</td>
+                    <td><code>2</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>3</code></td>
+                    <td>(31) 97654-3210</td>
+                    <td><code>3</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <!-- Tabela 03: plano -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 03/12</span>
+              <h4 class="table-card__title"><code>TABLE: plano</code></h4>
+              <span class="table-card__meta">Entidade Forte &bull; Definição dos tipos de assinatura</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tabela plano -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> id_plano</th>
+                    <th>tipo</th>
+                    <th>valor</th>
+                    <th>qtn_users</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td><code>1</code></td>
                     <td>Free com Anúncios</td>
-                    <td>R$ 0.00</td>
+                    <td>R$ 0,00</td>
                     <td>1</td>
-                    <td>Padrão (128 kbps)</td>
                   </tr>
                   <tr>
                     <td><code>2</code></td>
                     <td>Premium Individual</td>
-                    <td>R$ 21.90</td>
+                    <td>R$ 21,90</td>
                     <td>1</td>
-                    <td>Alta Fidelidade (320 kbps)</td>
                   </tr>
                   <tr>
                     <td><code>3</code></td>
                     <td>Premium Universitário</td>
-                    <td>R$ 11.90</td>
+                    <td>R$ 11,90</td>
                     <td>1</td>
-                    <td>Alta Fidelidade (320 kbps)</td>
                   </tr>
                   <tr>
                     <td><code>4</code></td>
                     <td>Premium Familiar</td>
-                    <td>R$ 34.90</td>
+                    <td>R$ 34,90</td>
                     <td>6</td>
-                    <td>Alta Fidelidade (320 kbps)</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </article>
-
-          <!-- Tabela 02: tb_usuarios -->
-          <article class="table-card">
-            <div class="table-card__header">
-              <span class="table-card__badge">Tabela 02/12</span>
-              <h4 class="table-card__title"><code>TABLE: tb_usuarios</code></h4>
-              <span class="table-card__meta">Entidade Central &bull; Contas cadastradas no sistema</span>
-            </div>
-            <!-- EDITE AQUI: Dados da tb_usuarios -->
-            <div class="table-responsive">
-              <table class="db-table">
-                <thead>
-                  <tr>
-                    <th><span class="badge badge--pk">PK</span> id_usuario (INT)</th>
-                    <th>nome_completo (VARCHAR)</th>
-                    <th>email (VARCHAR)</th>
-                    <th>data_nascimento (DATE)</th>
-                    <th><span class="badge badge--fk">FK</span> id_plano (INT)</th>
-                    <th>status_conta (VARCHAR)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><code>101</code></td>
-                    <td>Lucas Mendes Silva</td>
-                    <td>lucas.mendes@email.com</td>
-                    <td>1998-05-14</td>
-                    <td><code>2</code></td>
-                    <td>Ativo</td>
-                  </tr>
-                  <tr>
-                    <td><code>102</code></td>
-                    <td>Beatriz Helena Costa</td>
-                    <td>beatriz.costa@email.com</td>
-                    <td>2001-11-23</td>
-                    <td><code>3</code></td>
-                    <td>Ativo</td>
-                  </tr>
-                  <tr>
-                    <td><code>103</code></td>
-                    <td>Carlos Eduardo Rocha</td>
-                    <td>cadu.rocha@email.com</td>
-                    <td>1992-02-08</td>
-                    <td><code>4</code></td>
-                    <td>Ativo</td>
-                  </tr>
-                  <tr>
-                    <td><code>104</code></td>
-                    <td>Fernanda Lima Souza</td>
-                    <td>fernanda.souza@email.com</td>
-                    <td>2003-09-30</td>
-                    <td><code>1</code></td>
-                    <td>Inativo</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </article>
-
-          <!-- Tabela 03: tb_pagamentos -->
-          <article class="table-card">
-            <div class="table-card__header">
-              <span class="table-card__badge">Tabela 03/12</span>
-              <h4 class="table-card__title"><code>TABLE: tb_pagamentos</code></h4>
-              <span class="table-card__meta">Entidade Transacional &bull; Histórico financeiro de faturamento</span>
-            </div>
-            <!-- EDITE AQUI: Dados da tb_pagamentos -->
-            <div class="table-responsive">
-              <table class="db-table">
-                <thead>
-                  <tr>
-                    <th><span class="badge badge--pk">PK</span> id_pagamento (INT)</th>
-                    <th><span class="badge badge--fk">FK</span> id_usuario (INT)</th>
-                    <th>data_pagamento (TIMESTAMP)</th>
-                    <th>valor_pago (DECIMAL)</th>
-                    <th>metodo_pagamento (VARCHAR)</th>
-                    <th>status_transacao (VARCHAR)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><code>9001</code></td>
-                    <td><code>101</code></td>
-                    <td>2026-03-01 08:14:22</td>
-                    <td>R$ 21.90</td>
-                    <td>Cartão de Crédito</td>
-                    <td>Aprovado</td>
-                  </tr>
-                  <tr>
-                    <td><code>9002</code></td>
-                    <td><code>102</code></td>
-                    <td>2026-03-02 14:30:10</td>
-                    <td>R$ 11.90</td>
-                    <td>PIX</td>
-                    <td>Aprovado</td>
-                  </tr>
-                  <tr>
-                    <td><code>9003</code></td>
-                    <td><code>103</code></td>
-                    <td>2026-03-05 19:45:00</td>
-                    <td>R$ 34.90</td>
-                    <td>Boleto Bancário</td>
-                    <td>Aprovado</td>
                   </tr>
                 </tbody>
               </table>
@@ -395,142 +430,145 @@
 
         </div>
 
-        <!-- PAINEL 2: CATÁLOGO MUSICAL (Tabelas 4, 5 e 6) -->
+        <!-- PAINEL 2: PAGAMENTOS & ARTISTAS (Tabelas 4, 5 e 6) -->
         <div id="tab-modulo-2" class="tab-pane" role="tabpanel" aria-labelledby="btn-tab-2">
 
-          <!-- Tabela 04: tb_generos -->
+          <!-- Tabela 04: pagamentos -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 04/12</span>
-              <h4 class="table-card__title"><code>TABLE: tb_generos</code></h4>
-              <span class="table-card__meta">Entidade de Classificação &bull; Categorias fonográficas</span>
+              <h4 class="table-card__title"><code>TABLE: pagamentos</code></h4>
+              <span class="table-card__meta">Entidade Financeira &bull; Histórico transacional de assinaturas</span>
             </div>
-            <!-- EDITE AQUI: Dados da tb_generos -->
+            <!-- EDITE AQUI: Dados da tabela pagamentos -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
-                    <th><span class="badge badge--pk">PK</span> id_genero (INT)</th>
-                    <th>nome_genero (VARCHAR)</th>
-                    <th>descricao (VARCHAR)</th>
+                    <th><span class="badge badge--pk">PK</span> id_pagamento</th>
+                    <th>forma_de_pagamento</th>
+                    <th>timestamp</th>
+                    <th><span class="badge badge--fk">FK</span> fk_id_plano</th>
+                    <th><span class="badge badge--fk">FK</span> fk_id_user</th>
+                    <th>status_pagamento</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><code>1</code></td>
-                    <td>Rock Clássico</td>
-                    <td>Gênero caracterizado por guitarras elétricas, baixo e bateria.</td>
-                  </tr>
-                  <tr>
+                    <td><code>101</code></td>
+                    <td>Cartão de Crédito</td>
+                    <td>2026-11-15 08:14:22</td>
                     <td><code>2</code></td>
-                    <td>MPB (Música Popular Brasileira)</td>
-                    <td>Fusão tradicional de ritmos brasileiros com elementos pop e jazz.</td>
+                    <td><code>1</code></td>
+                    <td>Aprovado</td>
                   </tr>
                   <tr>
+                    <td><code>102</code></td>
+                    <td>PIX</td>
+                    <td>2026-11-16 14:30:10</td>
                     <td><code>3</code></td>
-                    <td>Synthwave / Lo-Fi</td>
-                    <td>Música eletrônica nostálgica com sintetizadores analógicos retrô.</td>
+                    <td><code>2</code></td>
+                    <td>Aprovado</td>
                   </tr>
                   <tr>
+                    <td><code>103</code></td>
+                    <td>Boleto Bancário</td>
+                    <td>2026-11-17 19:45:00</td>
                     <td><code>4</code></td>
-                    <td>Jazz Contemporâneo</td>
-                    <td>Improvisações harmônicas ricas com metais, piano acústico e contrabaixo.</td>
+                    <td><code>3</code></td>
+                    <td>Aprovado</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </article>
 
-          <!-- Tabela 05: tb_artistas -->
+          <!-- Tabela 05: Artistas -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 05/12</span>
-              <h4 class="table-card__title"><code>TABLE: tb_artistas</code></h4>
-              <span class="table-card__meta">Entidade Forte &bull; Autores, bandas e intérpretes cadastrados</span>
+              <h4 class="table-card__title"><code>TABLE: Artistas</code></h4>
+              <span class="table-card__meta">Entidade Forte &bull; Autores, bandas e intérpretes</span>
             </div>
-            <!-- EDITE AQUI: Dados da tb_artistas -->
+            <!-- EDITE AQUI: Dados da tabela Artistas -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
-                    <th><span class="badge badge--pk">PK</span> id_artista (INT)</th>
-                    <th>nome_artistico (VARCHAR)</th>
-                    <th>pais_origem (VARCHAR)</th>
-                    <th>ouvintes_mensais (INT)</th>
-                    <th>verificado (BOOLEAN)</th>
+                    <th><span class="badge badge--pk">PK</span> id_art</th>
+                    <th>nome</th>
+                    <th>senha</th>
+                    <th>email</th>
+                    <th>nacionalidade</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td><code>10</code></td>
                     <td>The Midnight Echoes</td>
+                    <td><code>••••••••</code></td>
+                    <td>contato@midnightechoes.co.uk</td>
                     <td>Reino Unido</td>
-                    <td>4.850.210</td>
-                    <td>TRUE</td>
                   </tr>
                   <tr>
                     <td><code>20</code></td>
-                    <td>Clara Viana & Quinteto</td>
+                    <td>Clara Viana &amp; Quinteto</td>
+                    <td><code>••••••••</code></td>
+                    <td>producao@claraviana.art.br</td>
                     <td>Brasil</td>
-                    <td>1.240.900</td>
-                    <td>TRUE</td>
                   </tr>
                   <tr>
                     <td><code>30</code></td>
                     <td>Neon Cyberflow</td>
+                    <td><code>••••••••</code></td>
+                    <td>mgmt@neoncyberflow.ca</td>
                     <td>Canadá</td>
-                    <td>890.430</td>
-                    <td>FALSE</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </article>
 
-          <!-- Tabela 06: tb_albuns -->
+          <!-- Tabela 06: albuns -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 06/12</span>
-              <h4 class="table-card__title"><code>TABLE: tb_albuns</code></h4>
-              <span class="table-card__meta">Entidade Forte &bull; Produções e lançamentos de estúdio</span>
+              <h4 class="table-card__title"><code>TABLE: albuns</code></h4>
+              <span class="table-card__meta">Entidade Fonográfica &bull; Lançamentos e produções de estúdio</span>
             </div>
-            <!-- EDITE AQUI: Dados da tb_albuns -->
+            <!-- EDITE AQUI: Dados da tabela albuns -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
-                    <th><span class="badge badge--pk">PK</span> id_album (INT)</th>
-                    <th>titulo_album (VARCHAR)</th>
-                    <th>ano_lancamento (INT)</th>
-                    <th><span class="badge badge--fk">FK</span> id_artista (INT)</th>
-                    <th>gravadora (VARCHAR)</th>
-                    <th>tipo_lancamento (VARCHAR)</th>
+                    <th><span class="badge badge--pk">PK</span> id_album</th>
+                    <th>Nome</th>
+                    <th>qnt_musica</th>
+                    <th>data_criação</th>
+                    <th><span class="badge badge--fk">FK</span> fk_id_art</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td><code>501</code></td>
                     <td>Electric Sunset Horizon</td>
-                    <td>2024</td>
+                    <td>10</td>
+                    <td>2024-05-12</td>
                     <td><code>10</code></td>
-                    <td>SoundWave Records</td>
-                    <td>Álbum de Estúdio</td>
                   </tr>
                   <tr>
                     <td><code>502</code></td>
                     <td>Aquarela de Cordas</td>
-                    <td>2023</td>
+                    <td>8</td>
+                    <td>2023-11-20</td>
                     <td><code>20</code></td>
-                    <td>Som Tropical Brasil</td>
-                    <td>Álbum de Estúdio</td>
                   </tr>
                   <tr>
                     <td><code>503</code></td>
                     <td>Digital Nostalgia Dreams</td>
-                    <td>2025</td>
+                    <td>6</td>
+                    <td>2025-02-14</td>
                     <td><code>30</code></td>
-                    <td>Independente</td>
-                    <td>EP</td>
                   </tr>
                 </tbody>
               </table>
@@ -539,153 +577,132 @@
 
         </div>
 
-        <!-- PAINEL 3: FAIXAS & PLAYLISTS (Tabelas 7, 8 e 9) -->
+        <!-- PAINEL 3: MÚSICAS, GÊNEROS & AUTORIA (Tabelas 7, 8 e 9) -->
         <div id="tab-modulo-3" class="tab-pane" role="tabpanel" aria-labelledby="btn-tab-3">
 
-          <!-- Tabela 07: tb_musicas -->
+          <!-- Tabela 07: genero -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 07/12</span>
-              <h4 class="table-card__title"><code>TABLE: tb_musicas</code></h4>
-              <span class="table-card__meta">Entidade Primordial &bull; Catálogo individual de faixas de áudio</span>
+              <h4 class="table-card__title"><code>TABLE: genero</code></h4>
+              <span class="table-card__meta">Entidade de Classificação &bull; Estilos e categorias musicais</span>
             </div>
-            <!-- EDITE AQUI: Dados da tb_musicas -->
+            <!-- EDITE AQUI: Dados da tabela genero -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
-                    <th><span class="badge badge--pk">PK</span> id_musica (INT)</th>
-                    <th>titulo_musica (VARCHAR)</th>
-                    <th>duracao_segundos (INT)</th>
-                    <th><span class="badge badge--fk">FK</span> id_album (INT)</th>
-                    <th><span class="badge badge--fk">FK</span> id_genero (INT)</th>
-                    <th>faixa_numero (INT)</th>
+                    <th><span class="badge badge--pk">PK</span> id_genero</th>
+                    <th>descrição</th>
+                    <th>nome_genero</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>1</code></td>
+                    <td>Guitarras elétricas, baixo e bateria marcantes</td>
+                    <td>Rock Clássico</td>
+                  </tr>
+                  <tr>
+                    <td><code>2</code></td>
+                    <td>Fusão rítmica com instrumentos acústicos e poesia</td>
+                    <td>MPB</td>
+                  </tr>
+                  <tr>
+                    <td><code>3</code></td>
+                    <td>Sintetizadores analógicos retrô e batidas cadenciadas</td>
+                    <td>Synthwave</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <!-- Tabela 08: musica -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 08/12</span>
+              <h4 class="table-card__title"><code>TABLE: musica</code></h4>
+              <span class="table-card__meta">Entidade Central do Catálogo &bull; Faixas de áudio</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tabela musica -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> id_musica</th>
+                    <th>Nome</th>
+                    <th>tempo</th>
+                    <th><span class="badge badge--fk">FK</span> fk_id_album</th>
+                    <th><span class="badge badge--fk">FK</span> fk_id_genero</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td><code>1001</code></td>
                     <td>Midnight City Drive</td>
-                    <td>248</td>
+                    <td>00:04:08</td>
                     <td><code>501</code></td>
                     <td><code>1</code></td>
-                    <td>1</td>
                   </tr>
                   <tr>
                     <td><code>1002</code></td>
                     <td>Neon Reflections</td>
-                    <td>195</td>
+                    <td>00:03:15</td>
                     <td><code>501</code></td>
                     <td><code>1</code></td>
-                    <td>2</td>
                   </tr>
                   <tr>
                     <td><code>1003</code></td>
                     <td>Samba dos Horizontes</td>
-                    <td>210</td>
+                    <td>00:03:30</td>
                     <td><code>502</code></td>
                     <td><code>2</code></td>
-                    <td>1</td>
                   </tr>
                   <tr>
                     <td><code>1004</code></td>
                     <td>Retro Highway 88</td>
-                    <td>182</td>
+                    <td>00:03:02</td>
                     <td><code>503</code></td>
                     <td><code>3</code></td>
-                    <td>1</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </article>
 
-          <!-- Tabela 08: tb_playlists -->
-          <article class="table-card">
-            <div class="table-card__header">
-              <span class="table-card__badge">Tabela 08/12</span>
-              <h4 class="table-card__title"><code>TABLE: tb_playlists</code></h4>
-              <span class="table-card__meta">Entidade de Usuário &bull; Coletâneas criadas por usuários</span>
-            </div>
-            <!-- EDITE AQUI: Dados da tb_playlists -->
-            <div class="table-responsive">
-              <table class="db-table">
-                <thead>
-                  <tr>
-                    <th><span class="badge badge--pk">PK</span> id_playlist (INT)</th>
-                    <th>nome_playlist (VARCHAR)</th>
-                    <th>descricao (VARCHAR)</th>
-                    <th><span class="badge badge--fk">FK</span> id_usuario (INT)</th>
-                    <th>publica (BOOLEAN)</th>
-                    <th>data_criacao (DATE)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><code>301</code></td>
-                    <td>Foco no Código & Café</td>
-                    <td>Faixas instrumentais para alta concentração.</td>
-                    <td><code>101</code></td>
-                    <td>TRUE</td>
-                    <td>2026-01-10</td>
-                  </tr>
-                  <tr>
-                    <td><code>302</code></td>
-                    <td>Viagem de Fim de Semana</td>
-                    <td>Músicas animadas para estrada e descanso.</td>
-                    <td><code>102</code></td>
-                    <td>TRUE</td>
-                    <td>2026-02-18</td>
-                  </tr>
-                  <tr>
-                    <td><code>303</code></td>
-                    <td>Relaxing Vibes Only</td>
-                    <td>Seleção calma para antes de dormir.</td>
-                    <td><code>103</code></td>
-                    <td>FALSE</td>
-                    <td>2026-03-01</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </article>
-
-          <!-- Tabela 09: tb_playlist_musica -->
+          <!-- Tabela 09: autoria_musica -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 09/12</span>
-              <h4 class="table-card__title"><code>TABLE: tb_playlist_musica</code></h4>
-              <span class="table-card__meta">Entidade Associativa (N:M) &bull; Associação entre Playlists e Músicas</span>
+              <h4 class="table-card__title"><code>TABLE: autoria_musica</code></h4>
+              <span class="table-card__meta">Entidade Associativa (N:N) &bull; Relação entre Artistas e Músicas</span>
             </div>
-            <!-- EDITE AQUI: Dados da tb_playlist_musica -->
+            <!-- EDITE AQUI: Dados da tabela autoria_musica -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
-                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> id_playlist (INT)</th>
-                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> id_musica (INT)</th>
-                    <th>ordem_execucao (INT)</th>
-                    <th>adicionado_em (TIMESTAMP)</th>
+                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> fk_id_art</th>
+                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> fk_id_musica</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><code>301</code></td>
+                    <td><code>10</code></td>
                     <td><code>1001</code></td>
-                    <td>1</td>
-                    <td>2026-01-10 10:15:00</td>
                   </tr>
                   <tr>
-                    <td><code>301</code></td>
-                    <td><code>1004</code></td>
-                    <td>2</td>
-                    <td>2026-01-10 10:16:30</td>
+                    <td><code>10</code></td>
+                    <td><code>1002</code></td>
                   </tr>
                   <tr>
-                    <td><code>302</code></td>
+                    <td><code>20</code></td>
                     <td><code>1003</code></td>
-                    <td>1</td>
-                    <td>2026-02-18 16:40:12</td>
+                  </tr>
+                  <tr>
+                    <td><code>30</code></td>
+                    <td><code>1004</code></td>
                   </tr>
                 </tbody>
               </table>
@@ -694,141 +711,145 @@
 
         </div>
 
-        <!-- PAINEL 4: INTERAÇÕES & CONSUMO (Tabelas 10, 11 e 12) -->
+        <!-- PAINEL 4: PLAYLISTS & HISTÓRICO (Tabelas 10, 11 e 12) -->
         <div id="tab-modulo-4" class="tab-pane" role="tabpanel" aria-labelledby="btn-tab-4">
 
-          <!-- Tabela 10: tb_historico_reproducao -->
+          <!-- Tabela 10: playlist -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 10/12</span>
-              <h4 class="table-card__title"><code>TABLE: tb_historico_reproducao</code></h4>
-              <span class="table-card__meta">Entidade de Log / Fato &bull; Rastreamento de streaming executado</span>
+              <h4 class="table-card__title"><code>TABLE: playlist</code></h4>
+              <span class="table-card__meta">Entidade de Usuário &bull; Coletâneas personalizadas</span>
             </div>
-            <!-- EDITE AQUI: Dados da tb_historico_reproducao -->
+            <!-- EDITE AQUI: Dados da tabela playlist -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
-                    <th><span class="badge badge--pk">PK</span> id_reproducao (INT)</th>
-                    <th><span class="badge badge--fk">FK</span> id_usuario (INT)</th>
-                    <th><span class="badge badge--fk">FK</span> id_musica (INT)</th>
-                    <th>data_hora_reproducao (TIMESTAMP)</th>
-                    <th>segundos_ouvidos (INT)</th>
-                    <th>dispositivo (VARCHAR)</th>
+                    <th><span class="badge badge--pk">PK</span> id_playlist</th>
+                    <th>Nome</th>
+                    <th>descrição</th>
+                    <th>pública</th>
+                    <th>data_criação</th>
+                    <th><span class="badge badge--fk">FK</span> fk_id_user</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><code>70001</code></td>
-                    <td><code>101</code></td>
-                    <td><code>1001</code></td>
-                    <td>2026-03-10 14:02:11</td>
-                    <td>248</td>
-                    <td>Desktop Web App</td>
+                    <td><code>301</code></td>
+                    <td>Foco no Código &amp; Café</td>
+                    <td>Faixas instrumentais para alta concentração</td>
+                    <td>Sim</td>
+                    <td>2026-01-10</td>
+                    <td><code>1</code></td>
                   </tr>
                   <tr>
-                    <td><code>70002</code></td>
-                    <td><code>101</code></td>
-                    <td><code>1004</code></td>
-                    <td>2026-03-10 14:06:20</td>
-                    <td>182</td>
-                    <td>Desktop Web App</td>
+                    <td><code>302</code></td>
+                    <td>Viagem de Fim de Semana</td>
+                    <td>Músicas animadas para pegar a estrada</td>
+                    <td>Sim</td>
+                    <td>2026-02-18</td>
+                    <td><code>2</code></td>
                   </tr>
                   <tr>
-                    <td><code>70003</code></td>
-                    <td><code>102</code></td>
-                    <td><code>1001</code></td>
-                    <td>2026-03-10 15:30:45</td>
-                    <td>248</td>
-                    <td>Smartphone Android</td>
-                  </tr>
-                  <tr>
-                    <td><code>70004</code></td>
-                    <td><code>103</code></td>
-                    <td><code>1003</code></td>
-                    <td>2026-03-10 16:11:02</td>
-                    <td>210</td>
-                    <td>Smart TV Samsung</td>
+                    <td><code>303</code></td>
+                    <td>Relaxing Vibes Only</td>
+                    <td>Seleção calma para antes de dormir</td>
+                    <td>Não</td>
+                    <td>2026-03-01</td>
+                    <td><code>3</code></td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </article>
 
-          <!-- Tabela 11: tb_curtidas -->
+          <!-- Tabela 11: item_playlist -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 11/12</span>
-              <h4 class="table-card__title"><code>TABLE: tb_curtidas</code></h4>
-              <span class="table-card__meta">Entidade Associativa &bull; Músicas favoritadas pelos usuários</span>
+              <h4 class="table-card__title"><code>TABLE: item_playlist</code></h4>
+              <span class="table-card__meta">Entidade Associativa (N:N) &bull; Faixas incluídas em cada playlist</span>
             </div>
-            <!-- EDITE AQUI: Dados da tb_curtidas -->
+            <!-- EDITE AQUI: Dados da tabela item_playlist -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
-                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> id_usuario (INT)</th>
-                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> id_musica (INT)</th>
-                    <th>data_curtida (TIMESTAMP)</th>
+                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> fk_id_playlist</th>
+                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> fk_id_musica</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><code>101</code></td>
+                    <td><code>301</code></td>
                     <td><code>1001</code></td>
-                    <td>2026-01-12 18:22:04</td>
                   </tr>
                   <tr>
-                    <td><code>101</code></td>
-                    <td><code>1002</code></td>
-                    <td>2026-01-15 09:10:31</td>
+                    <td><code>301</code></td>
+                    <td><code>1004</code></td>
                   </tr>
                   <tr>
-                    <td><code>102</code></td>
+                    <td><code>302</code></td>
                     <td><code>1003</code></td>
-                    <td>2026-02-01 21:04:19</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </article>
 
-          <!-- Tabela 12: tb_seguidores_artista -->
+          <!-- Tabela 12: historico -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 12/12</span>
-              <h4 class="table-card__title"><code>TABLE: tb_seguidores_artista</code></h4>
-              <span class="table-card__meta">Entidade Associativa &bull; Engajamento social e feed de novidades</span>
+              <h4 class="table-card__title"><code>TABLE: historico</code></h4>
+              <span class="table-card__meta">Entidade de Log / Fato &bull; Rastreamento de reproduções do usuário</span>
             </div>
-            <!-- EDITE AQUI: Dados da tb_seguidores_artista -->
+            <!-- EDITE AQUI: Dados da tabela historico -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
-                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> id_usuario (INT)</th>
-                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> id_artista (INT)</th>
-                    <th>data_seguindo (TIMESTAMP)</th>
-                    <th>notificacoes_ativas (BOOLEAN)</th>
+                    <th><span class="badge badge--pk">PK</span> id_historico</th>
+                    <th><span class="badge badge--fk">FK</span> fk_id_user</th>
+                    <th><span class="badge badge--fk">FK</span> fk_id_album</th>
+                    <th><span class="badge badge--fk">FK</span> fk_id_playlist</th>
+                    <th><span class="badge badge--fk">FK</span> fk_id_musica</th>
+                    <th>timestamp</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><code>101</code></td>
-                    <td><code>10</code></td>
-                    <td>2026-01-10 11:00:00</td>
-                    <td>TRUE</td>
+                    <td><code>7001</code></td>
+                    <td><code>1</code></td>
+                    <td><code>501</code></td>
+                    <td><code>301</code></td>
+                    <td><code>1001</code></td>
+                    <td>2026-11-18 14:02:11</td>
                   </tr>
                   <tr>
-                    <td><code>102</code></td>
-                    <td><code>20</code></td>
-                    <td>2026-02-15 17:42:19</td>
-                    <td>TRUE</td>
+                    <td><code>7002</code></td>
+                    <td><code>1</code></td>
+                    <td><code>503</code></td>
+                    <td><code>301</code></td>
+                    <td><code>1004</code></td>
+                    <td>2026-11-18 14:06:20</td>
                   </tr>
                   <tr>
-                    <td><code>103</code></td>
-                    <td><code>10</code></td>
-                    <td>2026-03-02 19:15:30</td>
-                    <td>FALSE</td>
+                    <td><code>7003</code></td>
+                    <td><code>2</code></td>
+                    <td><code>501</code></td>
+                    <td><code>NULL</code></td>
+                    <td><code>1001</code></td>
+                    <td>2026-11-18 15:30:45</td>
+                  </tr>
+                  <tr>
+                    <td><code>7004</code></td>
+                    <td><code>3</code></td>
+                    <td><code>502</code></td>
+                    <td><code>302</code></td>
+                    <td><code>1003</code></td>
+                    <td>2026-11-18 16:11:02</td>
                   </tr>
                 </tbody>
               </table>
@@ -848,7 +869,8 @@
         <div class="section__badge">ETAPA 04</div>
         <h2 class="section__title">Scripts SQL (DDL & DML — MyCompiler)</h2>
         <p class="section__description">
-          Comandos padronizados em SQL ANSI executados e validados no compilador online MyCompiler para a criação estrutural, instanciação e definição de integridade referencial.
+          Comandos padronizados em SQL ANSI executados e validados no compilador online MyCompiler para a criação
+          estrutural, instanciação e definição de integridade referencial.
         </p>
       </header>
 
@@ -1106,7 +1128,8 @@ INSERT INTO tb_seguidores_artista (id_usuario, id_artista, data_seguindo, notifi
         <details class="code-accordion">
           <summary class="code-accordion__header">
             <span class="code-accordion__icon-indicator"></span>
-            <span class="code-accordion__title">Script 03 — Constraints, Chaves Estrangeiras e Índices (ALTER TABLE)</span>
+            <span class="code-accordion__title">Script 03 — Constraints, Chaves Estrangeiras e Índices (ALTER
+              TABLE)</span>
             <span class="code-accordion__badge">CONSTRAINTS</span>
           </summary>
           <div class="code-accordion__content">
@@ -1212,7 +1235,8 @@ CREATE INDEX idx_historico_data ON tb_historico_reproducao(data_hora_reproducao)
         <div class="section__badge">ETAPA 05</div>
         <h2 class="section__title">Queries de Pesquisa e Retorno de Dados (DQL)</h2>
         <p class="section__description">
-          Demonstração de consultas analíticas e relacionais com junções (JOIN), agregações (COUNT, SUM) e ordenações para validação em sala de aula.
+          Demonstração de consultas analíticas e relacionais com junções (JOIN), agregações (COUNT, SUM) e ordenações
+          para validação em sala de aula.
         </p>
       </header>
 
@@ -1222,7 +1246,8 @@ CREATE INDEX idx_historico_data ON tb_historico_reproducao(data_hora_reproducao)
         <details class="query-accordion" open>
           <summary class="query-accordion__header">
             <span class="query-accordion__icon-indicator"></span>
-            <span class="query-accordion__title">Consulta 01 — Listar usuários ativos e seus respectivos planos (INNER JOIN)</span>
+            <span class="query-accordion__title">Consulta 01 — Listar usuários ativos e seus respectivos planos (INNER
+              JOIN)</span>
             <span class="query-accordion__badge">INNER JOIN</span>
           </summary>
           <div class="query-accordion__content">
@@ -1257,7 +1282,8 @@ ORDER BY u.nome_completo ASC;</code></pre>
             <div class="query-output">
               <div class="query-output__header">
                 <span class="query-output__icon">📋</span>
-                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; 3 linhas retornadas</span>
+                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; 3 linhas
+                  retornadas</span>
               </div>
               <!-- EDITE AQUI: Tabela com o retorno da Query 01 -->
               <div class="table-responsive">
@@ -1308,7 +1334,8 @@ ORDER BY u.nome_completo ASC;</code></pre>
         <details class="query-accordion">
           <summary class="query-accordion__header">
             <span class="query-accordion__icon-indicator"></span>
-            <span class="query-accordion__title">Consulta 02 — Top 5 músicas mais reproduzidas na plataforma (GROUP BY + COUNT + ORDER BY)</span>
+            <span class="query-accordion__title">Consulta 02 — Top 5 músicas mais reproduzidas na plataforma (GROUP BY +
+              COUNT + ORDER BY)</span>
             <span class="query-accordion__badge">GROUP BY & COUNT</span>
           </summary>
           <div class="query-accordion__content">
@@ -1342,7 +1369,8 @@ LIMIT 5;</code></pre>
             <div class="query-output">
               <div class="query-output__header">
                 <span class="query-output__icon">📋</span>
-                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Ranking de audiência</span>
+                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Ranking de
+                  audiência</span>
               </div>
               <!-- EDITE AQUI: Tabela com o retorno da Query 02 -->
               <div class="table-responsive">
@@ -1391,7 +1419,8 @@ LIMIT 5;</code></pre>
         <details class="query-accordion">
           <summary class="query-accordion__header">
             <span class="query-accordion__icon-indicator"></span>
-            <span class="query-accordion__title">Consulta 03 — Buscar todas as faixas de uma Playlist específica com nome do Artista e Álbum</span>
+            <span class="query-accordion__title">Consulta 03 — Buscar todas as faixas de uma Playlist específica com
+              nome do Artista e Álbum</span>
             <span class="query-accordion__badge">MULTI JOIN</span>
           </summary>
           <div class="query-accordion__content">
@@ -1427,7 +1456,8 @@ ORDER BY pm.ordem_execucao ASC;</code></pre>
             <div class="query-output">
               <div class="query-output__header">
                 <span class="query-output__icon">📋</span>
-                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Playlist ID 301 (Foco no Código & Café)</span>
+                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Playlist ID 301 (Foco
+                  no Código & Café)</span>
               </div>
               <!-- EDITE AQUI: Tabela com o retorno da Query 03 -->
               <div class="table-responsive">
@@ -1470,7 +1500,8 @@ ORDER BY pm.ordem_execucao ASC;</code></pre>
         <details class="query-accordion">
           <summary class="query-accordion__header">
             <span class="query-accordion__icon-indicator"></span>
-            <span class="query-accordion__title">Consulta 04 — Relatório de faturamento por tipo de plano de assinatura (SUM + GROUP BY)</span>
+            <span class="query-accordion__title">Consulta 04 — Relatório de faturamento por tipo de plano de assinatura
+              (SUM + GROUP BY)</span>
             <span class="query-accordion__badge">SUM & FINANCEIRO</span>
           </summary>
           <div class="query-accordion__content">
@@ -1502,7 +1533,8 @@ ORDER BY faturamento_total_bruto DESC;</code></pre>
             <div class="query-output">
               <div class="query-output__header">
                 <span class="query-output__icon">📋</span>
-                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Total Consolidado por Plano</span>
+                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Total Consolidado por
+                  Plano</span>
               </div>
               <!-- EDITE AQUI: Tabela com o retorno da Query 04 -->
               <div class="table-responsive">
@@ -1561,10 +1593,11 @@ ORDER BY faturamento_total_bruto DESC;</code></pre>
         <h2 class="footer__title">Equipe de Desenvolvimento & Modelagem de Dados</h2>
         <div class="footer__academic-info">
           <!-- EDITE AQUI: Informações institucionais da faculdade/curso -->
-          <span class="academic-badge"><strong>Curso:</strong> [Editar Curso - ex: Bacharelado em Ciência da Computação / Análise e Desenvolvimento de Sistemas]</span>
-          <span class="academic-badge"><strong>Disciplina:</strong> Banco de Dados Relacional</span>
-          <span class="academic-badge"><strong>Semestre/Ano:</strong> 2026/1</span>
-          <span class="academic-badge"><strong>Professor(a):</strong> [Editar Nome do Professor]</span>
+          <span class="academic-badge"><strong>Curso:</strong> Análise e Desenvolvimento de Sistemas - ADS & Ciência da
+            Computação</span>
+          <span class="academic-badge"><strong>Disciplina:</strong> Modelagem de Banco de Dados</span>
+          <span class="academic-badge"><strong>Semestre/Ano:</strong> 2026/2</span>
+          <span class="academic-badge"><strong>Professor(a):</strong> Ellen Martins</span>
         </div>
       </div>
 
@@ -1576,9 +1609,9 @@ ORDER BY faturamento_total_bruto DESC;</code></pre>
           <div class="member-card__avatar">01</div>
           <div class="member-card__info">
             <!-- EDITE AQUI: Dados do Integrante 01 -->
-            <h4 class="member-card__name">Integrante 01 - [Editar Nome]</h4>
-            <p class="member-card__ra">RA: 00000001</p>
-            <span class="member-card__role">Modelagem Conceitual (DER)</span>
+            <h4 class="member-card__name">Kelvin Leardini</h4>
+            <p class="member-card__ra">RGM: 48880078</p>
+            <span class="member-card__role">Documentação & Interface Web</span>
           </div>
         </article>
 
@@ -1587,9 +1620,9 @@ ORDER BY faturamento_total_bruto DESC;</code></pre>
           <div class="member-card__avatar">02</div>
           <div class="member-card__info">
             <!-- EDITE AQUI: Dados do Integrante 02 -->
-            <h4 class="member-card__name">Integrante 02 - [Editar Nome]</h4>
-            <p class="member-card__ra">RA: 00000002</p>
-            <span class="member-card__role">Modelo Lógico & 3ª FN</span>
+            <h4 class="member-card__name">Victor Hugo</h4>
+            <p class="member-card__ra">RGM: 49068245</p>
+            <span class="member-card__role">Dicionário de Dados & Atributos</span>
           </div>
         </article>
 
@@ -1598,9 +1631,9 @@ ORDER BY faturamento_total_bruto DESC;</code></pre>
           <div class="member-card__avatar">03</div>
           <div class="member-card__info">
             <!-- EDITE AQUI: Dados do Integrante 03 -->
-            <h4 class="member-card__name">Integrante 03 - [Editar Nome]</h4>
-            <p class="member-card__ra">RA: 00000003</p>
-            <span class="member-card__role">Scripts DDL (CREATE TABLE)</span>
+            <h4 class="member-card__name">Gustavo Bernardo</h4>
+            <p class="member-card__ra">RGM: 48753009</p>
+            <span class="member-card__role">Normalização & Regras de Negócio</span>
           </div>
         </article>
 
@@ -1609,9 +1642,9 @@ ORDER BY faturamento_total_bruto DESC;</code></pre>
           <div class="member-card__avatar">04</div>
           <div class="member-card__info">
             <!-- EDITE AQUI: Dados do Integrante 04 -->
-            <h4 class="member-card__name">Integrante 04 - [Editar Nome]</h4>
-            <p class="member-card__ra">RA: 00000004</p>
-            <span class="member-card__role">Scripts DML & Povoamento</span>
+            <h4 class="member-card__name">Yago Bafume</h4>
+            <p class="member-card__ra">RGM: 48809161</p>
+            <span class="member-card__role">Arquitetura do Modelo Lógico</span>
           </div>
         </article>
 
@@ -1620,9 +1653,9 @@ ORDER BY faturamento_total_bruto DESC;</code></pre>
           <div class="member-card__avatar">05</div>
           <div class="member-card__info">
             <!-- EDITE AQUI: Dados do Integrante 05 -->
-            <h4 class="member-card__name">Integrante 05 - [Editar Nome]</h4>
-            <p class="member-card__ra">RA: 00000005</p>
-            <span class="member-card__role">Constraints & Integridade FK</span>
+            <h4 class="member-card__name">Edson da Silva</h4>
+            <p class="member-card__ra">RGM: 48424994</p>
+            <span class="member-card__role">Implementação SQL & Consultas</span>
           </div>
         </article>
 
@@ -1631,9 +1664,9 @@ ORDER BY faturamento_total_bruto DESC;</code></pre>
           <div class="member-card__avatar">06</div>
           <div class="member-card__info">
             <!-- EDITE AQUI: Dados do Integrante 06 -->
-            <h4 class="member-card__name">Integrante 06 - [Editar Nome]</h4>
-            <p class="member-card__ra">RA: 00000006</p>
-            <span class="member-card__role">Queries DQL & Relatórios</span>
+            <h4 class="member-card__name">João Roberto</h4>
+            <p class="member-card__ra">RGM: 47632780</p>
+            <span class="member-card__role">Roteiro & Apresentação Técnica</span>
           </div>
         </article>
 
@@ -1642,16 +1675,17 @@ ORDER BY faturamento_total_bruto DESC;</code></pre>
           <div class="member-card__avatar">07</div>
           <div class="member-card__info">
             <!-- EDITE AQUI: Dados do Integrante 07 -->
-            <h4 class="member-card__name">Integrante 07 - [Editar Nome]</h4>
-            <p class="member-card__ra">RA: 00000007</p>
-            <span class="member-card__role">Documentação & Apresentação</span>
+            <h4 class="member-card__name">Guilherme Ricarti</h4>
+            <p class="member-card__ra">RGM: 047952679</p>
+            <span class="member-card__role">Modelagem Conceitual (DER)</span>
           </div>
         </article>
 
       </div>
 
       <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2026 DB_Streaming Acadêmico. Projeto desenvolvido estritamente com HTML5 Semântico, CSS3 Moderno e Vanilla JS para apresentação acadêmica.</p>
+        <p class="footer__copy">&copy; 2026 BD_Streaming Acadêmico. Projeto desenvolvido estritamente com HTML5
+          Semântico, CSS3 Moderno e Vanilla JS para apresentação acadêmica.</p>
         <a href="#secao-1" class="footer__back-to-top">⬆ Voltar ao Topo</a>
       </div>
     </div>
@@ -1674,12 +1708,13 @@ ORDER BY faturamento_total_bruto DESC;</code></pre>
           <div class="diagram-viewer__placeholder-content">
             <span class="diagram-viewer__icon">📐</span>
             <p class="diagram-viewer__instruction">[ Imagem do DER Conceitual Ampliada ]</p>
-            <span class="diagram-viewer__hint">Substitua este placeholder no index.html pelo arquivo da imagem real (ex: assets/der_ampliado.png)</span>
+            <span class="diagram-viewer__hint">Substitua este placeholder no index.html pelo arquivo da imagem real (ex:
+              assets/der_ampliado.png)</span>
           </div>
         </div>
       </div>
       <footer class="diagram-modal__footer">
-        <span class="diagram-modal__legend">Pressione <code>ESC</code> ou clique no botão ao lado para fechar.</span>
+        <span class="diagram-modal__legend">🔍 <strong>Dica:</strong> Clique na imagem para alternar o zoom detalhado &bull; Pressione <code>ESC</code> ou clique fora para fechar.</span>
         <button class="btn btn-secondary" data-modal-close="modal-der" type="button">Fechar Janela</button>
       </footer>
     </div>
@@ -1690,20 +1725,16 @@ ORDER BY faturamento_total_bruto DESC;</code></pre>
     <div class="diagram-modal__box">
       <header class="diagram-modal__header">
         <h3 class="diagram-modal__title">📊 Esquema do Modelo Lógico Relacional (12 Tabelas)</h3>
-        <button class="diagram-modal__close-btn" data-modal-close="modal-logico" aria-label="Fechar Modal">&times;</button>
+        <button class="diagram-modal__close-btn" data-modal-close="modal-logico"
+          aria-label="Fechar Modal">&times;</button>
       </header>
       <div class="diagram-modal__content">
         <div class="diagram-modal__canvas">
-          <!-- EDITE AQUI: Insira a tag de imagem real do modelo lógico para exibição no projetor -->
-          <div class="diagram-viewer__placeholder-content">
-            <span class="diagram-viewer__icon">📊</span>
-            <p class="diagram-viewer__instruction">[ Imagem do Modelo Lógico Relacional Ampliada ]</p>
-            <span class="diagram-viewer__hint">Exibição de alta resolução das 12 tabelas, chaves primárias e relacionamentos</span>
-          </div>
+          <img src="ModeloLogicov2.jpeg" alt="Esquema do Modelo Lógico Relacional Ampliado" class="diagram-modal__image">
         </div>
       </div>
       <footer class="diagram-modal__footer">
-        <span class="diagram-modal__legend">Pressione <code>ESC</code> ou clique no botão ao lado para fechar.</span>
+        <span class="diagram-modal__legend">🔍 <strong>Dica:</strong> Clique na imagem para alternar o zoom detalhado &bull; Pressione <code>ESC</code> ou clique fora para fechar.</span>
         <button class="btn btn-secondary" data-modal-close="modal-logico" type="button">Fechar Janela</button>
       </footer>
     </div>
@@ -1712,4 +1743,5 @@ ORDER BY faturamento_total_bruto DESC;</code></pre>
   <!-- Script Vanilla Didático -->
   <script src="script.js"></script>
 </body>
+
 </html>
