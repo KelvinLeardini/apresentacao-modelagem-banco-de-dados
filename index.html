@@ -1372,15 +1372,15 @@ SELECT id_user, tel FROM telefones;</code></pre>
           </div>
         </details>
 
-        <!-- Query 02: Top 5 músicas mais reproduzidas -->
+        <!-- Query 02: Consultas Analíticas (JOIN, Histórico, Agregação e Agrupamento) -->
         <details class="query-accordion">
           <summary class="query-accordion__header">
             <span class="query-accordion__icon-indicator"></span>
-            <span class="query-accordion__title">Consulta 02 — Top 5 músicas mais reproduzidas na plataforma (GROUP BY +
-              COUNT + ORDER BY)</span>
-            <span class="query-accordion__badge">GROUP BY & COUNT</span>
+            <span class="query-accordion__title">Consulta 02 — Consultas Analíticas: Pagamentos Pendentes, Histórico, Contagem e Agrupamento</span>
+            <span class="query-accordion__badge">SELECT / DQL</span>
           </summary>
           <div class="query-accordion__content">
+            <!-- 1. Janela do Editor SQL -->
             <div class="ide-window">
               <div class="ide-window__header">
                 <div class="ide-window__controls">
@@ -1388,72 +1388,126 @@ SELECT id_user, tel FROM telefones;</code></pre>
                   <span class="ide-window__circle"></span>
                   <span class="ide-window__circle"></span>
                 </div>
-                <span class="ide-window__filename">query_02_top_reproduzidas.sql</span>
-                <span class="ide-window__tag">[SELECT / DQL]</span>
+                <span class="ide-window__filename">query_02_consultas_analiticas.sql</span>
+                <span class="ide-window__tag">[SELECT / MyCompiler]</span>
               </div>
               <div class="ide-window__body">
-                <!-- EDITE AQUI: Comando SELECT da Query 02 -->
-                <pre class="ide-window__code"><code>SELECT 
-    m.id_musica,
-    m.titulo_musica,
-    a.nome_artistico AS artista,
-    COUNT(h.id_reproducao) AS total_reproducoes
-FROM tb_musicas m
-INNER JOIN tb_albuns alb ON m.id_album = alb.id_album
-INNER JOIN tb_artistas a ON alb.id_artista = a.id_artista
-LEFT JOIN tb_historico_reproducao h ON m.id_musica = h.id_musica
-GROUP BY m.id_musica, m.titulo_musica, a.nome_artistico
-ORDER BY total_reproducoes DESC
-LIMIT 5;</code></pre>
+                <!-- EDITE AQUI: Comandos da Consulta 02 -->
+                <pre class="ide-window__code"><code>SELECT u.nome, p.id_user FROM pagamentos AS p INNER JOIN users AS u ON u.id_user = p.id_user WHERE status_pagamento = 0;
+
+SELECT id_user, id_musica, reg_time FROM historicos ORDER BY reg_time; 
+
+SELECT COUNT(id_plano) FROM pagamentos WHERE status_pagamento = 0 AND id_plano = 2;
+
+SELECT COUNT(cidade) FROM users GROUP BY cidade;</code></pre>
               </div>
             </div>
 
-            <div class="query-output">
+            <!-- 2. Resultados das Consultas -->
+            <div class="query-output" style="margin-top: 1.5rem;">
               <div class="query-output__header">
                 <span class="query-output__icon">📋</span>
-                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Ranking de
-                  audiência</span>
+                <span class="query-output__title">1. Usuários com Pagamento Pendente (status_pagamento = 0 via INNER JOIN)</span>
               </div>
-              <!-- EDITE AQUI: Tabela com o retorno da Query 02 -->
               <div class="table-responsive">
                 <table class="db-table db-table--output">
                   <thead>
                     <tr>
-                      <th>id_musica</th>
-                      <th>titulo_musica</th>
-                      <th>artista</th>
-                      <th>total_reproducoes</th>
+                      <th>nome</th>
+                      <th>id_user</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>1001</td>
-                      <td>Midnight City Drive</td>
-                      <td>The Midnight Echoes</td>
-                      <td>2</td>
-                    </tr>
-                    <tr>
-                      <td>1004</td>
-                      <td>Retro Highway 88</td>
-                      <td>Neon Cyberflow</td>
+                      <td>Edson da Silva</td>
                       <td>1</td>
                     </tr>
                     <tr>
-                      <td>1003</td>
-                      <td>Samba dos Horizontes</td>
-                      <td>Clara Viana & Quinteto</td>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                      <td>1002</td>
-                      <td>Neon Reflections</td>
-                      <td>The Midnight Echoes</td>
-                      <td>0</td>
+                      <td>Gustavo da Silva</td>
+                      <td>3</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
+
+            <div class="query-output" style="margin-top: 1.5rem;">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">2. Histórico de Reproduções (ORDER BY reg_time)</span>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>id_user</th>
+                      <th>id_musica</th>
+                      <th>reg_time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>2026-12-20 11:10:11</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2026-12-21 10:20:20</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>2</td>
+                      <td>2026-12-22 12:59:20</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="query-output" style="margin-top: 1.5rem;">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">3. Quantidade de Pagamentos Pendentes no Plano 2 (COUNT com WHERE)</span>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>COUNT(id_plano)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="query-output" style="margin-top: 1.5rem;">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">4. Contagem de Usuários Agrupados por Cidade (GROUP BY cidade)</span>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>COUNT(cidade)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>4</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
           </div>
         </details>
 
