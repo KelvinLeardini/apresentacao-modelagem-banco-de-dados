@@ -1158,29 +1158,28 @@ INSERT art_music_assoc (id_art, id_musica) VALUES
     </section>
 
     <!-- ========================================================================
-         SEÇÃO 5: QUERIES DE EXEMPLO E RESULTADOS DE PESQUISA (DQL)
+         SEÇÃO 5: CONSULTA SQL E RESULTADOS DE PESQUISA
          ======================================================================== -->
     <section id="secao-5" class="section">
       <header class="section__header">
         <div class="section__badge">ETAPA 05</div>
-        <h2 class="section__title">Queries de Pesquisa e Retorno de Dados (DQL)</h2>
+        <h2 class="section__title">Consulta SQL e Teste de Integridade Referencial</h2>
         <p class="section__description">
-          Demonstração de consultas analíticas e relacionais com junções (JOIN), agregações (COUNT, SUM) e ordenações
-          para validação em sala de aula.
+          Demonstração da consulta e teste prático de integridade referencial com validação do efeito de exclusão em cascata (ON DELETE CASCADE).
         </p>
       </header>
 
       <div class="accordions-container">
 
-        <!-- Consulta 01: Estado Inicial de Usuários e Telefones (Aberta por padrão) -->
+        <!-- Consulta Única: Validação de Integridade e ON DELETE CASCADE -->
         <details class="query-accordion" open>
           <summary class="query-accordion__header">
-            <span class="code-accordion__icon-indicator"></span>
-            <span class="query-accordion__title">Consulta 01 — Estado Inicial: Listagem de Usuários e Telefones (Pré-Deleção)</span>
-            <span class="query-accordion__badge">SELECT / DQL</span>
+            <span class="query-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Consulta — Teste de Integridade Referencial com ON DELETE CASCADE</span>
+            <span class="query-accordion__badge">CONSULTA SQL</span>
           </summary>
           <div class="query-accordion__content">
-            <!-- 1. Parte Superior: Janela do Editor SQL -->
+            <!-- 1. Janela do Editor SQL -->
             <div class="ide-window">
               <div class="ide-window__header">
                 <div class="ide-window__controls">
@@ -1188,23 +1187,23 @@ INSERT art_music_assoc (id_art, id_musica) VALUES
                   <span class="ide-window__circle"></span>
                   <span class="ide-window__circle"></span>
                 </div>
-                <span class="ide-window__filename">query_01_estado_inicial.sql</span>
-                <span class="ide-window__tag">[SELECT / MyCompiler]</span>
+                <span class="ide-window__filename">consulta_teste_cascade.sql</span>
+                <span class="ide-window__tag">[SQL / MyCompiler]</span>
               </div>
               <div class="ide-window__body">
-                <pre class="ide-window__code"><code>-- 1. Listar todos os telefones vinculados
-SELECT id_user, tel FROM telefones;
-
--- 2. Listar todos os usuários cadastrados
-SELECT id_user, nome FROM users;</code></pre>
+                <pre class="ide-window__code"><code>SELECT id_user, tel FROM telefones;     
+SELECT id_user, nome FROM users;
+DELETE FROM users WHERE id_user = 4;
+SELECT id_user, nome FROM users;
+SELECT id_user, tel FROM telefones;</code></pre>
               </div>
             </div>
 
-            <!-- 2. Parte Inferior: Resultado da Pesquisa -->
-            <div class="query-output">
+            <!-- 2. Resultados da Execução -->
+            <div class="query-output" style="margin-top: 1.5rem;">
               <div class="query-output__header">
                 <span class="query-output__icon">📋</span>
-                <span class="query-output__title">Resultado da Pesquisa 1: Tabela 'telefones' (6 registros encontrados)</span>
+                <span class="query-output__title">1. Retorno: SELECT id_user, tel FROM telefones; (Antes do DELETE)</span>
               </div>
               <div class="table-responsive">
                 <table class="db-table db-table--output">
@@ -1233,7 +1232,7 @@ SELECT id_user, nome FROM users;</code></pre>
                     </tr>
                     <tr style="background-color: #fee2e2;">
                       <td><strong>4</strong></td>
-                      <td><strong>11989811111</strong> <em>(Telefone de Alan da Silva)</em></td>
+                      <td><strong>11989811111</strong> <em>(Telefone associado ao Usuário 4)</em></td>
                     </tr>
                     <tr>
                       <td>5</td>
@@ -1244,10 +1243,10 @@ SELECT id_user, nome FROM users;</code></pre>
               </div>
             </div>
 
-            <div class="query-output">
+            <div class="query-output" style="margin-top: 1.5rem;">
               <div class="query-output__header">
                 <span class="query-output__icon">📋</span>
-                <span class="query-output__title">Resultado da Pesquisa 2: Tabela 'users' (5 usuários cadastrados)</span>
+                <span class="query-output__title">2. Retorno: SELECT id_user, nome FROM users; (Antes do DELETE)</span>
               </div>
               <div class="table-responsive">
                 <table class="db-table db-table--output">
@@ -1282,79 +1281,22 @@ SELECT id_user, nome FROM users;</code></pre>
                 </table>
               </div>
             </div>
-          </div>
-        </details>
 
-        <!-- Consulta 02: Deleção com ON DELETE CASCADE -->
-        <details class="query-accordion">
-          <summary class="query-accordion__header">
-            <span class="code-accordion__icon-indicator"></span>
-            <span class="query-accordion__title">Operação 02 — Exclusão do Usuário ID 4 (Validação de Integridade: ON DELETE CASCADE)</span>
-            <span class="query-accordion__badge">DELETE / DML</span>
-          </summary>
-          <div class="query-accordion__content">
-            <div class="ide-window">
-              <div class="ide-window__header">
-                <div class="ide-window__controls">
-                  <span class="ide-window__circle"></span>
-                  <span class="ide-window__circle"></span>
-                  <span class="ide-window__circle"></span>
-                </div>
-                <span class="ide-window__filename">query_02_delete_cascade.sql</span>
-                <span class="ide-window__tag">[DELETE / MyCompiler]</span>
-              </div>
-              <div class="ide-window__body">
-                <pre class="ide-window__code"><code>-- Exclui o usuário ID = 4 da tabela pai 'users'
--- A constraint 'fk_id_user_tel' com ON DELETE CASCADE deve remover automaticamente
--- todos os registros dependentes vinculados na tabela 'telefones'.
-DELETE FROM users WHERE id_user = 4;</code></pre>
-              </div>
-            </div>
-
-            <div class="query-output">
+            <div class="query-output" style="margin-top: 1.5rem;">
               <div class="query-output__header">
                 <span class="query-output__icon">⚡</span>
-                <span class="query-output__title">Status de Execução no SGBD</span>
+                <span class="query-output__title">3. Execução: DELETE FROM users WHERE id_user = 4;</span>
               </div>
-              <div class="table-responsive" style="padding: 1rem; font-family: var(--font-mono); font-size: 0.9rem; background-color: var(--bg-surface);">
+              <div class="table-responsive" style="padding: 1rem 1.25rem; font-family: var(--font-mono); font-size: 0.875rem; background-color: var(--bg-surface);">
                 <p><strong>Query OK:</strong> 1 row affected (0.01 sec)</p>
-                <p style="color: var(--text-secondary); margin-top: 0.25rem;">Regra <code>ON DELETE CASCADE</code> disparada com sucesso para a chave estrangeira <code>fk_id_user_tel</code> na tabela <code>telefones</code>.</p>
-              </div>
-            </div>
-          </div>
-        </details>
-
-        <!-- Consulta 03: Comprovação Pós-Deleção -->
-        <details class="query-accordion">
-          <summary class="query-accordion__header">
-            <span class="code-accordion__icon-indicator"></span>
-            <span class="query-accordion__title">Consulta 03 — Verificação Pós-Deleção: Comprovação da Remoção em Cascata</span>
-            <span class="query-accordion__badge">VALIDAÇÃO CASCADE</span>
-          </summary>
-          <div class="query-accordion__content">
-            <div class="ide-window">
-              <div class="ide-window__header">
-                <div class="ide-window__controls">
-                  <span class="ide-window__circle"></span>
-                  <span class="ide-window__circle"></span>
-                  <span class="ide-window__circle"></span>
-                </div>
-                <span class="ide-window__filename">query_03_pos_delecao.sql</span>
-                <span class="ide-window__tag">[SELECT / MyCompiler]</span>
-              </div>
-              <div class="ide-window__body">
-                <pre class="ide-window__code"><code>-- 1. Verifica se o usuário 4 foi removido da tabela 'users'
-SELECT id_user, nome FROM users;
-
--- 2. Comprova que o telefone do usuário 4 foi deletado automaticamente da tabela 'telefones'
-SELECT id_user, tel FROM telefones;</code></pre>
+                <p style="color: var(--text-secondary); margin-top: 0.35rem;">A constraint <code>fk_id_user_tel</code> com a regra <code>ON DELETE CASCADE</code> disparou automaticamente a remoção dos registros dependentes vinculados na tabela <code>telefones</code>.</p>
               </div>
             </div>
 
-            <div class="query-output">
+            <div class="query-output" style="margin-top: 1.5rem;">
               <div class="query-output__header">
                 <span class="query-output__icon">📋</span>
-                <span class="query-output__title">Resultado da Pesquisa 1: Tabela 'users' (4 usuários restantes — Usuário 4 excluído)</span>
+                <span class="query-output__title">4. Retorno: SELECT id_user, nome FROM users; (Após o DELETE)</span>
               </div>
               <div class="table-responsive">
                 <table class="db-table db-table--output">
@@ -1386,10 +1328,10 @@ SELECT id_user, tel FROM telefones;</code></pre>
               </div>
             </div>
 
-            <div class="query-output">
+            <div class="query-output" style="margin-top: 1.5rem;">
               <div class="query-output__header">
                 <span class="query-output__icon">📋</span>
-                <span class="query-output__title">Resultado da Pesquisa 2: Tabela 'telefones' (Telefone do usuário 4 deletado automaticamente via CASCADE)</span>
+                <span class="query-output__title">5. Retorno: SELECT id_user, tel FROM telefones; (Comprovação da Exclusão em Cascata)</span>
               </div>
               <div class="table-responsive">
                 <table class="db-table db-table--output">
@@ -1424,89 +1366,7 @@ SELECT id_user, tel FROM telefones;</code></pre>
                 </table>
               </div>
             </div>
-          </div>
-        </details>
 
-        <!-- Consulta 04: Relatório do Catálogo Fonográfico com INNER JOIN -->
-        <details class="query-accordion">
-          <summary class="query-accordion__header">
-            <span class="code-accordion__icon-indicator"></span>
-            <span class="query-accordion__title">Consulta 04 — Catálogo Musical: Músicas, Álbuns, Artistas e Gêneros (INNER JOIN)</span>
-            <span class="query-accordion__badge">INNER JOIN MULTIPLO</span>
-          </summary>
-          <div class="query-accordion__content">
-            <div class="ide-window">
-              <div class="ide-window__header">
-                <div class="ide-window__controls">
-                  <span class="ide-window__circle"></span>
-                  <span class="ide-window__circle"></span>
-                  <span class="ide-window__circle"></span>
-                </div>
-                <span class="ide-window__filename">query_04_catalogo_musical.sql</span>
-                <span class="ide-window__tag">[SELECT / MyCompiler]</span>
-              </div>
-              <div class="ide-window__body">
-                <pre class="ide-window__code"><code>SELECT 
-    m.id_musica,
-    m.nome AS musica,
-    m.duracao_secs,
-    alb.nome AS album,
-    art.nome AS artista,
-    g.nome AS genero
-FROM musicas m
-INNER JOIN albuns alb ON m.id_album = alb.id_album
-INNER JOIN artistas art ON alb.id_art = art.id_art
-INNER JOIN generos g ON m.id_genero = g.id_genero
-ORDER BY m.id_musica ASC;</code></pre>
-              </div>
-            </div>
-
-            <div class="query-output">
-              <div class="query-output__header">
-                <span class="query-output__icon">📋</span>
-                <span class="query-output__title">Resultado da Pesquisa: Relação Completa do Catálogo Fonográfico</span>
-              </div>
-              <div class="table-responsive">
-                <table class="db-table db-table--output">
-                  <thead>
-                    <tr>
-                      <th>id_musica</th>
-                      <th>musica</th>
-                      <th>duracao_secs</th>
-                      <th>album</th>
-                      <th>artista</th>
-                      <th>genero</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>O sol que levou a lua</td>
-                      <td>240</td>
-                      <td>Uma vez levou</td>
-                      <td>Roberto Milos</td>
-                      <td>Jazz</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>A terra</td>
-                      <td>120</td>
-                      <td>Ùltima Adeus a Humanidade</td>
-                      <td>Roberta Milos</td>
-                      <td>Pop</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Boneco de Barro</td>
-                      <td>320</td>
-                      <td>Até logo, meus deus!</td>
-                      <td>Roberta Milos</td>
-                      <td>Pop Latino</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
           </div>
         </details>
 
