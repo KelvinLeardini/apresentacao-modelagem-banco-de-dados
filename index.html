@@ -1158,28 +1158,29 @@ INSERT art_music_assoc (id_art, id_musica) VALUES
     </section>
 
     <!-- ========================================================================
-         SEÇÃO 5: CONSULTA SQL E RESULTADOS DE PESQUISA
+         SEÇÃO 5: QUERIES DE EXEMPLO E RESULTADOS DE PESQUISA (DQL)
          ======================================================================== -->
     <section id="secao-5" class="section">
       <header class="section__header">
         <div class="section__badge">ETAPA 05</div>
-        <h2 class="section__title">Consulta SQL e Teste de Integridade Referencial</h2>
+        <h2 class="section__title">Queries de Pesquisa e Retorno de Dados (DQL)</h2>
         <p class="section__description">
-          Demonstração da consulta e teste prático de integridade referencial com validação do efeito de exclusão em cascata (ON DELETE CASCADE).
+          Demonstração de consultas analíticas e relacionais com junções (JOIN), agregações (COUNT, SUM) e ordenações
+          para validação em sala de aula.
         </p>
       </header>
 
       <div class="accordions-container">
 
-        <!-- Consulta Única: Validação de Integridade e ON DELETE CASCADE -->
+        <!-- Query 01: Usuários, Telefones e Deleção com CASCADE (Aberta por padrão) -->
         <details class="query-accordion" open>
           <summary class="query-accordion__header">
             <span class="query-accordion__icon-indicator"></span>
-            <span class="query-accordion__title">Consulta — Teste de Integridade Referencial com ON DELETE CASCADE</span>
-            <span class="query-accordion__badge">CONSULTA SQL</span>
+            <span class="query-accordion__title">Consulta 01 — Teste de Integridade Referencial e Exclusão em Cascata (ON DELETE CASCADE)</span>
+            <span class="query-accordion__badge">SELECT & DELETE</span>
           </summary>
           <div class="query-accordion__content">
-            <!-- 1. Janela do Editor SQL -->
+            <!-- 1. Parte Superior: Janela do Editor SQL -->
             <div class="ide-window">
               <div class="ide-window__header">
                 <div class="ide-window__controls">
@@ -1187,10 +1188,11 @@ INSERT art_music_assoc (id_art, id_musica) VALUES
                   <span class="ide-window__circle"></span>
                   <span class="ide-window__circle"></span>
                 </div>
-                <span class="ide-window__filename">consulta_teste_cascade.sql</span>
+                <span class="ide-window__filename">query_01_teste_cascade.sql</span>
                 <span class="ide-window__tag">[SQL / MyCompiler]</span>
               </div>
               <div class="ide-window__body">
+                <!-- EDITE AQUI: Comandos da Consulta 01 e Deleção -->
                 <pre class="ide-window__code"><code>SELECT id_user, tel FROM telefones;     
 SELECT id_user, nome FROM users;
 DELETE FROM users WHERE id_user = 4;
@@ -1199,7 +1201,7 @@ SELECT id_user, tel FROM telefones;</code></pre>
               </div>
             </div>
 
-            <!-- 2. Resultados da Execução -->
+            <!-- 2. Parte Inferior: Resultados da Execução -->
             <div class="query-output" style="margin-top: 1.5rem;">
               <div class="query-output__header">
                 <span class="query-output__icon">📋</span>
@@ -1289,7 +1291,7 @@ SELECT id_user, tel FROM telefones;</code></pre>
               </div>
               <div class="table-responsive" style="padding: 1rem 1.25rem; font-family: var(--font-mono); font-size: 0.875rem; background-color: var(--bg-surface);">
                 <p><strong>Query OK:</strong> 1 row affected (0.01 sec)</p>
-                <p style="color: var(--text-secondary); margin-top: 0.35rem;">A constraint <code>fk_id_user_tel</code> com a regra <code>ON DELETE CASCADE</code> disparou automaticamente a remoção dos registros dependentes vinculados na tabela <code>telefones</code>.</p>
+                <p style="color: var(--text-secondary); margin-top: 0.35rem;">A constraint <code>fk_id_user_tel</code> com a regra <code>ON DELETE CASCADE</code> disparou automaticamente a remoção dos registros dependentes na tabela <code>telefones</code>.</p>
               </div>
             </div>
 
@@ -1367,6 +1369,255 @@ SELECT id_user, tel FROM telefones;</code></pre>
               </div>
             </div>
 
+          </div>
+        </details>
+
+        <!-- Query 02: Top 5 músicas mais reproduzidas -->
+        <details class="query-accordion">
+          <summary class="query-accordion__header">
+            <span class="query-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Consulta 02 — Top 5 músicas mais reproduzidas na plataforma (GROUP BY +
+              COUNT + ORDER BY)</span>
+            <span class="query-accordion__badge">GROUP BY & COUNT</span>
+          </summary>
+          <div class="query-accordion__content">
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">query_02_top_reproduzidas.sql</span>
+                <span class="ide-window__tag">[SELECT / DQL]</span>
+              </div>
+              <div class="ide-window__body">
+                <!-- EDITE AQUI: Comando SELECT da Query 02 -->
+                <pre class="ide-window__code"><code>SELECT 
+    m.id_musica,
+    m.titulo_musica,
+    a.nome_artistico AS artista,
+    COUNT(h.id_reproducao) AS total_reproducoes
+FROM tb_musicas m
+INNER JOIN tb_albuns alb ON m.id_album = alb.id_album
+INNER JOIN tb_artistas a ON alb.id_artista = a.id_artista
+LEFT JOIN tb_historico_reproducao h ON m.id_musica = h.id_musica
+GROUP BY m.id_musica, m.titulo_musica, a.nome_artistico
+ORDER BY total_reproducoes DESC
+LIMIT 5;</code></pre>
+              </div>
+            </div>
+
+            <div class="query-output">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Ranking de
+                  audiência</span>
+              </div>
+              <!-- EDITE AQUI: Tabela com o retorno da Query 02 -->
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>id_musica</th>
+                      <th>titulo_musica</th>
+                      <th>artista</th>
+                      <th>total_reproducoes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1001</td>
+                      <td>Midnight City Drive</td>
+                      <td>The Midnight Echoes</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>1004</td>
+                      <td>Retro Highway 88</td>
+                      <td>Neon Cyberflow</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>1003</td>
+                      <td>Samba dos Horizontes</td>
+                      <td>Clara Viana & Quinteto</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>1002</td>
+                      <td>Neon Reflections</td>
+                      <td>The Midnight Echoes</td>
+                      <td>0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Query 03: Faixas de uma playlist com artista e álbum -->
+        <details class="query-accordion">
+          <summary class="query-accordion__header">
+            <span class="query-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Consulta 03 — Buscar todas as faixas de uma Playlist específica com
+              nome do Artista e Álbum</span>
+            <span class="query-accordion__badge">MULTI JOIN</span>
+          </summary>
+          <div class="query-accordion__content">
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">query_03_faixas_playlist.sql</span>
+                <span class="ide-window__tag">[SELECT / DQL]</span>
+              </div>
+              <div class="ide-window__body">
+                <!-- EDITE AQUI: Comando SELECT da Query 03 -->
+                <pre class="ide-window__code"><code>SELECT 
+    p.nome_playlist,
+    pm.ordem_execucao AS ordem,
+    m.titulo_musica,
+    a.nome_artistico AS artista,
+    alb.titulo_album AS album,
+    SEC_TO_TIME(m.duracao_segundos) AS duracao_formatada
+FROM tb_playlists p
+INNER JOIN tb_playlist_musica pm ON p.id_playlist = pm.id_playlist
+INNER JOIN tb_musicas m ON pm.id_musica = m.id_musica
+INNER JOIN tb_albuns alb ON m.id_album = alb.id_album
+INNER JOIN tb_artistas a ON alb.id_artista = a.id_artista
+WHERE p.id_playlist = 301
+ORDER BY pm.ordem_execucao ASC;</code></pre>
+              </div>
+            </div>
+
+            <div class="query-output">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Playlist ID 301 (Foco
+                  no Código & Café)</span>
+              </div>
+              <!-- EDITE AQUI: Tabela com o retorno da Query 03 -->
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>nome_playlist</th>
+                      <th>ordem</th>
+                      <th>titulo_musica</th>
+                      <th>artista</th>
+                      <th>album</th>
+                      <th>duracao_formatada</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Foco no Código & Café</td>
+                      <td>1</td>
+                      <td>Midnight City Drive</td>
+                      <td>The Midnight Echoes</td>
+                      <td>Electric Sunset Horizon</td>
+                      <td>00:04:08</td>
+                    </tr>
+                    <tr>
+                      <td>Foco no Código & Café</td>
+                      <td>2</td>
+                      <td>Retro Highway 88</td>
+                      <td>Neon Cyberflow</td>
+                      <td>Digital Nostalgia Dreams</td>
+                      <td>00:03:02</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Query 04: Relatório de faturamento por tipo de plano -->
+        <details class="query-accordion">
+          <summary class="query-accordion__header">
+            <span class="query-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Consulta 04 — Relatório de faturamento por tipo de plano de assinatura
+              (SUM + GROUP BY)</span>
+            <span class="query-accordion__badge">SUM & FINANCEIRO</span>
+          </summary>
+          <div class="query-accordion__content">
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">query_04_faturamento_planos.sql</span>
+                <span class="ide-window__tag">[SELECT / DQL]</span>
+              </div>
+              <div class="ide-window__body">
+                <!-- EDITE AQUI: Comando SELECT da Query 04 -->
+                <pre class="ide-window__code"><code>SELECT 
+    p.id_plano,
+    p.nome_plano,
+    COUNT(DISTINCT u.id_usuario) AS assinantes_ativos,
+    COALESCE(SUM(pag.valor_pago), 0.00) AS faturamento_total_bruto
+FROM tb_planos p
+LEFT JOIN tb_usuarios u ON p.id_plano = u.id_plano AND u.status_conta = 'Ativo'
+LEFT JOIN tb_pagamentos pag ON u.id_usuario = pag.id_usuario AND pag.status_transacao = 'Aprovado'
+GROUP BY p.id_plano, p.nome_plano
+ORDER BY faturamento_total_bruto DESC;</code></pre>
+              </div>
+            </div>
+
+            <div class="query-output">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Total Consolidado por
+                  Plano</span>
+              </div>
+              <!-- EDITE AQUI: Tabela com o retorno da Query 04 -->
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>id_plano</th>
+                      <th>nome_plano</th>
+                      <th>assinantes_ativos</th>
+                      <th>faturamento_total_bruto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>4</td>
+                      <td>Premium Familiar</td>
+                      <td>1</td>
+                      <td>R$ 34.90</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Premium Individual</td>
+                      <td>1</td>
+                      <td>R$ 21.90</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Premium Universitário</td>
+                      <td>1</td>
+                      <td>R$ 11.90</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>Free com Anúncios</td>
+                      <td>0</td>
+                      <td>R$ 0.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </details>
 
