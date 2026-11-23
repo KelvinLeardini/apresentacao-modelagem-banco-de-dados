@@ -268,126 +268,157 @@
         <!-- PAINEL 1: USUÁRIOS & PLANOS (Tabelas 1, 2 e 3) -->
         <div id="tab-modulo-1" class="tab-pane active" role="tabpanel" aria-labelledby="btn-tab-1">
 
-          <!-- Tabela 01: usuario -->
+          <!-- Tabela 01: users -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 01/12</span>
-              <h4 class="table-card__title"><code>TABLE: usuario</code></h4>
+              <h4 class="table-card__title"><code>TABLE: users</code></h4>
               <span class="table-card__meta">Entidade Central &bull; Contas e endereços dos usuários</span>
             </div>
-            <!-- EDITE AQUI: Dados da tabela usuario -->
+            <!-- EDITE AQUI: Dados da tabela users -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
                     <th><span class="badge badge--pk">PK</span> id_user</th>
-                    <th>Nome</th>
+                    <th>nome</th>
                     <th>cpf</th>
                     <th>email</th>
                     <th>senha</th>
-                    <th><span class="badge badge--fk">FK</span> fk_telefone</th>
                     <th>cep</th>
-                    <th>Rua</th>
+                    <th>rua</th>
                     <th>numero</th>
                     <th>cidade</th>
                     <th>bairro</th>
-                    <th><span class="badge badge--fk">FK</span> fk_id_plano</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td><code>1</code></td>
-                    <td>Lucas Mendes Silva</td>
-                    <td>123.456.789-00</td>
-                    <td>lucas.mendes@email.com</td>
-                    <td><code>••••••••</code></td>
-                    <td><code>1</code></td>
-                    <td>01310-100</td>
-                    <td>Av. Paulista</td>
-                    <td>1578</td>
-                    <td>São Paulo</td>
-                    <td>Bela Vista</td>
-                    <td><code>2</code></td>
+                    <td>Edson da Silva</td>
+                    <td>123</td>
+                    <td>edson@gmail.com</td>
+                    <td><code>••••</code></td>
+                    <td>34019</td>
+                    <td>Avenida</td>
+                    <td>200</td>
+                    <td>Guarulhos</td>
+                    <td>Brasil</td>
                   </tr>
                   <tr>
                     <td><code>2</code></td>
-                    <td>Beatriz Helena Costa</td>
-                    <td>234.567.890-11</td>
-                    <td>beatriz.costa@email.com</td>
-                    <td><code>••••••••</code></td>
-                    <td><code>2</code></td>
-                    <td>22041-001</td>
-                    <td>Rua Barata Ribeiro</td>
-                    <td>450</td>
-                    <td>Rio de Janeiro</td>
-                    <td>Copacabana</td>
-                    <td><code>3</code></td>
+                    <td>Renata de Melo</td>
+                    <td>122</td>
+                    <td>renata@gmail.com</td>
+                    <td><code>••••</code></td>
+                    <td>34020</td>
+                    <td>Avenida</td>
+                    <td>202</td>
+                    <td>Guarulhos</td>
+                    <td>Brasil</td>
                   </tr>
                   <tr>
                     <td><code>3</code></td>
-                    <td>Carlos Eduardo Rocha</td>
-                    <td>345.678.901-22</td>
-                    <td>cadu.rocha@email.com</td>
-                    <td><code>••••••••</code></td>
-                    <td><code>3</code></td>
-                    <td>30130-110</td>
-                    <td>Av. Afonso Pena</td>
-                    <td>1200</td>
-                    <td>Belo Horizonte</td>
-                    <td>Centro</td>
+                    <td>Gustavo da Silva</td>
+                    <td>121</td>
+                    <td>gustavo@gmail.com</td>
+                    <td><code>••••</code></td>
+                    <td>34020</td>
+                    <td>Avenida</td>
+                    <td>206</td>
+                    <td>Guarulhos</td>
+                    <td>Brasil</td>
+                  </tr>
+                  <tr>
                     <td><code>4</code></td>
+                    <td>Alan da Silva</td>
+                    <td>120</td>
+                    <td>alan@gmail.com</td>
+                    <td><code>••••</code></td>
+                    <td>34020</td>
+                    <td>Avenida</td>
+                    <td>210</td>
+                    <td>Guarulhos</td>
+                    <td>Brasil</td>
+                  </tr>
+                  <tr>
+                    <td><code>5</code></td>
+                    <td>Pedro Henrique</td>
+                    <td>119</td>
+                    <td>pedro@gmail.com</td>
+                    <td><code>••••</code></td>
+                    <td>34020</td>
+                    <td>Avenida</td>
+                    <td>20</td>
+                    <td>Guarulhos</td>
+                    <td>Brasil</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </article>
 
-          <!-- Tabela 02: telefone -->
+          <!-- Tabela 02: telefones -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 02/12</span>
-              <h4 class="table-card__title"><code>TABLE: telefone</code></h4>
-              <span class="table-card__meta">Entidade de Contato &bull; Números vinculados aos usuários</span>
+              <h4 class="table-card__title"><code>TABLE: telefones</code></h4>
+              <span class="table-card__meta">Entidade de Contato &bull; Números de telefone vinculados aos usuários</span>
             </div>
-            <!-- EDITE AQUI: Dados da tabela telefone -->
+            <!-- EDITE AQUI: Dados da tabela telefones -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
-                    <th><span class="badge badge--pk">PK</span> id_telefone</th>
-                    <th>Nome</th>
-                    <th><span class="badge badge--fk">FK</span> fk_id_user</th>
+                    <th><span class="badge badge--pk">PK</span> id_tel</th>
+                    <th>tel</th>
+                    <th><span class="badge badge--fk">FK</span> id_user</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td><code>1</code></td>
-                    <td>(11) 98765-4321</td>
+                    <td>11989850920</td>
                     <td><code>1</code></td>
                   </tr>
                   <tr>
                     <td><code>2</code></td>
-                    <td>(21) 99876-5432</td>
-                    <td><code>2</code></td>
+                    <td>11989850910</td>
+                    <td><code>1</code></td>
                   </tr>
                   <tr>
                     <td><code>3</code></td>
-                    <td>(31) 97654-3210</td>
-                    <td><code>3</code></td>
+                    <td>11989850912</td>
+                    <td><code>2</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>4</code></td>
+                    <td>11989850920</td>
+                    <td><code>2</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>5</code></td>
+                    <td>11989811111</td>
+                    <td><code>4</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>6</code></td>
+                    <td>11981119191</td>
+                    <td><code>5</code></td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </article>
 
-          <!-- Tabela 03: plano -->
+          <!-- Tabela 03: planos -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 03/12</span>
-              <h4 class="table-card__title"><code>TABLE: plano</code></h4>
-              <span class="table-card__meta">Entidade Forte &bull; Definição dos tipos de assinatura</span>
+              <h4 class="table-card__title"><code>TABLE: planos</code></h4>
+              <span class="table-card__meta">Entidade Forte &bull; Tipos de assinatura e limites de usuários</span>
             </div>
-            <!-- EDITE AQUI: Dados da tabela plano -->
+            <!-- EDITE AQUI: Dados da tabela planos -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
@@ -401,27 +432,21 @@
                 <tbody>
                   <tr>
                     <td><code>1</code></td>
-                    <td>Free com Anúncios</td>
-                    <td>R$ 0,00</td>
-                    <td>1</td>
+                    <td>Gratuito</td>
+                    <td>R$ 0.00</td>
+                    <td>0</td>
                   </tr>
                   <tr>
                     <td><code>2</code></td>
-                    <td>Premium Individual</td>
-                    <td>R$ 21,90</td>
-                    <td>1</td>
+                    <td>Lite</td>
+                    <td>R$ 5.00</td>
+                    <td>0</td>
                   </tr>
                   <tr>
                     <td><code>3</code></td>
-                    <td>Premium Universitário</td>
-                    <td>R$ 11,90</td>
-                    <td>1</td>
-                  </tr>
-                  <tr>
-                    <td><code>4</code></td>
-                    <td>Premium Familiar</td>
-                    <td>R$ 34,90</td>
-                    <td>6</td>
+                    <td>Pro</td>
+                    <td>R$ 10.00</td>
+                    <td>0</td>
                   </tr>
                 </tbody>
               </table>
@@ -448,81 +473,81 @@
                     <th><span class="badge badge--pk">PK</span> id_pagamento</th>
                     <th>forma_de_pagamento</th>
                     <th>timestamp</th>
-                    <th><span class="badge badge--fk">FK</span> fk_id_plano</th>
-                    <th><span class="badge badge--fk">FK</span> fk_id_user</th>
+                    <th><span class="badge badge--fk">FK</span> id_user</th>
+                    <th><span class="badge badge--fk">FK</span> id_plano</th>
                     <th>status_pagamento</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><code>101</code></td>
-                    <td>Cartão de Crédito</td>
-                    <td>2026-11-15 08:14:22</td>
-                    <td><code>2</code></td>
                     <td><code>1</code></td>
-                    <td>Aprovado</td>
+                    <td>Pix</td>
+                    <td>2026-10-20 11:42:00</td>
+                    <td><code>1</code></td>
+                    <td><code>2</code></td>
+                    <td>0</td>
                   </tr>
                   <tr>
-                    <td><code>102</code></td>
-                    <td>PIX</td>
-                    <td>2026-11-16 14:30:10</td>
+                    <td><code>2</code></td>
+                    <td>Cartão de Crédito</td>
+                    <td>2026-10-21 11:42:00</td>
+                    <td><code>2</code></td>
+                    <td><code>3</code></td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td><code>3</code></td>
+                    <td>Boleto</td>
+                    <td>2026-10-22 13:34:00</td>
                     <td><code>3</code></td>
                     <td><code>2</code></td>
-                    <td>Aprovado</td>
-                  </tr>
-                  <tr>
-                    <td><code>103</code></td>
-                    <td>Boleto Bancário</td>
-                    <td>2026-11-17 19:45:00</td>
-                    <td><code>4</code></td>
-                    <td><code>3</code></td>
-                    <td>Aprovado</td>
+                    <td>0</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </article>
 
-          <!-- Tabela 05: Artistas -->
+          <!-- Tabela 05: artistas -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 05/12</span>
-              <h4 class="table-card__title"><code>TABLE: Artistas</code></h4>
-              <span class="table-card__meta">Entidade Forte &bull; Autores, bandas e intérpretes</span>
+              <h4 class="table-card__title"><code>TABLE: artistas</code></h4>
+              <span class="table-card__meta">Entidade Forte &bull; Autores, bandas e intérpretes cadastrados</span>
             </div>
-            <!-- EDITE AQUI: Dados da tabela Artistas -->
+            <!-- EDITE AQUI: Dados da tabela artistas -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
                     <th><span class="badge badge--pk">PK</span> id_art</th>
                     <th>nome</th>
-                    <th>senha</th>
                     <th>email</th>
+                    <th>senha</th>
                     <th>nacionalidade</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><code>10</code></td>
-                    <td>The Midnight Echoes</td>
+                    <td><code>1</code></td>
+                    <td>Roberto Milos</td>
+                    <td>roberto@gmail.com</td>
                     <td><code>••••••••</code></td>
-                    <td>contato@midnightechoes.co.uk</td>
-                    <td>Reino Unido</td>
+                    <td>Brasileiro</td>
                   </tr>
                   <tr>
-                    <td><code>20</code></td>
-                    <td>Clara Viana &amp; Quinteto</td>
+                    <td><code>2</code></td>
+                    <td>Roberta Milos</td>
+                    <td>roberta@gmail.com</td>
                     <td><code>••••••••</code></td>
-                    <td>producao@claraviana.art.br</td>
-                    <td>Brasil</td>
+                    <td>Brasileiro</td>
                   </tr>
                   <tr>
-                    <td><code>30</code></td>
-                    <td>Neon Cyberflow</td>
+                    <td><code>3</code></td>
+                    <td>Emanuele</td>
+                    <td>emanuele_tr@gmail.com</td>
                     <td><code>••••••••</code></td>
-                    <td>mgmt@neoncyberflow.ca</td>
-                    <td>Canadá</td>
+                    <td>Brasileiro</td>
                   </tr>
                 </tbody>
               </table>
@@ -542,33 +567,33 @@
                 <thead>
                   <tr>
                     <th><span class="badge badge--pk">PK</span> id_album</th>
-                    <th>Nome</th>
+                    <th>nome</th>
                     <th>qnt_musica</th>
-                    <th>data_criação</th>
-                    <th><span class="badge badge--fk">FK</span> fk_id_art</th>
+                    <th>data_de_criacao</th>
+                    <th><span class="badge badge--fk">FK</span> id_art</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><code>501</code></td>
-                    <td>Electric Sunset Horizon</td>
-                    <td>10</td>
-                    <td>2024-05-12</td>
-                    <td><code>10</code></td>
+                    <td><code>1</code></td>
+                    <td>Uma vez levou</td>
+                    <td>0</td>
+                    <td>1946-10-10</td>
+                    <td><code>1</code></td>
                   </tr>
                   <tr>
-                    <td><code>502</code></td>
-                    <td>Aquarela de Cordas</td>
-                    <td>8</td>
-                    <td>2023-11-20</td>
-                    <td><code>20</code></td>
+                    <td><code>2</code></td>
+                    <td>Ùltima Adeus a Humanidade</td>
+                    <td>0</td>
+                    <td>1999-12-31</td>
+                    <td><code>2</code></td>
                   </tr>
                   <tr>
-                    <td><code>503</code></td>
-                    <td>Digital Nostalgia Dreams</td>
-                    <td>6</td>
-                    <td>2025-02-14</td>
-                    <td><code>30</code></td>
+                    <td><code>3</code></td>
+                    <td>Até logo, meus deus!</td>
+                    <td>0</td>
+                    <td>2000-12-30</td>
+                    <td><code>2</code></td>
                   </tr>
                 </tbody>
               </table>
@@ -580,129 +605,122 @@
         <!-- PAINEL 3: MÚSICAS, GÊNEROS & AUTORIA (Tabelas 7, 8 e 9) -->
         <div id="tab-modulo-3" class="tab-pane" role="tabpanel" aria-labelledby="btn-tab-3">
 
-          <!-- Tabela 07: genero -->
+          <!-- Tabela 07: generos -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 07/12</span>
-              <h4 class="table-card__title"><code>TABLE: genero</code></h4>
+              <h4 class="table-card__title"><code>TABLE: generos</code></h4>
               <span class="table-card__meta">Entidade de Classificação &bull; Estilos e categorias musicais</span>
             </div>
-            <!-- EDITE AQUI: Dados da tabela genero -->
+            <!-- EDITE AQUI: Dados da tabela generos -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
                     <th><span class="badge badge--pk">PK</span> id_genero</th>
-                    <th>descrição</th>
-                    <th>nome_genero</th>
+                    <th>nome</th>
+                    <th>desc_genero</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td><code>1</code></td>
-                    <td>Guitarras elétricas, baixo e bateria marcantes</td>
-                    <td>Rock Clássico</td>
+                    <td>Pop Latino</td>
+                    <td>Música Pop Latino</td>
                   </tr>
                   <tr>
                     <td><code>2</code></td>
-                    <td>Fusão rítmica com instrumentos acústicos e poesia</td>
-                    <td>MPB</td>
+                    <td>Jazz</td>
+                    <td>Música Jazz</td>
                   </tr>
                   <tr>
                     <td><code>3</code></td>
-                    <td>Sintetizadores analógicos retrô e batidas cadenciadas</td>
-                    <td>Synthwave</td>
+                    <td>Pop</td>
+                    <td>Música Pop Internacional</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </article>
 
-          <!-- Tabela 08: musica -->
+          <!-- Tabela 08: musicas -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 08/12</span>
-              <h4 class="table-card__title"><code>TABLE: musica</code></h4>
-              <span class="table-card__meta">Entidade Central do Catálogo &bull; Faixas de áudio</span>
+              <h4 class="table-card__title"><code>TABLE: musicas</code></h4>
+              <span class="table-card__meta">Entidade Central do Catálogo &bull; Faixas de áudio e metadados</span>
             </div>
-            <!-- EDITE AQUI: Dados da tabela musica -->
+            <!-- EDITE AQUI: Dados da tabela musicas -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
                     <th><span class="badge badge--pk">PK</span> id_musica</th>
-                    <th>Nome</th>
-                    <th>tempo</th>
-                    <th><span class="badge badge--fk">FK</span> fk_id_album</th>
-                    <th><span class="badge badge--fk">FK</span> fk_id_genero</th>
+                    <th>nome</th>
+                    <th>duracao_secs</th>
+                    <th><span class="badge badge--fk">FK</span> id_album</th>
+                    <th><span class="badge badge--fk">FK</span> id_genero</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><code>1001</code></td>
-                    <td>Midnight City Drive</td>
-                    <td>00:04:08</td>
-                    <td><code>501</code></td>
                     <td><code>1</code></td>
-                  </tr>
-                  <tr>
-                    <td><code>1002</code></td>
-                    <td>Neon Reflections</td>
-                    <td>00:03:15</td>
-                    <td><code>501</code></td>
+                    <td>O sol que levou a lua</td>
+                    <td>240</td>
                     <td><code>1</code></td>
-                  </tr>
-                  <tr>
-                    <td><code>1003</code></td>
-                    <td>Samba dos Horizontes</td>
-                    <td>00:03:30</td>
-                    <td><code>502</code></td>
                     <td><code>2</code></td>
                   </tr>
                   <tr>
-                    <td><code>1004</code></td>
-                    <td>Retro Highway 88</td>
-                    <td>00:03:02</td>
-                    <td><code>503</code></td>
+                    <td><code>2</code></td>
+                    <td>A terra</td>
+                    <td>120</td>
+                    <td><code>2</code></td>
                     <td><code>3</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>3</code></td>
+                    <td>Boneco de Barro</td>
+                    <td>320</td>
+                    <td><code>3</code></td>
+                    <td><code>1</code></td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </article>
 
-          <!-- Tabela 09: autoria_musica -->
+          <!-- Tabela 09: art_music_assoc -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 09/12</span>
-              <h4 class="table-card__title"><code>TABLE: autoria_musica</code></h4>
-              <span class="table-card__meta">Entidade Associativa (N:N) &bull; Relação entre Artistas e Músicas</span>
+              <h4 class="table-card__title"><code>TABLE: art_music_assoc</code></h4>
+              <span class="table-card__meta">Entidade Associativa &bull; Associação entre Artistas e Músicas</span>
             </div>
-            <!-- EDITE AQUI: Dados da tabela autoria_musica -->
+            <!-- EDITE AQUI: Dados da tabela art_music_assoc -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
-                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> fk_id_art</th>
-                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> fk_id_musica</th>
+                    <th><span class="badge badge--pk">PK</span> id_art_music_assoc</th>
+                    <th><span class="badge badge--fk">FK</span> id_art</th>
+                    <th><span class="badge badge--fk">FK</span> id_musica</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><code>10</code></td>
-                    <td><code>1001</code></td>
+                    <td><code>1</code></td>
+                    <td><code>1</code></td>
+                    <td><code>2</code></td>
                   </tr>
                   <tr>
-                    <td><code>10</code></td>
-                    <td><code>1002</code></td>
+                    <td><code>2</code></td>
+                    <td><code>2</code></td>
+                    <td><code>3</code></td>
                   </tr>
                   <tr>
-                    <td><code>20</code></td>
-                    <td><code>1003</code></td>
-                  </tr>
-                  <tr>
-                    <td><code>30</code></td>
-                    <td><code>1004</code></td>
+                    <td><code>3</code></td>
+                    <td><code>3</code></td>
+                    <td><code>1</code></td>
                   </tr>
                 </tbody>
               </table>
@@ -714,49 +732,49 @@
         <!-- PAINEL 4: PLAYLISTS & HISTÓRICO (Tabelas 10, 11 e 12) -->
         <div id="tab-modulo-4" class="tab-pane" role="tabpanel" aria-labelledby="btn-tab-4">
 
-          <!-- Tabela 10: playlist -->
+          <!-- Tabela 10: playlists -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 10/12</span>
-              <h4 class="table-card__title"><code>TABLE: playlist</code></h4>
-              <span class="table-card__meta">Entidade de Usuário &bull; Coletâneas personalizadas</span>
+              <h4 class="table-card__title"><code>TABLE: playlists</code></h4>
+              <span class="table-card__meta">Entidade de Usuário &bull; Coletâneas de músicas criadas pelos usuários</span>
             </div>
-            <!-- EDITE AQUI: Dados da tabela playlist -->
+            <!-- EDITE AQUI: Dados da tabela playlists -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
                     <th><span class="badge badge--pk">PK</span> id_playlist</th>
-                    <th>Nome</th>
-                    <th>descrição</th>
-                    <th>pública</th>
-                    <th>data_criação</th>
-                    <th><span class="badge badge--fk">FK</span> fk_id_user</th>
+                    <th>nome</th>
+                    <th>desc_playlist</th>
+                    <th>is_public</th>
+                    <th>data_criacao</th>
+                    <th><span class="badge badge--fk">FK</span> id_user</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><code>301</code></td>
-                    <td>Foco no Código &amp; Café</td>
-                    <td>Faixas instrumentais para alta concentração</td>
-                    <td>Sim</td>
-                    <td>2026-01-10</td>
+                    <td><code>1</code></td>
+                    <td>Playlist 1</td>
+                    <td>Primeira Playlist</td>
+                    <td>0</td>
+                    <td>2026-12-22</td>
                     <td><code>1</code></td>
                   </tr>
                   <tr>
-                    <td><code>302</code></td>
-                    <td>Viagem de Fim de Semana</td>
-                    <td>Músicas animadas para pegar a estrada</td>
-                    <td>Sim</td>
-                    <td>2026-02-18</td>
+                    <td><code>2</code></td>
+                    <td>Playlist 2</td>
+                    <td>Segunda Playlist</td>
+                    <td>0</td>
+                    <td>2026-12-22</td>
                     <td><code>2</code></td>
                   </tr>
                   <tr>
-                    <td><code>303</code></td>
-                    <td>Relaxing Vibes Only</td>
-                    <td>Seleção calma para antes de dormir</td>
-                    <td>Não</td>
-                    <td>2026-03-01</td>
+                    <td><code>3</code></td>
+                    <td>Playlist 3</td>
+                    <td>Terceira Playlist</td>
+                    <td>0</td>
+                    <td>2026-12-22</td>
                     <td><code>3</code></td>
                   </tr>
                 </tbody>
@@ -764,92 +782,84 @@
             </div>
           </article>
 
-          <!-- Tabela 11: item_playlist -->
+          <!-- Tabela 11: playlist_assoc -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 11/12</span>
-              <h4 class="table-card__title"><code>TABLE: item_playlist</code></h4>
-              <span class="table-card__meta">Entidade Associativa (N:N) &bull; Faixas incluídas em cada playlist</span>
+              <h4 class="table-card__title"><code>TABLE: playlist_assoc</code></h4>
+              <span class="table-card__meta">Entidade Associativa &bull; Associação entre Playlists e Músicas</span>
             </div>
-            <!-- EDITE AQUI: Dados da tabela item_playlist -->
+            <!-- EDITE AQUI: Dados da tabela playlist_assoc -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
-                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> fk_id_playlist</th>
-                    <th><span class="badge badge--pk">PK</span> <span class="badge badge--fk">FK</span> fk_id_musica</th>
+                    <th><span class="badge badge--pk">PK</span> id_playlist_assoc</th>
+                    <th><span class="badge badge--fk">FK</span> id_playlist</th>
+                    <th><span class="badge badge--fk">FK</span> id_musica</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><code>301</code></td>
-                    <td><code>1001</code></td>
+                    <td><code>1</code></td>
+                    <td><code>1</code></td>
+                    <td><code>2</code></td>
                   </tr>
                   <tr>
-                    <td><code>301</code></td>
-                    <td><code>1004</code></td>
+                    <td><code>2</code></td>
+                    <td><code>2</code></td>
+                    <td><code>3</code></td>
                   </tr>
                   <tr>
-                    <td><code>302</code></td>
-                    <td><code>1003</code></td>
+                    <td><code>3</code></td>
+                    <td><code>3</code></td>
+                    <td><code>1</code></td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </article>
 
-          <!-- Tabela 12: historico -->
+          <!-- Tabela 12: historicos -->
           <article class="table-card">
             <div class="table-card__header">
               <span class="table-card__badge">Tabela 12/12</span>
-              <h4 class="table-card__title"><code>TABLE: historico</code></h4>
+              <h4 class="table-card__title"><code>TABLE: historicos</code></h4>
               <span class="table-card__meta">Entidade de Log / Fato &bull; Rastreamento de reproduções do usuário</span>
             </div>
-            <!-- EDITE AQUI: Dados da tabela historico -->
+            <!-- EDITE AQUI: Dados da tabela historicos -->
             <div class="table-responsive">
               <table class="db-table">
                 <thead>
                   <tr>
                     <th><span class="badge badge--pk">PK</span> id_historico</th>
-                    <th><span class="badge badge--fk">FK</span> fk_id_user</th>
-                    <th><span class="badge badge--fk">FK</span> fk_id_album</th>
-                    <th><span class="badge badge--fk">FK</span> fk_id_playlist</th>
-                    <th><span class="badge badge--fk">FK</span> fk_id_musica</th>
-                    <th>timestamp</th>
+                    <th><span class="badge badge--fk">FK</span> id_user</th>
+                    <th><span class="badge badge--fk">FK</span> id_album</th>
+                    <th><span class="badge badge--fk">FK</span> id_musica</th>
+                    <th>reg_time</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><code>7001</code></td>
                     <td><code>1</code></td>
-                    <td><code>501</code></td>
-                    <td><code>301</code></td>
-                    <td><code>1001</code></td>
-                    <td>2026-11-18 14:02:11</td>
+                    <td><code>1</code></td>
+                    <td><code>1</code></td>
+                    <td><code>1</code></td>
+                    <td>2026-12-20 11:10:11</td>
                   </tr>
                   <tr>
-                    <td><code>7002</code></td>
-                    <td><code>1</code></td>
-                    <td><code>503</code></td>
-                    <td><code>301</code></td>
-                    <td><code>1004</code></td>
-                    <td>2026-11-18 14:06:20</td>
-                  </tr>
-                  <tr>
-                    <td><code>7003</code></td>
                     <td><code>2</code></td>
-                    <td><code>501</code></td>
-                    <td><code>NULL</code></td>
-                    <td><code>1001</code></td>
-                    <td>2026-11-18 15:30:45</td>
+                    <td><code>2</code></td>
+                    <td><code>2</code></td>
+                    <td><code>2</code></td>
+                    <td>2026-12-21 10:20:20</td>
                   </tr>
                   <tr>
-                    <td><code>7004</code></td>
                     <td><code>3</code></td>
-                    <td><code>502</code></td>
-                    <td><code>302</code></td>
-                    <td><code>1003</code></td>
-                    <td>2026-11-18 16:11:02</td>
+                    <td><code>3</code></td>
+                    <td><code>3</code></td>
+                    <td><code>2</code></td>
+                    <td>2026-12-22 12:59:20</td>
                   </tr>
                 </tbody>
               </table>
@@ -897,120 +907,138 @@
               <div class="ide-window__body">
                 <!-- EDITE AQUI: Seu script DDL completo -->
                 <pre class="ide-window__code"><code>-- ==========================================================
--- PROJETO: BANCO DE DADOS DE STREAMING MUSICAL
+-- PROJETO: BANCO DE DADOS DE STREAMING MUSICAL (db_server_music)
 -- ARQUIVO: 01_create_tables_ddl.sql
 -- AMBIENTE DE EXECUÇÃO: MyCompiler (MySQL / MariaDB)
 -- ==========================================================
 
--- 1. TABELA DE PLANOS DE ASSINATURA
-CREATE TABLE tb_planos (
+DROP DATABASE IF EXISTS db_server_music;
+CREATE DATABASE db_server_music;
+USE db_server_music;
+
+CREATE TABLE users (
+	id_user INT AUTO_INCREMENT PRIMARY KEY,
+	nome VARCHAR(100) NOT NULL,
+	cpf VARCHAR(11) NOT NULL UNIQUE,
+	email VARCHAR(200) NOT NULL UNIQUE,
+	senha VARCHAR(200) NOT NULL,
+	cep VARCHAR(8) NOT NULL,
+	rua VARCHAR(100) NOT NULL,
+	numero INT NOT NULL,
+	cidade VARCHAR(50) NOT NULL,
+	bairro VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE planos (
     id_plano INT AUTO_INCREMENT PRIMARY KEY,
-    nome_plano VARCHAR(50) NOT NULL,
-    valor_mensal DECIMAL(10,2) NOT NULL,
-    limite_dispositivos INT DEFAULT 1,
-    qualidade_audio VARCHAR(30) NOT NULL
+    tipo VARCHAR(100) UNIQUE,
+    valor DECIMAL(5, 2),
+    qtn_users INT DEFAULT 0
 );
 
--- 2. TABELA DE USUÁRIOS
-CREATE TABLE tb_usuarios (
-    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    nome_completo VARCHAR(120) NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    data_nascimento DATE NOT NULL,
-    id_plano INT NOT NULL,
-    status_conta VARCHAR(20) DEFAULT 'Ativo'
-);
-
--- 3. TABELA DE PAGAMENTOS
-CREATE TABLE tb_pagamentos (
+CREATE TABLE pagamentos (
     id_pagamento INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT NOT NULL,
-    data_pagamento TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    valor_pago DECIMAL(10,2) NOT NULL,
-    metodo_pagamento VARCHAR(40) NOT NULL,
-    status_transacao VARCHAR(20) DEFAULT 'Aprovado'
+    forma_de_pagamento VARCHAR(20),
+    timestamp DATETIME,
+    id_user INT,
+    CONSTRAINT fk_id_user FOREIGN KEY (id_user)
+        REFERENCES users (id_user),
+    id_plano INT,
+    CONSTRAINT fk_id_plano FOREIGN KEY (id_plano)
+        REFERENCES planos (id_plano),
+    status_pagamento INT NOT NULL
 );
 
--- 4. TABELA DE GÊNEROS MUSICAIS
-CREATE TABLE tb_generos (
-    id_genero INT AUTO_INCREMENT PRIMARY KEY,
-    nome_genero VARCHAR(50) NOT NULL UNIQUE,
-    descricao VARCHAR(255)
+CREATE TABLE telefones (
+    id_tel INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    tel VARCHAR(11) NOT NULL,
+    id_user INT,
+    CONSTRAINT fk_id_user_tel FOREIGN KEY (id_user)
+        REFERENCES users (id_user)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
--- 5. TABELA DE ARTISTAS
-CREATE TABLE tb_artistas (
-    id_artista INT AUTO_INCREMENT PRIMARY KEY,
-    nome_artistico VARCHAR(100) NOT NULL,
-    pais_origem VARCHAR(50),
-    ouvintes_mensais INT DEFAULT 0,
-    verificado BOOLEAN DEFAULT FALSE
+CREATE TABLE generos (
+    id_genero INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nome VARCHAR(100) UNIQUE,
+    desc_genero VARCHAR(300)
 );
 
--- 6. TABELA DE ÁLBUNS
-CREATE TABLE tb_albuns (
-    id_album INT AUTO_INCREMENT PRIMARY KEY,
-    titulo_album VARCHAR(120) NOT NULL,
-    ano_lancamento INT NOT NULL,
-    id_artista INT NOT NULL,
-    gravadora VARCHAR(80),
-    tipo_lancamento VARCHAR(30) DEFAULT 'Álbum de Estúdio'
+CREATE TABLE artistas (
+    id_art INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nome VARCHAR(80) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(100) NOT NULL,
+    nacionalidade VARCHAR(50)
 );
 
--- 7. TABELA DE MÚSICAS (FAIXAS)
-CREATE TABLE tb_musicas (
-    id_musica INT AUTO_INCREMENT PRIMARY KEY,
-    titulo_musica VARCHAR(120) NOT NULL,
-    duracao_segundos INT NOT NULL,
-    id_album INT NOT NULL,
-    id_genero INT NOT NULL,
-    faixa_numero INT NOT NULL
+CREATE TABLE albuns (
+    id_album INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nome VARCHAR(80) NOT NULL,
+    qnt_musica INT DEFAULT 0,
+    data_de_criacao DATE,
+    id_art INT,
+    CONSTRAINT fk_id_art FOREIGN KEY (id_art)
+        REFERENCES artistas (id_art)
 );
 
--- 8. TABELA DE PLAYLISTS
-CREATE TABLE tb_playlists (
-    id_playlist INT AUTO_INCREMENT PRIMARY KEY,
-    nome_playlist VARCHAR(100) NOT NULL,
-    descricao VARCHAR(255),
-    id_usuario INT NOT NULL,
-    publica BOOLEAN DEFAULT TRUE,
-    data_criacao DATE NOT NULL
+CREATE TABLE musicas (
+    id_musica INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nome VARCHAR(80) NOT NULL,
+    duracao_secs INT NOT NULL,
+    id_album INT,
+    id_genero INT,
+    CONSTRAINT fk_id_album FOREIGN KEY (id_album)
+        REFERENCES albuns (id_album),
+    CONSTRAINT fk_genero FOREIGN KEY (id_genero)
+        REFERENCES generos (id_genero)
 );
 
--- 9. TABELA ASSOCIATIVA PLAYLIST-MÚSICA (N:M)
-CREATE TABLE tb_playlist_musica (
-    id_playlist INT NOT NULL,
-    id_musica INT NOT NULL,
-    ordem_execucao INT NOT NULL,
-    adicionado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (id_playlist, id_musica)
+CREATE TABLE historicos (
+    id_historico INT AUTO_INCREMENT PRIMARY KEY,
+    id_user INT,
+    id_album INT,
+    id_musica INT,
+    reg_time DATETIME,
+    CONSTRAINT fk_id_user_hist FOREIGN KEY (id_user)
+        REFERENCES users (id_user),
+    CONSTRAINT fk_id_musica_hist FOREIGN KEY (id_musica)
+        REFERENCES musicas (id_musica),
+    CONSTRAINT fk_id_albun_hist FOREIGN KEY (id_album)
+        REFERENCES albuns (id_album)
 );
 
--- 10. TABELA DE HISTÓRICO DE REPRODUÇÃO
-CREATE TABLE tb_historico_reproducao (
-    id_reproducao INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT NOT NULL,
-    id_musica INT NOT NULL,
-    data_hora_reproducao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    segundos_ouvidos INT NOT NULL,
-    dispositivo VARCHAR(50)
+CREATE TABLE playlists (
+    id_playlist INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nome VARCHAR(80) NOT NULL,
+    desc_playlist VARCHAR(1000),
+    is_public INT DEFAULT 0,
+    data_criacao DATETIME,
+    id_user INT,
+    CONSTRAINT fk_id_user_play FOREIGN KEY (id_user)
+        REFERENCES users (id_user)
 );
 
--- 11. TABELA DE CURTIDAS (FAVORITAS)
-CREATE TABLE tb_curtidas (
-    id_usuario INT NOT NULL,
-    id_musica INT NOT NULL,
-    data_curtida TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (id_usuario, id_musica)
+CREATE TABLE playlist_assoc (
+    id_playlist_assoc INT AUTO_INCREMENT PRIMARY KEY,
+    id_playlist INT,
+    id_musica INT,
+    UNIQUE KEY uk_playlist_musica (id_playlist, id_musica),
+    CONSTRAINT fk_id_playlist FOREIGN KEY (id_playlist)
+        REFERENCES playlists (id_playlist),
+    CONSTRAINT fk_id_musica_assoc FOREIGN KEY (id_musica)
+        REFERENCES musicas (id_musica)
 );
 
--- 12. TABELA DE SEGUIDORES DE ARTISTAS
-CREATE TABLE tb_seguidores_artista (
-    id_usuario INT NOT NULL,
-    id_artista INT NOT NULL,
-    data_seguindo TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    notificacoes_ativas BOOLEAN DEFAULT TRUE,
-    PRIMARY KEY (id_usuario, id_artista)
+CREATE TABLE art_music_assoc (
+    id_art_music_assoc INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    id_art INT,
+    id_musica INT,
+    CONSTRAINT fk_id_art_assoc FOREIGN KEY (id_art)
+        REFERENCES artistas (id_art),
+    CONSTRAINT fk_musica_assoc FOREIGN KEY (id_musica)
+        REFERENCES musicas (id_musica)
 );</code></pre>
               </div>
             </div>
@@ -1038,191 +1066,93 @@ CREATE TABLE tb_seguidores_artista (
               <div class="ide-window__body">
                 <!-- EDITE AQUI: Seu script DML completo -->
                 <pre class="ide-window__code"><code>-- ==========================================================
--- PROJETO: BANCO DE DADOS DE STREAMING MUSICAL
+-- PROJETO: BANCO DE DADOS DE STREAMING MUSICAL (db_server_music)
 -- ARQUIVO: 02_insert_seed_data.sql
--- POVOAMENTO INICIAL DAS 12 TABELAS NO MYCOMPILER
+-- POVOAMENTO INICIAL DAS TABELAS NO MYCOMPILER
 -- ==========================================================
 
--- 1. POVOAMENTO: tb_planos
-INSERT INTO tb_planos (id_plano, nome_plano, valor_mensal, limite_dispositivos, qualidade_audio) VALUES
-(1, 'Free com Anúncios', 0.00, 1, 'Padrão (128 kbps)'),
-(2, 'Premium Individual', 21.90, 1, 'Alta Fidelidade (320 kbps)'),
-(3, 'Premium Universitário', 11.90, 1, 'Alta Fidelidade (320 kbps)'),
-(4, 'Premium Familiar', 34.90, 6, 'Alta Fidelidade (320 kbps)');
+-- 1. Planos
+INSERT planos (tipo, valor) VALUES 
+("Gratuito", 0.0),
+("Lite", 5.0),
+("Pro", 10.0);
 
--- 2. POVOAMENTO: tb_usuarios
-INSERT INTO tb_usuarios (id_usuario, nome_completo, email, data_nascimento, id_plano, status_conta) VALUES
-(101, 'Lucas Mendes Silva', 'lucas.mendes@email.com', '1998-05-14', 2, 'Ativo'),
-(102, 'Beatriz Helena Costa', 'beatriz.costa@email.com', '2001-11-23', 3, 'Ativo'),
-(103, 'Carlos Eduardo Rocha', 'cadu.rocha@email.com', '1992-02-08', 4, 'Ativo'),
-(104, 'Fernanda Lima Souza', 'fernanda.souza@email.com', '2003-09-30', 1, 'Inativo');
+-- 2. Usuarios 
+INSERT users (nome, cpf, email, senha, cep, rua, numero, cidade, bairro) VALUES
+("Edson da Silva", 123, "edson@gmail.com", 1234, 34019, "Avenida", 200, "Guarulhos", "Brasil"),
+("Renata de Melo", 122, "renata@gmail.com", 1234, 34020, "Avenida", 202, "Guarulhos", "Brasil"),
+("Gustavo da Silva", 121, "gustavo@gmail.com", 1234, 34020, "Avenida", 206, "Guarulhos", "Brasil"),
+("Alan da Silva", 120, "alan@gmail.com", 1234, 34020, "Avenida", 210, "Guarulhos", "Brasil"),
+("Pedro Henrique", 119, "pedro@gmail.com", 1234, 34020, "Avenida", 20, "Guarulhos", "Brasil");
 
--- 3. POVOAMENTO: tb_pagamentos
-INSERT INTO tb_pagamentos (id_pagamento, id_usuario, data_pagamento, valor_pago, metodo_pagamento, status_transacao) VALUES
-(9001, 101, '2026-03-01 08:14:22', 21.90, 'Cartão de Crédito', 'Aprovado'),
-(9002, 102, '2026-03-02 14:30:10', 11.90, 'PIX', 'Aprovado'),
-(9003, 103, '2026-03-05 19:45:00', 34.90, 'Boleto Bancário', 'Aprovado');
+-- 3. Telefone
+INSERT telefones (tel, id_user) VALUES 
+("11989850920", 1),
+("11989850910", 1),
+("11989850912", 2),
+("11989850920", 2),
+("11989811111", 4),
+("11981119191", 5);
 
--- 4. POVOAMENTO: tb_generos
-INSERT INTO tb_generos (id_genero, nome_genero, descricao) VALUES
-(1, 'Rock Clássico', 'Gênero caracterizado por guitarras elétricas, baixo e bateria.'),
-(2, 'MPB (Música Popular Brasileira)', 'Fusão tradicional de ritmos brasileiros com elementos pop e jazz.'),
-(3, 'Synthwave / Lo-Fi', 'Música eletrônica nostálgica com sintetizadores analógicos retrô.'),
-(4, 'Jazz Contemporâneo', 'Improvisações harmônicas ricas com metais, piano acústico e contrabaixo.');
+-- 4. Pagamentos 
+INSERT pagamentos (forma_de_pagamento, timestamp, id_plano, id_user, status_pagamento) VALUES 
+("Pix", "2026-10-20 11:42:00", 2, 1, 0),
+("Cartão de Crédito", "2026-10-21 11:42:00", 3, 2, 1),
+("Boleto", "2026-10-22 13:34:00", 2, 3, 0);
 
--- 5. POVOAMENTO: tb_artistas
-INSERT INTO tb_artistas (id_artista, nome_artistico, pais_origem, ouvintes_mensais, verificado) VALUES
-(10, 'The Midnight Echoes', 'Reino Unido', 4850210, TRUE),
-(20, 'Clara Viana & Quinteto', 'Brasil', 1240900, TRUE),
-(30, 'Neon Cyberflow', 'Canadá', 890430, FALSE);
+-- 5. Generos 
+INSERT generos (nome, desc_genero) VALUES 
+("Pop Latino", "Música Pop Latino"),
+("Jazz", "Música Jazz"),
+("Pop", "Música Pop Internacional");
 
--- 6. POVOAMENTO: tb_albuns
-INSERT INTO tb_albuns (id_album, titulo_album, ano_lancamento, id_artista, gravadora, tipo_lancamento) VALUES
-(501, 'Electric Sunset Horizon', 2024, 10, 'SoundWave Records', 'Álbum de Estúdio'),
-(502, 'Aquarela de Cordas', 2023, 20, 'Som Tropical Brasil', 'Álbum de Estúdio'),
-(503, 'Digital Nostalgia Dreams', 2025, 30, 'Independente', 'EP');
+-- 6. Artistas
+INSERT artistas (nome, email, senha, nacionalidade) VALUES 
+("Roberto Milos", "roberto@gmail.com", "roberto_senha@", "Brasileiro"),
+("Roberta Milos", "roberta@gmail.com", "roberta_senha@", "Brasileiro"),
+("Emanuele", "emanuele_tr@gmail.com", "emanuele_21_senha123", "Brasileiro");
 
--- 7. POVOAMENTO: tb_musicas
-INSERT INTO tb_musicas (id_musica, titulo_musica, duracao_segundos, id_album, id_genero, faixa_numero) VALUES
-(1001, 'Midnight City Drive', 248, 501, 1, 1),
-(1002, 'Neon Reflections', 195, 501, 1, 2),
-(1003, 'Samba dos Horizontes', 210, 502, 2, 1),
-(1004, 'Retro Highway 88', 182, 503, 3, 1);
+-- 7. Albuns
+INSERT albuns (nome, data_de_criacao, id_art) VALUES 
+("Uma vez levou", "1946-10-10", 1),
+("Ùltima Adeus a Humanidade", "1999-12-31", 2), 
+("Até logo, meus deus!", "2000-12-30", 2);
 
--- 8. POVOAMENTO: tb_playlists
-INSERT INTO tb_playlists (id_playlist, nome_playlist, descricao, id_usuario, publica, data_criacao) VALUES
-(301, 'Foco no Código & Café', 'Faixas instrumentais para alta concentração.', 101, TRUE, '2026-01-10'),
-(302, 'Viagem de Fim de Semana', 'Músicas animadas para estrada e descanso.', 102, TRUE, '2026-02-18'),
-(303, 'Relaxing Vibes Only', 'Seleção calma para antes de dormir.', 103, FALSE, '2026-03-01');
+-- 8. Músicas
+INSERT musicas (nome, duracao_secs, id_album, id_genero) VALUES 
+("O sol que levou a lua", 240, 1, 2),
+("A terra", 120, 2, 3),
+("Boneco de Barro", 320, 3, 1);
 
--- 9. POVOAMENTO: tb_playlist_musica
-INSERT INTO tb_playlist_musica (id_playlist, id_musica, ordem_execucao, adicionado_em) VALUES
-(301, 1001, 1, '2026-01-10 10:15:00'),
-(301, 1004, 2, '2026-01-10 10:16:30'),
-(302, 1003, 1, '2026-02-18 16:40:12');
+-- 9. Historico
+INSERT historicos (id_user, id_album, id_musica, reg_time) VALUES 
+(1, 1, 1, "2026-12-20 11:10:11"),
+(2, 2, 2, "2026-12-21 10:20:20"),
+(3, 3, 2, "2026-12-22 12:59:20");
 
--- 10. POVOAMENTO: tb_historico_reproducao
-INSERT INTO tb_historico_reproducao (id_reproducao, id_usuario, id_musica, data_hora_reproducao, segundos_ouvidos, dispositivo) VALUES
-(70001, 101, 1001, '2026-03-10 14:02:11', 248, 'Desktop Web App'),
-(70002, 101, 1004, '2026-03-10 14:06:20', 182, 'Desktop Web App'),
-(70003, 102, 1001, '2026-03-10 15:30:45', 248, 'Smartphone Android'),
-(70004, 103, 1003, '2026-03-10 16:11:02', 210, 'Smart TV Samsung');
+-- 10. PlayList
+INSERT playlists (nome, desc_playlist, is_public, data_criacao, id_user) VALUES 
+("Playlist 1", "Primeira Playlist", 0, "2026-12-22", 1),
+("Playlist 2", "Segunda Playlist", 0, "2026-12-22", 2),
+("Playlist 3", "Terceira Playlist", 0, "2026-12-22", 3);
 
--- 11. POVOAMENTO: tb_curtidas
-INSERT INTO tb_curtidas (id_usuario, id_musica, data_curtida) VALUES
-(101, 1001, '2026-01-12 18:22:04'),
-(101, 1002, '2026-01-15 09:10:31'),
-(102, 1003, '2026-02-01 21:04:19');
+-- 11. PlayList & Musicas - Assocs
+INSERT playlist_assoc (id_playlist, id_musica) VALUES 
+(1, 2),
+(2, 3),
+(3, 1);
 
--- 12. POVOAMENTO: tb_seguidores_artista
-INSERT INTO tb_seguidores_artista (id_usuario, id_artista, data_seguindo, notificacoes_ativas) VALUES
-(101, 10, '2026-01-10 11:00:00', TRUE),
-(102, 20, '2026-02-15 17:42:19', TRUE),
-(103, 10, '2026-03-02 19:15:30', FALSE);</code></pre>
+-- 12. Artistas & Musicas - Assocs
+INSERT art_music_assoc (id_art, id_musica) VALUES
+(1, 2),
+(2, 3),
+(3, 1);</code></pre>
               </div>
             </div>
           </div>
         </details>
 
-        <!-- Gaveta 3: Constraints, Chaves Estrangeiras e Índices -->
-        <details class="code-accordion">
-          <summary class="code-accordion__header">
-            <span class="code-accordion__icon-indicator"></span>
-            <span class="code-accordion__title">Script 03 — Constraints, Chaves Estrangeiras e Índices (ALTER
-              TABLE)</span>
-            <span class="code-accordion__badge">CONSTRAINTS</span>
-          </summary>
-          <div class="code-accordion__content">
-            <div class="ide-window">
-              <div class="ide-window__header">
-                <div class="ide-window__controls">
-                  <span class="ide-window__circle"></span>
-                  <span class="ide-window__circle"></span>
-                  <span class="ide-window__circle"></span>
-                </div>
-                <span class="ide-window__filename">03_constraints_and_foreign_keys.sql</span>
-                <span class="ide-window__tag">[SQL / MyCompiler]</span>
-              </div>
-              <div class="ide-window__body">
-                <!-- EDITE AQUI: Seu script de Constraints e ALTER TABLE -->
-                <pre class="ide-window__code"><code>-- ==========================================================
--- PROJETO: BANCO DE DADOS DE STREAMING MUSICAL
--- ARQUIVO: 03_constraints_and_foreign_keys.sql
--- INTEGRIDADE REFERENCIAL E ÍNDICES DE PERFORMANCE
--- ==========================================================
 
--- 1. FOREIGN KEYS PARA USUÁRIOS E PAGAMENTOS
-ALTER TABLE tb_usuarios
-    ADD CONSTRAINT fk_usuarios_planos
-    FOREIGN KEY (id_plano) REFERENCES tb_planos(id_plano)
-    ON UPDATE CASCADE ON DELETE RESTRICT;
-
-ALTER TABLE tb_pagamentos
-    ADD CONSTRAINT fk_pagamentos_usuarios
-    FOREIGN KEY (id_usuario) REFERENCES tb_usuarios(id_usuario)
-    ON UPDATE CASCADE ON DELETE CASCADE;
-
--- 2. FOREIGN KEYS PARA ÁLBUNS E MÚSICAS
-ALTER TABLE tb_albuns
-    ADD CONSTRAINT fk_albuns_artistas
-    FOREIGN KEY (id_artista) REFERENCES tb_artistas(id_artista)
-    ON UPDATE CASCADE ON DELETE RESTRICT;
-
-ALTER TABLE tb_musicas
-    ADD CONSTRAINT fk_musicas_albuns
-    FOREIGN KEY (id_album) REFERENCES tb_albuns(id_album)
-    ON UPDATE CASCADE ON DELETE CASCADE,
-    ADD CONSTRAINT fk_musicas_generos
-    FOREIGN KEY (id_genero) REFERENCES tb_generos(id_genero)
-    ON UPDATE CASCADE ON DELETE RESTRICT;
-
--- 3. FOREIGN KEYS PARA PLAYLISTS E ITENS DA PLAYLIST
-ALTER TABLE tb_playlists
-    ADD CONSTRAINT fk_playlists_usuarios
-    FOREIGN KEY (id_usuario) REFERENCES tb_usuarios(id_usuario)
-    ON UPDATE CASCADE ON DELETE CASCADE;
-
-ALTER TABLE tb_playlist_musica
-    ADD CONSTRAINT fk_plmusica_playlists
-    FOREIGN KEY (id_playlist) REFERENCES tb_playlists(id_playlist)
-    ON UPDATE CASCADE ON DELETE CASCADE,
-    ADD CONSTRAINT fk_plmusica_musicas
-    FOREIGN KEY (id_musica) REFERENCES tb_musicas(id_musica)
-    ON UPDATE CASCADE ON DELETE CASCADE;
-
--- 4. FOREIGN KEYS PARA HISTÓRICO, CURTIDAS E SEGUIDORES
-ALTER TABLE tb_historico_reproducao
-    ADD CONSTRAINT fk_historico_usuarios
-    FOREIGN KEY (id_usuario) REFERENCES tb_usuarios(id_usuario)
-    ON UPDATE CASCADE ON DELETE CASCADE,
-    ADD CONSTRAINT fk_historico_musicas
-    FOREIGN KEY (id_musica) REFERENCES tb_musicas(id_musica)
-    ON UPDATE CASCADE ON DELETE CASCADE;
-
-ALTER TABLE tb_curtidas
-    ADD CONSTRAINT fk_curtidas_usuarios
-    FOREIGN KEY (id_usuario) REFERENCES tb_usuarios(id_usuario)
-    ON UPDATE CASCADE ON DELETE CASCADE,
-    ADD CONSTRAINT fk_curtidas_musicas
-    FOREIGN KEY (id_musica) REFERENCES tb_musicas(id_musica)
-    ON UPDATE CASCADE ON DELETE CASCADE;
-
-ALTER TABLE tb_seguidores_artista
-    ADD CONSTRAINT fk_seguidores_usuarios
-    FOREIGN KEY (id_usuario) REFERENCES tb_usuarios(id_usuario)
-    ON UPDATE CASCADE ON DELETE CASCADE,
-    ADD CONSTRAINT fk_seguidores_artistas
-    FOREIGN KEY (id_artista) REFERENCES tb_artistas(id_artista)
-    ON UPDATE CASCADE ON DELETE CASCADE;
-
--- 5. ÍNDICES DE PERFORMANCE PARA BUSCAS FREQUENTES
-CREATE INDEX idx_musicas_titulo ON tb_musicas(titulo_musica);
-CREATE INDEX idx_artistas_nome ON tb_artistas(nome_artistico);
-CREATE INDEX idx_historico_data ON tb_historico_reproducao(data_hora_reproducao);</code></pre>
-              </div>
-            </div>
-          </div>
-        </details>
 
       </div>
     </section>
@@ -1242,13 +1172,12 @@ CREATE INDEX idx_historico_data ON tb_historico_reproducao(data_hora_reproducao)
 
       <div class="accordions-container">
 
-        <!-- Query 01: Usuários ativos e seus planos (Aberta por padrão) -->
+        <!-- Consulta 01: Estado Inicial de Usuários e Telefones (Aberta por padrão) -->
         <details class="query-accordion" open>
           <summary class="query-accordion__header">
-            <span class="query-accordion__icon-indicator"></span>
-            <span class="query-accordion__title">Consulta 01 — Listar usuários ativos e seus respectivos planos (INNER
-              JOIN)</span>
-            <span class="query-accordion__badge">INNER JOIN</span>
+            <span class="code-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Consulta 01 — Estado Inicial: Listagem de Usuários e Telefones (Pré-Deleção)</span>
+            <span class="query-accordion__badge">SELECT / DQL</span>
           </summary>
           <div class="query-accordion__content">
             <!-- 1. Parte Superior: Janela do Editor SQL -->
@@ -1259,22 +1188,15 @@ CREATE INDEX idx_historico_data ON tb_historico_reproducao(data_hora_reproducao)
                   <span class="ide-window__circle"></span>
                   <span class="ide-window__circle"></span>
                 </div>
-                <span class="ide-window__filename">query_01_usuarios_planos.sql</span>
-                <span class="ide-window__tag">[SELECT / DQL]</span>
+                <span class="ide-window__filename">query_01_estado_inicial.sql</span>
+                <span class="ide-window__tag">[SELECT / MyCompiler]</span>
               </div>
               <div class="ide-window__body">
-                <!-- EDITE AQUI: Comando SELECT da Query 01 -->
-                <pre class="ide-window__code"><code>SELECT 
-    u.id_usuario,
-    u.nome_completo AS usuario,
-    u.email,
-    p.nome_plano AS plano,
-    p.valor_mensal AS mensalidade,
-    p.qualidade_audio
-FROM tb_usuarios u
-INNER JOIN tb_planos p ON u.id_plano = p.id_plano
-WHERE u.status_conta = 'Ativo'
-ORDER BY u.nome_completo ASC;</code></pre>
+                <pre class="ide-window__code"><code>-- 1. Listar todos os telefones vinculados
+SELECT id_user, tel FROM telefones;
+
+-- 2. Listar todos os usuários cadastrados
+SELECT id_user, nome FROM users;</code></pre>
               </div>
             </div>
 
@@ -1282,46 +1204,79 @@ ORDER BY u.nome_completo ASC;</code></pre>
             <div class="query-output">
               <div class="query-output__header">
                 <span class="query-output__icon">📋</span>
-                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; 3 linhas
-                  retornadas</span>
+                <span class="query-output__title">Resultado da Pesquisa 1: Tabela 'telefones' (6 registros encontrados)</span>
               </div>
-              <!-- EDITE AQUI: Tabela com o retorno da Query 01 -->
               <div class="table-responsive">
                 <table class="db-table db-table--output">
                   <thead>
                     <tr>
-                      <th>id_usuario</th>
-                      <th>usuario</th>
-                      <th>email</th>
-                      <th>plano</th>
-                      <th>mensalidade</th>
-                      <th>qualidade_audio</th>
+                      <th>id_user</th>
+                      <th>tel</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>102</td>
-                      <td>Beatriz Helena Costa</td>
-                      <td>beatriz.costa@email.com</td>
-                      <td>Premium Universitário</td>
-                      <td>R$ 11.90</td>
-                      <td>Alta Fidelidade (320 kbps)</td>
+                      <td>1</td>
+                      <td>11989850920</td>
                     </tr>
                     <tr>
-                      <td>103</td>
-                      <td>Carlos Eduardo Rocha</td>
-                      <td>cadu.rocha@email.com</td>
-                      <td>Premium Familiar</td>
-                      <td>R$ 34.90</td>
-                      <td>Alta Fidelidade (320 kbps)</td>
+                      <td>1</td>
+                      <td>11989850910</td>
                     </tr>
                     <tr>
-                      <td>101</td>
-                      <td>Lucas Mendes Silva</td>
-                      <td>lucas.mendes@email.com</td>
-                      <td>Premium Individual</td>
-                      <td>R$ 21.90</td>
-                      <td>Alta Fidelidade (320 kbps)</td>
+                      <td>2</td>
+                      <td>11989850912</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>11989850920</td>
+                    </tr>
+                    <tr style="background-color: #fee2e2;">
+                      <td><strong>4</strong></td>
+                      <td><strong>11989811111</strong> <em>(Telefone de Alan da Silva)</em></td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>11981119191</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="query-output">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">Resultado da Pesquisa 2: Tabela 'users' (5 usuários cadastrados)</span>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>id_user</th>
+                      <th>nome</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Edson da Silva</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Renata de Melo</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Gustavo da Silva</td>
+                    </tr>
+                    <tr style="background-color: #fee2e2;">
+                      <td><strong>4</strong></td>
+                      <td><strong>Alan da Silva</strong> <em>(Alvo da exclusão)</em></td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Pedro Henrique</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1330,13 +1285,12 @@ ORDER BY u.nome_completo ASC;</code></pre>
           </div>
         </details>
 
-        <!-- Query 02: Top 5 músicas mais reproduzidas -->
+        <!-- Consulta 02: Deleção com ON DELETE CASCADE -->
         <details class="query-accordion">
           <summary class="query-accordion__header">
-            <span class="query-accordion__icon-indicator"></span>
-            <span class="query-accordion__title">Consulta 02 — Top 5 músicas mais reproduzidas na plataforma (GROUP BY +
-              COUNT + ORDER BY)</span>
-            <span class="query-accordion__badge">GROUP BY & COUNT</span>
+            <span class="code-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Operação 02 — Exclusão do Usuário ID 4 (Validação de Integridade: ON DELETE CASCADE)</span>
+            <span class="query-accordion__badge">DELETE / DML</span>
           </summary>
           <div class="query-accordion__content">
             <div class="ide-window">
@@ -1346,231 +1300,208 @@ ORDER BY u.nome_completo ASC;</code></pre>
                   <span class="ide-window__circle"></span>
                   <span class="ide-window__circle"></span>
                 </div>
-                <span class="ide-window__filename">query_02_top_reproduzidas.sql</span>
-                <span class="ide-window__tag">[SELECT / DQL]</span>
+                <span class="ide-window__filename">query_02_delete_cascade.sql</span>
+                <span class="ide-window__tag">[DELETE / MyCompiler]</span>
               </div>
               <div class="ide-window__body">
-                <!-- EDITE AQUI: Comando SELECT da Query 02 -->
-                <pre class="ide-window__code"><code>SELECT 
-    m.id_musica,
-    m.titulo_musica,
-    a.nome_artistico AS artista,
-    COUNT(h.id_reproducao) AS total_reproducoes
-FROM tb_musicas m
-INNER JOIN tb_albuns alb ON m.id_album = alb.id_album
-INNER JOIN tb_artistas a ON alb.id_artista = a.id_artista
-LEFT JOIN tb_historico_reproducao h ON m.id_musica = h.id_musica
-GROUP BY m.id_musica, m.titulo_musica, a.nome_artistico
-ORDER BY total_reproducoes DESC
-LIMIT 5;</code></pre>
+                <pre class="ide-window__code"><code>-- Exclui o usuário ID = 4 da tabela pai 'users'
+-- A constraint 'fk_id_user_tel' com ON DELETE CASCADE deve remover automaticamente
+-- todos os registros dependentes vinculados na tabela 'telefones'.
+DELETE FROM users WHERE id_user = 4;</code></pre>
+              </div>
+            </div>
+
+            <div class="query-output">
+              <div class="query-output__header">
+                <span class="query-output__icon">⚡</span>
+                <span class="query-output__title">Status de Execução no SGBD</span>
+              </div>
+              <div class="table-responsive" style="padding: 1rem; font-family: var(--font-mono); font-size: 0.9rem; background-color: var(--bg-surface);">
+                <p><strong>Query OK:</strong> 1 row affected (0.01 sec)</p>
+                <p style="color: var(--text-secondary); margin-top: 0.25rem;">Regra <code>ON DELETE CASCADE</code> disparada com sucesso para a chave estrangeira <code>fk_id_user_tel</code> na tabela <code>telefones</code>.</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Consulta 03: Comprovação Pós-Deleção -->
+        <details class="query-accordion">
+          <summary class="query-accordion__header">
+            <span class="code-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Consulta 03 — Verificação Pós-Deleção: Comprovação da Remoção em Cascata</span>
+            <span class="query-accordion__badge">VALIDAÇÃO CASCADE</span>
+          </summary>
+          <div class="query-accordion__content">
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">query_03_pos_delecao.sql</span>
+                <span class="ide-window__tag">[SELECT / MyCompiler]</span>
+              </div>
+              <div class="ide-window__body">
+                <pre class="ide-window__code"><code>-- 1. Verifica se o usuário 4 foi removido da tabela 'users'
+SELECT id_user, nome FROM users;
+
+-- 2. Comprova que o telefone do usuário 4 foi deletado automaticamente da tabela 'telefones'
+SELECT id_user, tel FROM telefones;</code></pre>
               </div>
             </div>
 
             <div class="query-output">
               <div class="query-output__header">
                 <span class="query-output__icon">📋</span>
-                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Ranking de
-                  audiência</span>
+                <span class="query-output__title">Resultado da Pesquisa 1: Tabela 'users' (4 usuários restantes — Usuário 4 excluído)</span>
               </div>
-              <!-- EDITE AQUI: Tabela com o retorno da Query 02 -->
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>id_user</th>
+                      <th>nome</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Edson da Silva</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Renata de Melo</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Gustavo da Silva</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Pedro Henrique</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="query-output">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">Resultado da Pesquisa 2: Tabela 'telefones' (Telefone do usuário 4 deletado automaticamente via CASCADE)</span>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>id_user</th>
+                      <th>tel</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>11989850920</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>11989850910</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>11989850912</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>11989850920</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>11981119191</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Consulta 04: Relatório do Catálogo Fonográfico com INNER JOIN -->
+        <details class="query-accordion">
+          <summary class="query-accordion__header">
+            <span class="code-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Consulta 04 — Catálogo Musical: Músicas, Álbuns, Artistas e Gêneros (INNER JOIN)</span>
+            <span class="query-accordion__badge">INNER JOIN MULTIPLO</span>
+          </summary>
+          <div class="query-accordion__content">
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">query_04_catalogo_musical.sql</span>
+                <span class="ide-window__tag">[SELECT / MyCompiler]</span>
+              </div>
+              <div class="ide-window__body">
+                <pre class="ide-window__code"><code>SELECT 
+    m.id_musica,
+    m.nome AS musica,
+    m.duracao_secs,
+    alb.nome AS album,
+    art.nome AS artista,
+    g.nome AS genero
+FROM musicas m
+INNER JOIN albuns alb ON m.id_album = alb.id_album
+INNER JOIN artistas art ON alb.id_art = art.id_art
+INNER JOIN generos g ON m.id_genero = g.id_genero
+ORDER BY m.id_musica ASC;</code></pre>
+              </div>
+            </div>
+
+            <div class="query-output">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">Resultado da Pesquisa: Relação Completa do Catálogo Fonográfico</span>
+              </div>
               <div class="table-responsive">
                 <table class="db-table db-table--output">
                   <thead>
                     <tr>
                       <th>id_musica</th>
-                      <th>titulo_musica</th>
-                      <th>artista</th>
-                      <th>total_reproducoes</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1001</td>
-                      <td>Midnight City Drive</td>
-                      <td>The Midnight Echoes</td>
-                      <td>2</td>
-                    </tr>
-                    <tr>
-                      <td>1004</td>
-                      <td>Retro Highway 88</td>
-                      <td>Neon Cyberflow</td>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                      <td>1003</td>
-                      <td>Samba dos Horizontes</td>
-                      <td>Clara Viana & Quinteto</td>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                      <td>1002</td>
-                      <td>Neon Reflections</td>
-                      <td>The Midnight Echoes</td>
-                      <td>0</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </details>
-
-        <!-- Query 03: Faixas de uma playlist com artista e álbum -->
-        <details class="query-accordion">
-          <summary class="query-accordion__header">
-            <span class="query-accordion__icon-indicator"></span>
-            <span class="query-accordion__title">Consulta 03 — Buscar todas as faixas de uma Playlist específica com
-              nome do Artista e Álbum</span>
-            <span class="query-accordion__badge">MULTI JOIN</span>
-          </summary>
-          <div class="query-accordion__content">
-            <div class="ide-window">
-              <div class="ide-window__header">
-                <div class="ide-window__controls">
-                  <span class="ide-window__circle"></span>
-                  <span class="ide-window__circle"></span>
-                  <span class="ide-window__circle"></span>
-                </div>
-                <span class="ide-window__filename">query_03_faixas_playlist.sql</span>
-                <span class="ide-window__tag">[SELECT / DQL]</span>
-              </div>
-              <div class="ide-window__body">
-                <!-- EDITE AQUI: Comando SELECT da Query 03 -->
-                <pre class="ide-window__code"><code>SELECT 
-    p.nome_playlist,
-    pm.ordem_execucao AS ordem,
-    m.titulo_musica,
-    a.nome_artistico AS artista,
-    alb.titulo_album AS album,
-    SEC_TO_TIME(m.duracao_segundos) AS duracao_formatada
-FROM tb_playlists p
-INNER JOIN tb_playlist_musica pm ON p.id_playlist = pm.id_playlist
-INNER JOIN tb_musicas m ON pm.id_musica = m.id_musica
-INNER JOIN tb_albuns alb ON m.id_album = alb.id_album
-INNER JOIN tb_artistas a ON alb.id_artista = a.id_artista
-WHERE p.id_playlist = 301
-ORDER BY pm.ordem_execucao ASC;</code></pre>
-              </div>
-            </div>
-
-            <div class="query-output">
-              <div class="query-output__header">
-                <span class="query-output__icon">📋</span>
-                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Playlist ID 301 (Foco
-                  no Código & Café)</span>
-              </div>
-              <!-- EDITE AQUI: Tabela com o retorno da Query 03 -->
-              <div class="table-responsive">
-                <table class="db-table db-table--output">
-                  <thead>
-                    <tr>
-                      <th>nome_playlist</th>
-                      <th>ordem</th>
-                      <th>titulo_musica</th>
-                      <th>artista</th>
+                      <th>musica</th>
+                      <th>duracao_secs</th>
                       <th>album</th>
-                      <th>duracao_formatada</th>
+                      <th>artista</th>
+                      <th>genero</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Foco no Código & Café</td>
                       <td>1</td>
-                      <td>Midnight City Drive</td>
-                      <td>The Midnight Echoes</td>
-                      <td>Electric Sunset Horizon</td>
-                      <td>00:04:08</td>
-                    </tr>
-                    <tr>
-                      <td>Foco no Código & Café</td>
-                      <td>2</td>
-                      <td>Retro Highway 88</td>
-                      <td>Neon Cyberflow</td>
-                      <td>Digital Nostalgia Dreams</td>
-                      <td>00:03:02</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </details>
-
-        <!-- Query 04: Relatório de faturamento por tipo de plano -->
-        <details class="query-accordion">
-          <summary class="query-accordion__header">
-            <span class="query-accordion__icon-indicator"></span>
-            <span class="query-accordion__title">Consulta 04 — Relatório de faturamento por tipo de plano de assinatura
-              (SUM + GROUP BY)</span>
-            <span class="query-accordion__badge">SUM & FINANCEIRO</span>
-          </summary>
-          <div class="query-accordion__content">
-            <div class="ide-window">
-              <div class="ide-window__header">
-                <div class="ide-window__controls">
-                  <span class="ide-window__circle"></span>
-                  <span class="ide-window__circle"></span>
-                  <span class="ide-window__circle"></span>
-                </div>
-                <span class="ide-window__filename">query_04_faturamento_planos.sql</span>
-                <span class="ide-window__tag">[SELECT / DQL]</span>
-              </div>
-              <div class="ide-window__body">
-                <!-- EDITE AQUI: Comando SELECT da Query 04 -->
-                <pre class="ide-window__code"><code>SELECT 
-    p.id_plano,
-    p.nome_plano,
-    COUNT(DISTINCT u.id_usuario) AS assinantes_ativos,
-    COALESCE(SUM(pag.valor_pago), 0.00) AS faturamento_total_bruto
-FROM tb_planos p
-LEFT JOIN tb_usuarios u ON p.id_plano = u.id_plano AND u.status_conta = 'Ativo'
-LEFT JOIN tb_pagamentos pag ON u.id_usuario = pag.id_usuario AND pag.status_transacao = 'Aprovado'
-GROUP BY p.id_plano, p.nome_plano
-ORDER BY faturamento_total_bruto DESC;</code></pre>
-              </div>
-            </div>
-
-            <div class="query-output">
-              <div class="query-output__header">
-                <span class="query-output__icon">📋</span>
-                <span class="query-output__title">Resultado da Pesquisa (Output do Banco) &bull; Total Consolidado por
-                  Plano</span>
-              </div>
-              <!-- EDITE AQUI: Tabela com o retorno da Query 04 -->
-              <div class="table-responsive">
-                <table class="db-table db-table--output">
-                  <thead>
-                    <tr>
-                      <th>id_plano</th>
-                      <th>nome_plano</th>
-                      <th>assinantes_ativos</th>
-                      <th>faturamento_total_bruto</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>4</td>
-                      <td>Premium Familiar</td>
-                      <td>1</td>
-                      <td>R$ 34.90</td>
+                      <td>O sol que levou a lua</td>
+                      <td>240</td>
+                      <td>Uma vez levou</td>
+                      <td>Roberto Milos</td>
+                      <td>Jazz</td>
                     </tr>
                     <tr>
                       <td>2</td>
-                      <td>Premium Individual</td>
-                      <td>1</td>
-                      <td>R$ 21.90</td>
+                      <td>A terra</td>
+                      <td>120</td>
+                      <td>Ùltima Adeus a Humanidade</td>
+                      <td>Roberta Milos</td>
+                      <td>Pop</td>
                     </tr>
                     <tr>
                       <td>3</td>
-                      <td>Premium Universitário</td>
-                      <td>1</td>
-                      <td>R$ 11.90</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>Free com Anúncios</td>
-                      <td>0</td>
-                      <td>R$ 0.00</td>
+                      <td>Boneco de Barro</td>
+                      <td>320</td>
+                      <td>Até logo, meus deus!</td>
+                      <td>Roberta Milos</td>
+                      <td>Pop Latino</td>
                     </tr>
                   </tbody>
                 </table>
