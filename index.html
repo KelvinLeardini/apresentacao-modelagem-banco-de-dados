@@ -1687,8 +1687,7 @@ SELECT tipo, valor FROM planos;</code></pre>
               </div>
               <div class="ide-window__body">
                 <!-- EDITE AQUI: Comandos da Consulta 04 -->
-                <pre class="ide-window__code"><code>-- 1. Consulta utilizando SELECT e WHERE
-SELECT id_musica, nome, duracao_secs
+                <pre class="ide-window__code"><code>SELECT id_musica, nome, duracao_secs
 FROM musicas
 WHERE duracao_secs > 150;</code></pre>
               </div>
@@ -1748,8 +1747,7 @@ WHERE duracao_secs > 150;</code></pre>
               </div>
               <div class="ide-window__body">
                 <!-- EDITE AQUI: Comandos da Consulta 05 -->
-                <pre class="ide-window__code"><code>-- 2. Consulta utilizando ORDER BY
-SELECT id_user, nome, bairro, numero
+                <pre class="ide-window__code"><code>SELECT id_user, nome, bairro, numero
 FROM users
 ORDER BY nome ASC;</code></pre>
               </div>
@@ -1824,8 +1822,7 @@ ORDER BY nome ASC;</code></pre>
               </div>
               <div class="ide-window__body">
                 <!-- EDITE AQUI: Comandos da Consulta 06 -->
-                <pre class="ide-window__code"><code>-- 3. Consulta utilizando função de agregação (AVG)
-SELECT AVG(duracao_secs) AS media_duracao_segundos
+                <pre class="ide-window__code"><code>SELECT AVG(duracao_secs) AS media_duracao_segundos
 FROM musicas;</code></pre>
               </div>
             </div>
@@ -1875,8 +1872,7 @@ FROM musicas;</code></pre>
               </div>
               <div class="ide-window__body">
                 <!-- EDITE AQUI: Comandos da Consulta 07 -->
-                <pre class="ide-window__code"><code>-- 4. Consulta utilizando GROUP BY
-SELECT id_user, COUNT(id_tel) AS quantidade_telefones
+                <pre class="ide-window__code"><code>SELECT id_user, COUNT(id_tel) AS quantidade_telefones
 FROM telefones
 GROUP BY id_user;</code></pre>
               </div>
