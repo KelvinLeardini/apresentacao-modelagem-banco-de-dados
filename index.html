@@ -1666,7 +1666,255 @@ SELECT tipo, valor FROM planos;</code></pre>
           </div>
         </details>
 
+        <!-- Query 04: Consulta utilizando SELECT e WHERE -->
+        <details class="query-accordion">
+          <summary class="query-accordion__header">
+            <span class="query-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Consulta 04 — Filtragem de Músicas por Duração (SELECT & WHERE)</span>
+            <span class="query-accordion__badge">SELECT & WHERE</span>
+          </summary>
+          <div class="query-accordion__content">
+            <!-- 1. Janela do Editor SQL -->
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">query_04_select_where.sql</span>
+                <span class="ide-window__tag">[SELECT / MyCompiler]</span>
+              </div>
+              <div class="ide-window__body">
+                <!-- EDITE AQUI: Comandos da Consulta 04 -->
+                <pre class="ide-window__code"><code>-- 1. Consulta utilizando SELECT e WHERE
+SELECT id_musica, nome, duracao_secs
+FROM musicas
+WHERE duracao_secs > 150;</code></pre>
+              </div>
+            </div>
 
+            <!-- 2. Resultado da Consulta -->
+            <div class="query-output" style="margin-top: 1.5rem;">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">Resultado da Pesquisa: Faixas com duração superior a 150 segundos (2 linhas retornadas)</span>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>id_musica</th>
+                      <th>nome</th>
+                      <th>duracao_secs</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>O sol que levou a lua</td>
+                      <td>240</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Boneco de Barro</td>
+                      <td>320</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Query 05: Consulta utilizando ORDER BY -->
+        <details class="query-accordion">
+          <summary class="query-accordion__header">
+            <span class="query-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Consulta 05 — Listagem Alfabética de Usuários e Endereços (ORDER BY)</span>
+            <span class="query-accordion__badge">ORDER BY ASC</span>
+          </summary>
+          <div class="query-accordion__content">
+            <!-- 1. Janela do Editor SQL -->
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">query_05_order_by.sql</span>
+                <span class="ide-window__tag">[SELECT / MyCompiler]</span>
+              </div>
+              <div class="ide-window__body">
+                <!-- EDITE AQUI: Comandos da Consulta 05 -->
+                <pre class="ide-window__code"><code>-- 2. Consulta utilizando ORDER BY
+SELECT id_user, nome, bairro, numero
+FROM users
+ORDER BY nome ASC;</code></pre>
+              </div>
+            </div>
+
+            <!-- 2. Resultado da Consulta -->
+            <div class="query-output" style="margin-top: 1.5rem;">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">Resultado da Pesquisa: Usuários ordenados por nome em ordem crescente (A-Z)</span>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>id_user</th>
+                      <th>nome</th>
+                      <th>bairro</th>
+                      <th>numero</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Edson da Silva</td>
+                      <td>Centro</td>
+                      <td>1500</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Gustavo da Silva</td>
+                      <td>Macedo</td>
+                      <td>320</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Pedro Henrique</td>
+                      <td>Vila Progresso</td>
+                      <td>95</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Renata de Melo</td>
+                      <td>Maia</td>
+                      <td>850</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Query 06: Consulta utilizando função de agregação (AVG) -->
+        <details class="query-accordion">
+          <summary class="query-accordion__header">
+            <span class="query-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Consulta 06 — Cálculo da Duração Média das Músicas (Função de Agregação AVG)</span>
+            <span class="query-accordion__badge">AVG / AGREGAÇÃO</span>
+          </summary>
+          <div class="query-accordion__content">
+            <!-- 1. Janela do Editor SQL -->
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">query_06_agregacao_avg.sql</span>
+                <span class="ide-window__tag">[SELECT / MyCompiler]</span>
+              </div>
+              <div class="ide-window__body">
+                <!-- EDITE AQUI: Comandos da Consulta 06 -->
+                <pre class="ide-window__code"><code>-- 3. Consulta utilizando função de agregação (AVG)
+SELECT AVG(duracao_secs) AS media_duracao_segundos
+FROM musicas;</code></pre>
+              </div>
+            </div>
+
+            <!-- 2. Resultado da Consulta -->
+            <div class="query-output" style="margin-top: 1.5rem;">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">Resultado da Pesquisa: Média aritmética da duração das faixas em segundos</span>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>media_duracao_segundos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>226.6667</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Query 07: Consulta utilizando GROUP BY -->
+        <details class="query-accordion">
+          <summary class="query-accordion__header">
+            <span class="query-accordion__icon-indicator"></span>
+            <span class="query-accordion__title">Consulta 07 — Quantidade de Telefones por Usuário (COUNT & GROUP BY)</span>
+            <span class="query-accordion__badge">GROUP BY & COUNT</span>
+          </summary>
+          <div class="query-accordion__content">
+            <!-- 1. Janela do Editor SQL -->
+            <div class="ide-window">
+              <div class="ide-window__header">
+                <div class="ide-window__controls">
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                  <span class="ide-window__circle"></span>
+                </div>
+                <span class="ide-window__filename">query_07_group_by_telefones.sql</span>
+                <span class="ide-window__tag">[SELECT / MyCompiler]</span>
+              </div>
+              <div class="ide-window__body">
+                <!-- EDITE AQUI: Comandos da Consulta 07 -->
+                <pre class="ide-window__code"><code>-- 4. Consulta utilizando GROUP BY
+SELECT id_user, COUNT(id_tel) AS quantidade_telefones
+FROM telefones
+GROUP BY id_user;</code></pre>
+              </div>
+            </div>
+
+            <!-- 2. Resultado da Consulta -->
+            <div class="query-output" style="margin-top: 1.5rem;">
+              <div class="query-output__header">
+                <span class="query-output__icon">📋</span>
+                <span class="query-output__title">Resultado da Pesquisa: Total de números de telefone agrupados por ID de usuário</span>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table db-table--output">
+                  <thead>
+                    <tr>
+                      <th>id_user</th>
+                      <th>quantidade_telefones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>1</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
 
       </div>
     </section>
