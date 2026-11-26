@@ -37,14 +37,19 @@
   </header>
 
   <!-- ==========================================================================
-       CONTEÚDO PRINCIPAL
+       NAVEGAÇÃO LATERAL POR PONTOS (GERADA DINAMICAMENTE VIA JS)
        ========================================================================== -->
-  <main class="main-content">
+  <nav class="slide-dots" aria-label="Navegação por Slides da Apresentação"></nav>
+
+  <!-- ==========================================================================
+       CONTEÚDO PRINCIPAL (ARQUITETURA FULL-PAGE SLIDES)
+       ========================================================================== -->
+  <main class="main-content slides-container">
 
     <!-- ========================================================================
          SEÇÃO 1: INTRODUÇÃO, MINIMUNDO E REGRAS DE NEGÓCIO
          ======================================================================== -->
-    <section id="secao-1" class="section">
+    <section id="secao-1" class="section slide is-active" data-slide-title="1. Minimundo & Regras">
       <header class="section__header">
         <div class="section__badge">ETAPA 01</div>
         <h2 class="section__title">Minimundo e Regras de Negócio da Plataforma</h2>
@@ -153,7 +158,7 @@
     <!-- ========================================================================
          SEÇÃO 2: MODELO CONCEITUAL - DER
          ======================================================================== -->
-    <section id="secao-2" class="section">
+    <section id="secao-2" class="section slide is-next" data-slide-title="2. DER Conceitual">
       <header class="section__header">
         <div class="section__badge">ETAPA 02</div>
         <h2 class="section__title">Modelo Conceitual (Diagrama Entidade-Relacionamento)</h2>
@@ -202,7 +207,7 @@
     <!-- ========================================================================
          SEÇÃO 3: MODELO LÓGICO RELACIONAL E AS 13 TABELAS COM DADOS
          ======================================================================== -->
-    <section id="secao-3" class="section">
+    <section id="secao-3" class="section slide is-next" data-slide-title="3. Lógico & 13 Tabelas">
       <header class="section__header">
         <div class="section__badge">ETAPA 03</div>
         <h2 class="section__title">Modelo Lógico Relacional e Dados Armazenados</h2>
@@ -904,7 +909,7 @@
     <!-- ========================================================================
          SEÇÃO 4: SCRIPTS SQL USADOS NO MYCOMPILER
          ======================================================================== -->
-    <section id="secao-4" class="section">
+    <section id="secao-4" class="section slide is-next" data-slide-title="4. Scripts SQL">
       <header class="section__header">
         <div class="section__badge">ETAPA 04</div>
         <h2 class="section__title">Scripts SQL (DDL & DML — MyCompiler)</h2>
@@ -1206,7 +1211,7 @@ INSERT art_assoc (id_art, id_album) VALUES
     <!-- ========================================================================
          SEÇÃO 5: QUERIES DE EXEMPLO E RESULTADOS DE PESQUISA (DQL)
          ======================================================================== -->
-    <section id="secao-5" class="section">
+    <section id="secao-5" class="section slide is-next" data-slide-title="5. Consultas & Testes">
       <header class="section__header">
         <div class="section__badge">ETAPA 05</div>
         <h2 class="section__title">Queries de Pesquisa e Retorno de Dados (DQL)</h2>
@@ -1666,114 +1671,117 @@ SELECT tipo, valor FROM planos;</code></pre>
       </div>
     </section>
 
-  </main>
+    <!-- ========================================================================
+         SEÇÃO 6 (SLIDE FINAL): RODAPÉ COM OS 7 INTEGRANTES DO GRUPO
+         ======================================================================== -->
+    <section id="equipe" class="section slide slide--footer is-next" data-slide-title="6. Equipe & Créditos">
+      <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__header">
+            <div class="section__badge">ETAPA 06</div>
+            <h2 class="footer__title">Equipe de Desenvolvimento & Modelagem de Dados</h2>
+            <div class="footer__academic-info">
+              <!-- EDITE AQUI: Informações institucionais da faculdade/curso -->
+              <span class="academic-badge"><strong>Curso:</strong> Análise e Desenvolvimento de Sistemas - ADS & Ciência da
+                Computação</span>
+              <span class="academic-badge"><strong>Disciplina:</strong> Modelagem de Banco de Dados</span>
+              <span class="academic-badge"><strong>Semestre/Ano:</strong> 2026/2</span>
+              <span class="academic-badge"><strong>Professor(a):</strong> Ellen Martins</span>
+            </div>
+          </div>
 
-  <!-- ==========================================================================
-       RODAPÉ COM OS 7 INTEGRANTES DO GRUPO
-       ========================================================================== -->
-  <footer id="equipe" class="footer">
-    <div class="footer__container">
-      <div class="footer__header">
-        <h2 class="footer__title">Equipe de Desenvolvimento & Modelagem de Dados</h2>
-        <div class="footer__academic-info">
-          <!-- EDITE AQUI: Informações institucionais da faculdade/curso -->
-          <span class="academic-badge"><strong>Curso:</strong> Análise e Desenvolvimento de Sistemas - ADS & Ciência da
-            Computação</span>
-          <span class="academic-badge"><strong>Disciplina:</strong> Modelagem de Banco de Dados</span>
-          <span class="academic-badge"><strong>Semestre/Ano:</strong> 2026/2</span>
-          <span class="academic-badge"><strong>Professor(a):</strong> Ellen Martins</span>
+          <!-- Grid com exatamente 7 cards de integrantes -->
+          <div class="team-grid">
+
+            <!-- Integrante 01 -->
+            <article class="member-card">
+              <div class="member-card__avatar">01</div>
+              <div class="member-card__info">
+                <!-- EDITE AQUI: Dados do Integrante 01 -->
+                <h4 class="member-card__name">Kelvin Leardini</h4>
+                <p class="member-card__ra">RGM: 48880078</p>
+                <span class="member-card__role">Documentação & Interface Web</span>
+              </div>
+            </article>
+
+            <!-- Integrante 02 -->
+            <article class="member-card">
+              <div class="member-card__avatar">02</div>
+              <div class="member-card__info">
+                <!-- EDITE AQUI: Dados do Integrante 02 -->
+                <h4 class="member-card__name">Victor Hugo</h4>
+                <p class="member-card__ra">RGM: 49068245</p>
+                <span class="member-card__role">Dicionário de Dados & Atributos</span>
+              </div>
+            </article>
+
+            <!-- Integrante 03 -->
+            <article class="member-card">
+              <div class="member-card__avatar">03</div>
+              <div class="member-card__info">
+                <!-- EDITE AQUI: Dados do Integrante 03 -->
+                <h4 class="member-card__name">Gustavo Bernardo</h4>
+                <p class="member-card__ra">RGM: 48753009</p>
+                <span class="member-card__role">Normalização & Regras de Negócio</span>
+              </div>
+            </article>
+
+            <!-- Integrante 04 -->
+            <article class="member-card">
+              <div class="member-card__avatar">04</div>
+              <div class="member-card__info">
+                <!-- EDITE AQUI: Dados do Integrante 04 -->
+                <h4 class="member-card__name">Yago Bafume</h4>
+                <p class="member-card__ra">RGM: 48809161</p>
+                <span class="member-card__role">Arquitetura do Modelo Lógico</span>
+              </div>
+            </article>
+
+            <!-- Integrante 05 -->
+            <article class="member-card">
+              <div class="member-card__avatar">05</div>
+              <div class="member-card__info">
+                <!-- EDITE AQUI: Dados do Integrante 05 -->
+                <h4 class="member-card__name">Edson da Silva</h4>
+                <p class="member-card__ra">RGM: 48424994</p>
+                <span class="member-card__role">Implementação SQL & Consultas</span>
+              </div>
+            </article>
+
+            <!-- Integrante 06 -->
+            <article class="member-card">
+              <div class="member-card__avatar">06</div>
+              <div class="member-card__info">
+                <!-- EDITE AQUI: Dados do Integrante 06 -->
+                <h4 class="member-card__name">João Roberto</h4>
+                <p class="member-card__ra">RGM: 47632780</p>
+                <span class="member-card__role">Roteiro & Apresentação Técnica</span>
+              </div>
+            </article>
+
+            <!-- Integrante 07 -->
+            <article class="member-card">
+              <div class="member-card__avatar">07</div>
+              <div class="member-card__info">
+                <!-- EDITE AQUI: Dados do Integrante 07 -->
+                <h4 class="member-card__name">Guilherme Ricarti</h4>
+                <p class="member-card__ra">RGM: 047952679</p>
+                <span class="member-card__role">Modelagem Conceitual (DER)</span>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="footer__bottom">
+            <p class="footer__copy">&copy; 2026 BD_Streaming Acadêmico. Projeto desenvolvido estritamente com HTML5
+              Semântico, CSS3 Moderno e Vanilla JS para apresentação acadêmica.</p>
+            <a href="#secao-1" class="footer__back-to-top">⬆ Voltar ao Topo</a>
+          </div>
         </div>
-      </div>
+      </footer>
+    </section>
 
-      <!-- Grid com exatamente 7 cards de integrantes -->
-      <div class="team-grid">
-
-        <!-- Integrante 01 -->
-        <article class="member-card">
-          <div class="member-card__avatar">01</div>
-          <div class="member-card__info">
-            <!-- EDITE AQUI: Dados do Integrante 01 -->
-            <h4 class="member-card__name">Kelvin Leardini</h4>
-            <p class="member-card__ra">RGM: 48880078</p>
-            <span class="member-card__role">Documentação & Interface Web</span>
-          </div>
-        </article>
-
-        <!-- Integrante 02 -->
-        <article class="member-card">
-          <div class="member-card__avatar">02</div>
-          <div class="member-card__info">
-            <!-- EDITE AQUI: Dados do Integrante 02 -->
-            <h4 class="member-card__name">Victor Hugo</h4>
-            <p class="member-card__ra">RGM: 49068245</p>
-            <span class="member-card__role">Dicionário de Dados & Atributos</span>
-          </div>
-        </article>
-
-        <!-- Integrante 03 -->
-        <article class="member-card">
-          <div class="member-card__avatar">03</div>
-          <div class="member-card__info">
-            <!-- EDITE AQUI: Dados do Integrante 03 -->
-            <h4 class="member-card__name">Gustavo Bernardo</h4>
-            <p class="member-card__ra">RGM: 48753009</p>
-            <span class="member-card__role">Normalização & Regras de Negócio</span>
-          </div>
-        </article>
-
-        <!-- Integrante 04 -->
-        <article class="member-card">
-          <div class="member-card__avatar">04</div>
-          <div class="member-card__info">
-            <!-- EDITE AQUI: Dados do Integrante 04 -->
-            <h4 class="member-card__name">Yago Bafume</h4>
-            <p class="member-card__ra">RGM: 48809161</p>
-            <span class="member-card__role">Arquitetura do Modelo Lógico</span>
-          </div>
-        </article>
-
-        <!-- Integrante 05 -->
-        <article class="member-card">
-          <div class="member-card__avatar">05</div>
-          <div class="member-card__info">
-            <!-- EDITE AQUI: Dados do Integrante 05 -->
-            <h4 class="member-card__name">Edson da Silva</h4>
-            <p class="member-card__ra">RGM: 48424994</p>
-            <span class="member-card__role">Implementação SQL & Consultas</span>
-          </div>
-        </article>
-
-        <!-- Integrante 06 -->
-        <article class="member-card">
-          <div class="member-card__avatar">06</div>
-          <div class="member-card__info">
-            <!-- EDITE AQUI: Dados do Integrante 06 -->
-            <h4 class="member-card__name">João Roberto</h4>
-            <p class="member-card__ra">RGM: 47632780</p>
-            <span class="member-card__role">Roteiro & Apresentação Técnica</span>
-          </div>
-        </article>
-
-        <!-- Integrante 07 -->
-        <article class="member-card">
-          <div class="member-card__avatar">07</div>
-          <div class="member-card__info">
-            <!-- EDITE AQUI: Dados do Integrante 07 -->
-            <h4 class="member-card__name">Guilherme Ricarti</h4>
-            <p class="member-card__ra">RGM: 047952679</p>
-            <span class="member-card__role">Modelagem Conceitual (DER)</span>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2026 BD_Streaming Acadêmico. Projeto desenvolvido estritamente com HTML5
-          Semântico, CSS3 Moderno e Vanilla JS para apresentação acadêmica.</p>
-        <a href="#secao-1" class="footer__back-to-top">⬆ Voltar ao Topo</a>
-      </div>
-    </div>
-  </footer>
+  </main>
 
   <!-- ==========================================================================
        MODAIS NATIVOS (<dialog>) PARA ZOOM DOS DIAGRAMAS DER E LÓGICO
