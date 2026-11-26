@@ -200,7 +200,7 @@
     </section>
 
     <!-- ========================================================================
-         SEÇÃO 3: MODELO LÓGICO RELACIONAL E AS 12 TABELAS COM DADOS
+         SEÇÃO 3: MODELO LÓGICO RELACIONAL E AS 13 TABELAS COM DADOS
          ======================================================================== -->
     <section id="secao-3" class="section">
       <header class="section__header">
@@ -208,7 +208,7 @@
         <h2 class="section__title">Modelo Lógico Relacional e Dados Armazenados</h2>
         <p class="section__description">
           Esquema relacional em 3ª Forma Normal (3FN) detalhando chaves primárias (PK), chaves estrangeiras (FK), tipos
-          primitivos de dados e instâncias povoadas nas 12 tabelas.
+          primitivos de dados e instâncias povoadas nas 13 tabelas.
         </p>
       </header>
 
@@ -218,21 +218,21 @@
           title="Clique para ampliar o Diagrama do Modelo Lógico">
 
           <!-- EDITE AQUI: Descomente a tag img abaixo e insira o caminho do diagrama lógico gerado no MySQL Workbench, DBeaver, etc. -->
-          <img src="ModeloLogicov3.jpeg" alt="Esquema Lógico Relacional das 12 Tabelas" class="diagram-viewer__image">
+          <img src="ModeloLogicov3.jpeg" alt="Esquema Lógico Relacional das 13 Tabelas" class="diagram-viewer__image">
         </div>
 
         <div class="diagram-viewer__toolbar">
           <button class="btn btn-zoom" data-modal-target="modal-logico" type="button">
             <span class="btn__icon">🔍</span> Ampliar Modelo Lógico (Tela Cheia)
           </button>
-          <span class="diagram-viewer__status-tag">12 Tabelas Normalizadas</span>
+          <span class="diagram-viewer__status-tag">13 Tabelas Normalizadas</span>
         </div>
       </figure>
 
-      <!-- Parte 3.2: Visualização Tabular das 12 Tabelas Divididas em 4 Abas -->
+      <!-- Parte 3.2: Visualização Tabular das 13 Tabelas Divididas em 4 Abas -->
       <div class="tables-section">
         <div class="tables-section__header">
-          <h3 class="tables-section__title">Visualização das 12 Tabelas e Registros do Banco de Dados</h3>
+          <h3 class="tables-section__title">Visualização das 13 Tabelas e Registros do Banco de Dados</h3>
           <p class="tables-section__subtitle">Selecione o módulo para inspecionar os dicionários de dados e registros
             fictícios de validação:</p>
         </div>
@@ -263,7 +263,7 @@
           <!-- Tabela 01: users -->
           <article class="table-card">
             <div class="table-card__header">
-              <span class="table-card__badge">Tabela 01/12</span>
+              <span class="table-card__badge">Tabela 01/13</span>
               <h4 class="table-card__title"><code>TABLE: users</code></h4>
               <span class="table-card__meta">Entidade Central &bull; Contas e endereços dos usuários</span>
             </div>
@@ -353,7 +353,7 @@
           <!-- Tabela 02: telefones -->
           <article class="table-card">
             <div class="table-card__header">
-              <span class="table-card__badge">Tabela 02/12</span>
+              <span class="table-card__badge">Tabela 02/13</span>
               <h4 class="table-card__title"><code>TABLE: telefones</code></h4>
               <span class="table-card__meta">Entidade de Contato &bull; Números de telefone vinculados aos usuários</span>
             </div>
@@ -380,7 +380,7 @@
                   </tr>
                   <tr>
                     <td><code>3</code></td>
-                    <td>11989850912</td>
+                    <td>11989850913</td>
                     <td><code>2</code></td>
                   </tr>
                   <tr>
@@ -406,7 +406,7 @@
           <!-- Tabela 03: planos -->
           <article class="table-card">
             <div class="table-card__header">
-              <span class="table-card__badge">Tabela 03/12</span>
+              <span class="table-card__badge">Tabela 03/13</span>
               <h4 class="table-card__title"><code>TABLE: planos</code></h4>
               <span class="table-card__meta">Entidade Forte &bull; Tipos de assinatura e limites de usuários</span>
             </div>
@@ -453,7 +453,7 @@
           <!-- Tabela 04: pagamentos -->
           <article class="table-card">
             <div class="table-card__header">
-              <span class="table-card__badge">Tabela 04/12</span>
+              <span class="table-card__badge">Tabela 04/13</span>
               <h4 class="table-card__title"><code>TABLE: pagamentos</code></h4>
               <span class="table-card__meta">Entidade Financeira &bull; Histórico transacional de assinaturas</span>
             </div>
@@ -503,7 +503,7 @@
           <!-- Tabela 05: artistas -->
           <article class="table-card">
             <div class="table-card__header">
-              <span class="table-card__badge">Tabela 05/12</span>
+              <span class="table-card__badge">Tabela 05/13</span>
               <h4 class="table-card__title"><code>TABLE: artistas</code></h4>
               <span class="table-card__meta">Entidade Forte &bull; Autores, bandas e intérpretes cadastrados</span>
             </div>
@@ -549,7 +549,7 @@
           <!-- Tabela 06: albuns -->
           <article class="table-card">
             <div class="table-card__header">
-              <span class="table-card__badge">Tabela 06/12</span>
+              <span class="table-card__badge">Tabela 06/13</span>
               <h4 class="table-card__title"><code>TABLE: albuns</code></h4>
               <span class="table-card__meta">Entidade Fonográfica &bull; Lançamentos e produções de estúdio</span>
             </div>
@@ -592,15 +592,53 @@
             </div>
           </article>
 
-        </div>
-
-        <!-- PAINEL 3: MÚSICAS, GÊNEROS & AUTORIA (Tabelas 7, 8 e 9) -->
-        <div id="tab-modulo-3" class="tab-pane" role="tabpanel" aria-labelledby="btn-tab-3">
-
-          <!-- Tabela 07: generos -->
+          <!-- Tabela 07: art_assoc -->
           <article class="table-card">
             <div class="table-card__header">
-              <span class="table-card__badge">Tabela 07/12</span>
+              <span class="table-card__badge">Tabela 07/13</span>
+              <h4 class="table-card__title"><code>TABLE: art_assoc</code></h4>
+              <span class="table-card__meta">Entidade Associativa &bull; Associação N:N entre Álbuns e Artistas</span>
+            </div>
+            <!-- EDITE AQUI: Dados da tabela art_assoc -->
+            <div class="table-responsive">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th><span class="badge badge--pk">PK</span> id_art_assoc</th>
+                    <th><span class="badge badge--fk">FK</span> id_art</th>
+                    <th><span class="badge badge--fk">FK</span> id_album</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>1</code></td>
+                    <td><code>1</code></td>
+                    <td><code>1</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>2</code></td>
+                    <td><code>2</code></td>
+                    <td><code>2</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>3</code></td>
+                    <td><code>2</code></td>
+                    <td><code>3</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- PAINEL 3: MÚSICAS, GÊNEROS & AUTORIA (Tabelas 8, 9 e 10) -->
+        <div id="tab-modulo-3" class="tab-pane" role="tabpanel" aria-labelledby="btn-tab-3">
+
+          <!-- Tabela 08: generos -->
+          <article class="table-card">
+            <div class="table-card__header">
+              <span class="table-card__badge">Tabela 08/13</span>
               <h4 class="table-card__title"><code>TABLE: generos</code></h4>
               <span class="table-card__meta">Entidade de Classificação &bull; Estilos e categorias musicais</span>
             </div>
@@ -635,10 +673,10 @@
             </div>
           </article>
 
-          <!-- Tabela 08: musicas -->
+          <!-- Tabela 09: musicas -->
           <article class="table-card">
             <div class="table-card__header">
-              <span class="table-card__badge">Tabela 08/12</span>
+              <span class="table-card__badge">Tabela 09/13</span>
               <h4 class="table-card__title"><code>TABLE: musicas</code></h4>
               <span class="table-card__meta">Entidade Central do Catálogo &bull; Faixas de áudio e metadados</span>
             </div>
@@ -681,10 +719,10 @@
             </div>
           </article>
 
-          <!-- Tabela 09: art_music_assoc -->
+          <!-- Tabela 10: art_music_assoc -->
           <article class="table-card">
             <div class="table-card__header">
-              <span class="table-card__badge">Tabela 09/12</span>
+              <span class="table-card__badge">Tabela 10/13</span>
               <h4 class="table-card__title"><code>TABLE: art_music_assoc</code></h4>
               <span class="table-card__meta">Entidade Associativa &bull; Associação entre Artistas e Músicas</span>
             </div>
@@ -721,13 +759,13 @@
 
         </div>
 
-        <!-- PAINEL 4: PLAYLISTS & HISTÓRICO (Tabelas 10, 11 e 12) -->
+        <!-- PAINEL 4: PLAYLISTS & HISTÓRICO (Tabelas 11, 12 e 13) -->
         <div id="tab-modulo-4" class="tab-pane" role="tabpanel" aria-labelledby="btn-tab-4">
 
-          <!-- Tabela 10: playlists -->
+          <!-- Tabela 11: playlists -->
           <article class="table-card">
             <div class="table-card__header">
-              <span class="table-card__badge">Tabela 10/12</span>
+              <span class="table-card__badge">Tabela 11/13</span>
               <h4 class="table-card__title"><code>TABLE: playlists</code></h4>
               <span class="table-card__meta">Entidade de Usuário &bull; Coletâneas de músicas criadas pelos usuários</span>
             </div>
@@ -774,10 +812,10 @@
             </div>
           </article>
 
-          <!-- Tabela 11: playlist_assoc -->
+          <!-- Tabela 12: playlist_assoc -->
           <article class="table-card">
             <div class="table-card__header">
-              <span class="table-card__badge">Tabela 11/12</span>
+              <span class="table-card__badge">Tabela 12/13</span>
               <h4 class="table-card__title"><code>TABLE: playlist_assoc</code></h4>
               <span class="table-card__meta">Entidade Associativa &bull; Associação entre Playlists e Músicas</span>
             </div>
@@ -812,10 +850,10 @@
             </div>
           </article>
 
-          <!-- Tabela 12: historicos -->
+          <!-- Tabela 13: historicos -->
           <article class="table-card">
             <div class="table-card__header">
-              <span class="table-card__badge">Tabela 12/12</span>
+              <span class="table-card__badge">Tabela 13/13</span>
               <h4 class="table-card__title"><code>TABLE: historicos</code></h4>
               <span class="table-card__meta">Entidade de Log / Fato &bull; Rastreamento de reproduções do usuário</span>
             </div>
@@ -1031,6 +1069,16 @@ CREATE TABLE art_music_assoc (
         REFERENCES artistas (id_art),
     CONSTRAINT fk_musica_assoc FOREIGN KEY (id_musica)
         REFERENCES musicas (id_musica)
+);
+
+CREATE TABLE art_assoc (
+    id_art_assoc INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    id_art INT,
+    id_album INT,
+    CONSTRAINT fk_id_art_album FOREIGN KEY (id_art)
+        REFERENCES artistas (id_art),
+    CONSTRAINT fk_id_album_assoc FOREIGN KEY (id_album)
+        REFERENCES albuns (id_album)
 );</code></pre>
               </div>
             </div>
@@ -1138,7 +1186,13 @@ INSERT playlist_assoc (id_playlist, id_musica) VALUES
 INSERT art_music_assoc (id_art, id_musica) VALUES
 (1, 2),
 (2, 3),
-(3, 1);</code></pre>
+(3, 1);
+
+-- 13. Artistas & Albuns - Assocs
+INSERT art_assoc (id_art, id_album) VALUES 
+(1, 1),
+(2, 2),
+(2, 3);</code></pre>
               </div>
             </div>
           </div>
@@ -1748,7 +1802,7 @@ SELECT tipo, valor FROM planos;</code></pre>
   <dialog id="modal-logico" class="diagram-modal">
     <div class="diagram-modal__box">
       <header class="diagram-modal__header">
-        <h3 class="diagram-modal__title">📊 Esquema do Modelo Lógico Relacional (12 Tabelas)</h3>
+        <h3 class="diagram-modal__title">📊 Esquema do Modelo Lógico Relacional (13 Tabelas)</h3>
         <button class="diagram-modal__close-btn" data-modal-close="modal-logico"
           aria-label="Fechar Modal">&times;</button>
       </header>
