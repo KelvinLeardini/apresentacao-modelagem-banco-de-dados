@@ -1368,7 +1368,7 @@ SELECT id_user, tel FROM telefones;</code></pre>
         <details class="query-accordion">
           <summary class="query-accordion__header">
             <span class="query-accordion__icon-indicator"></span>
-            <span class="query-accordion__title">Consulta 02 — Consultas Analíticas: Pagamentos Pendentes, Histórico, Contagem e Agrupamento</span>
+            <span class="query-accordion__title">Consulta 02 — Consultas Analíticas: Pagamentos Concluídos, Histórico, Contagem e Agrupamento</span>
             <span class="query-accordion__badge">SELECT / DQL</span>
           </summary>
           <div class="query-accordion__content">
@@ -1399,7 +1399,7 @@ SELECT COUNT(cidade) FROM users GROUP BY cidade;</code></pre>
             <div class="query-output" style="margin-top: 1.5rem;">
               <div class="query-output__header">
                 <span class="query-output__icon">📋</span>
-                <span class="query-output__title">1. Usuários com Pagamento Pendente (status_pagamento = 0 via INNER JOIN)</span>
+                <span class="query-output__title">1. Usuários com Pagamento Concluído (status_pagamento = 0 via INNER JOIN)</span>
               </div>
               <div class="table-responsive">
                 <table class="db-table db-table--output">
@@ -1461,7 +1461,7 @@ SELECT COUNT(cidade) FROM users GROUP BY cidade;</code></pre>
             <div class="query-output" style="margin-top: 1.5rem;">
               <div class="query-output__header">
                 <span class="query-output__icon">📋</span>
-                <span class="query-output__title">3. Quantidade de Pagamentos Pendentes no Plano 2 (COUNT com WHERE)</span>
+                <span class="query-output__title">3. Quantidade de Pagamentos Concluídos no Plano 2 (COUNT com WHERE)</span>
               </div>
               <div class="table-responsive">
                 <table class="db-table db-table--output">
